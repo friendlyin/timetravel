@@ -22,7 +22,7 @@ export function getOpenAIClient(): OpenAI {
   if (!openaiClient) {
     // Try to get API key from local config first, then fall back to environment variables
     const apiKey = localConfig.openaiApiKey || process.env.OPENAI_API_KEY;
-    
+
     if (!apiKey) {
       throw new Error(
         'OPENAI_API_KEY is not configured. ' +
@@ -31,7 +31,10 @@ export function getOpenAIClient(): OpenAI {
       );
     }
 
-    return openaiClient
+    openaiClient = new OpenAI({ apiKey });
+  }
+
+  return openaiClient;
 }
 
 /**
@@ -163,4 +166,3 @@ export async function testConnection(): Promise<boolean> {
     return false;
   }
 }
-
