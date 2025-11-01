@@ -1,0 +1,550 @@
+{
+  "metadata": {
+    "sessionId": "session-20251101-160528",
+    "startTime": "2025-11-01T16:05:28.060Z",
+    "currentStep": "Pivotal Moment Agent",
+    "status": "active",
+    "totalSteps": 8
+  },
+  "input": {
+    "date": "1200-01-05",
+    "location": "North Africa"
+  },
+  "config": {
+    "numberOfPersonaOptions": 4,
+    "maxPivotalMoments": 5,
+    "generateImages": false
+  },
+  "lifelines": [
+    {
+      "id": "lifeline-persona-4",
+      "startAge": 0,
+      "endAge": 13,
+      "narrative": "Born into the throes of warfare, the young Arab-Berber boy entered the world under the tumultuous skies of a military camp on the borderlands of the Iberian Peninsula. His father, a respected high-ranking officer in the Almohad army, was stationed here, leading campaigns against the encroaching Christian forces. The infant's earliest cries mingled with the clamor of soldiers and the distant echoes of battle. These formative years were spent in Fez, a vibrant city teeming with Islamic scholarship and bustling markets, yet forever shadowed by the looming threat of conflict. Raised with a regimen that mirrored the discipline of an army, he was taught the arts of leadership and warfare by the age of seven. His days were filled with lessons in strategy and physical training, shaping his athletic form and sharpening his features, even as his mind absorbed the wisdom of the Quran and the teachings of esteemed philosophers.",
+      "events": [
+        {
+          "age": 3,
+          "year": "1208",
+          "event": "The family moved to Fez after his father's successful campaign in Iberia, marking a shift from the temporary life of a military camp to the vibrant community of an urban center.",
+          "impact": "moderate",
+          "location": "Fez"
+        },
+        {
+          "age": 6,
+          "year": "1211",
+          "event": "His father was honored by Caliph Muhammad al-Nasir for his service, granting the family increased status and privilege within the military elite.",
+          "impact": "significant",
+          "location": "Fez"
+        },
+        {
+          "age": 9,
+          "year": "1214",
+          "event": "Witnessed the construction of the Kutubiyya Mosque in Marrakesh during a family visit, sparking a lifelong appreciation for Islamic architecture and cultural achievements.",
+          "impact": "moderate",
+          "location": "Marrakesh"
+        },
+        {
+          "age": 11,
+          "year": "1216",
+          "event": "Accompanied his father on a military campaign for the first time, experiencing the brutal realities of warfare and the responsibilities of leadership.",
+          "impact": "major",
+          "location": "Iberian Peninsula"
+        },
+        {
+          "age": 13,
+          "year": "1218",
+          "event": "Received an invitation to train under a prominent military mentor, offering a prestigious path within the Almohad army but requiring him to leave his family.",
+          "impact": "major",
+          "location": "Fez"
+        }
+      ],
+      "characterDevelopment": {
+        "skills": [
+          "Leadership",
+          "Military strategy",
+          "Physical combat"
+        ],
+        "relationships": [
+          "Close bond with his father",
+          "Mentorship under military leaders"
+        ],
+        "beliefs": [
+          "Strong belief in Almohad principles",
+          "Appreciation for Islamic culture and architecture"
+        ],
+        "reputation": "Respected young member of the military elite",
+        "physicalCondition": "Athletic and robust",
+        "mentalState": "Disciplined, with a mix of youthful curiosity and the burden of expectation"
+      },
+      "pivotalMomentReached": true,
+      "imagePrompt": "A young Arab-Berber boy in traditional Almohad attire standing before the grand Kutubiyya Mosque, eyes filled with wonder, as his father, a distinguished officer, looks on proudly under the sprawling sky of Marrakesh."
+    }
+  ],
+  "pivotalMoments": [
+    {
+      "id": "pivotal-moment-001",
+      "age": 13,
+      "year": "1218",
+      "title": "The Call of Duty and Destiny",
+      "situation": "The young boy stands at the threshold of his future, holding an invitation to train under a prominent military mentor. This opportunity promises to elevate him within the Caliphate's ranks, yet it requires leaving his family and familiar life behind. The decision he makes now will forge the path of his destiny.",
+      "context": "After years of rigorous training and witnessing the realities of warfare, the boy is presented with the chance to join the prestigious ranks of the Almohad army under the tutelage of a renowned commander. However, this means relinquishing the comfort and guidance of his family, and stepping into a world filled with new challenges and expectations.",
+      "stakes": "At stake is the future of his career and personal growth. Accepting the offer could lead to great honor and influence, but it also risks estrangement from his family and the burdens of military life. Declining might preserve his current relationships but limit his potential impact.",
+      "choices": [
+        {
+          "id": "choice-1",
+          "title": "Accept the Mentor's Offer",
+          "description": "Embrace the opportunity to train under the military mentor, leaving family and familiarity to forge a path of distinguished service and potential leadership in the Almohad army.",
+          "immediateConsequences": [
+            "Embark on a journey to the military academy",
+            "Begin intensive training under expert guidance"
+          ],
+          "potentialOutcomes": [
+            "Rise to become a celebrated military leader",
+            "Risk of becoming distant from family ties"
+          ],
+          "risk": "high",
+          "alignment": [
+            "Ambition",
+            "Duty",
+            "Honor"
+          ]
+        },
+        {
+          "id": "choice-2",
+          "title": "Stay with Family in Fez",
+          "description": "Decline the offer to remain in Fez, continuing your education and training under your father’s guidance, preserving family bonds and current lifestyle.",
+          "immediateConsequences": [
+            "Stay in familiar surroundings",
+            "Continue learning with father and local mentors"
+          ],
+          "potentialOutcomes": [
+            "Maintain strong family relationships",
+            "Possibly slower career progression"
+          ],
+          "risk": "medium",
+          "alignment": [
+            "Family",
+            "Security",
+            "Loyalty"
+          ]
+        },
+        {
+          "id": "choice-3",
+          "title": "Pursue Islamic Scholarship",
+          "description": "Opt to focus on Islamic scholarship, inspired by your reverence for cultural and intellectual achievements, seeking a future as a learned scholar instead of a military path.",
+          "immediateConsequences": [
+            "Enroll in a prominent school in Fez",
+            "Begin studies in philosophy and the Quran"
+          ],
+          "potentialOutcomes": [
+            "Become a respected scholar or advisor",
+            "Potential loss of military career prospects"
+          ],
+          "risk": "medium",
+          "alignment": [
+            "Wisdom",
+            "Culture",
+            "Knowledge"
+          ]
+        },
+        {
+          "id": "choice-4",
+          "title": "Forge Your Own Path",
+          "description": "Reject all traditional expectations to carve out your own path, seeking a balance between military skills and cultural pursuits, shaping a unique role within the Caliphate.",
+          "immediateConsequences": [
+            "Face uncertainty and criticism from peers",
+            "Embark on self-guided exploration and learning"
+          ],
+          "potentialOutcomes": [
+            "Create a unique and influential role",
+            "Struggle with lack of defined support or structure"
+          ],
+          "risk": "extreme",
+          "alignment": [
+            "Freedom",
+            "Individuality",
+            "Innovation"
+          ]
+        }
+      ],
+      "timeConstraint": "The invitation requires a response within a month to secure the position.",
+      "influencingFactors": [
+        "Father's expectations",
+        "Cultural admiration",
+        "Desire for personal growth"
+      ],
+      "imagePrompt": "The young boy stands torn between paths, surrounded by the wisdom of Fez's scholars, the imposing helmets of warriors, and the whispers of ancient texts carried on the wind under the Marrakesh sun."
+    }
+  ],
+  "choices": [
+    {
+      "pivotalMomentId": "pivotal-moment-001",
+      "choiceId": "choice-1",
+      "choiceTitle": "Accept the Mentor's Offer",
+      "timestamp": "2025-11-01T16:10:50.064Z"
+    }
+  ],
+  "imagePrompts": [
+    {
+      "id": "prompt-1762013247886",
+      "prompt": "A photorealistic photograph capturing the young Arab-Berber boy amidst the lively streets of Fez in the early 13th century. The scene is set in a bustling market, with the sun casting a warm golden hue over the intricate latticework of nearby minarets and domed rooftops. The boy, around seven years old, stands in sharp focus, wearing a traditional white tunic and a red fez, his youthful face framed by the shadow of a nearby awning. Around him, merchants in vibrant kaftans and turbans haggle over exotic spices and textiles, while a caravan of camels laden with goods passes in the background. The image captures the natural vibrancy and detail of the marketplace, with realistic skin tones and high detail in the woven patterns of the fabrics, all under the soft, diffused natural lighting of the late afternoon sun. Sharp focus, high detail, documentary photography style.",
+      "sourceType": "context",
+      "sourceId": "session-20251101-160528",
+      "timestamp": "2023-11-01T16:52:00Z"
+    },
+    {
+      "id": "prompt-1762013570187",
+      "prompt": "A photorealistic photograph capturing a pivotal moment in a bustling marketplace of Fez, circa early 13th century, as the young Arab-Berber boy stands beside his father. The scene is bathed in the warm glow of late afternoon sunlight, casting long shadows that dance across the cobblestone street. The boy, dressed in a simple yet well-crafted tunic and a modest turban, clutches a scroll—an invitation to train under a military mentor—with his other hand resting on a wooden training sword at his side. Surrounding him are the vibrant stalls of merchants displaying rich textiles, spices, and pottery, all under the intricate arches and domes of Almohad architecture. The focus is sharp, capturing the fine details of the boy’s youthful yet determined expression, the texture of his clothing, and the dynamic energy of the marketplace backdrop. High detail and natural lighting convey a sense of realism and immediacy, immersing the viewer in this historical moment.",
+      "sourceType": "context",
+      "sourceId": "session-20251101-160528",
+      "timestamp": "2023-11-01T16:05:28Z"
+    }
+  ],
+  "images": [
+    {
+      "id": "image-1762013285179",
+      "url": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-2csB8HQYSV27j9GDSf6uFYLd/user-jWPQkm86IPsLHI0HsDFMCkkD/img-e8Eeqa9ihTAhz6aRQOMEbOSX.png?st=2025-11-01T15%3A08%3A04Z&se=2025-11-01T17%3A08%3A04Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=475fd488-6c59-44a5-9aa9-31c4db451bea&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-11-01T16%3A08%3A04Z&ske=2025-11-02T16%3A08%3A04Z&sks=b&skv=2024-08-04&sig=jiSVMKoVwuh/kUYGq7h1pGuRQL2Guv1MPUwbgw5uGGo%3D",
+      "revisedPrompt": "A photorealistic scene set in the lively streets of Fez in the early 13th century. The picture highlights a young Arab-Berber boy, approximately seven years old, who stands amidst the bustling market. He is adorned in a traditional white tunic and a red fez, his young face amplified by the shadow of a nearby awning. The sun casts a warm golden hue on the intricate latticework of nearby minarets and domed rooftops. Merchants, wearing vibrant kaftans and turbans, negotiate over exotic spices and textiles, while a caravan of camels carrying goods strolls through. The image captures the natural vibrancy and minute details of the marketplace, coupled with realistic skin tones and the high detail in the woven patterns of fabrics, bathed under the soft, diffused natural light of a late afternoon sun. The image is created in a sharp focus, high detail, documentary photography style.",
+      "sourceType": "unknown",
+      "sourceId": "",
+      "timestamp": "2025-11-01T16:08:05.179Z"
+    },
+    {
+      "id": "image-1762013609950",
+      "url": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-2csB8HQYSV27j9GDSf6uFYLd/user-jWPQkm86IPsLHI0HsDFMCkkD/img-aAfn01XhDQuIJjpguYxS91Wc.png?st=2025-11-01T15%3A13%3A29Z&se=2025-11-01T17%3A13%3A29Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=52f8f7b3-ca8d-4b21-9807-8b9df114d84c&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-11-01T06%3A57%3A25Z&ske=2025-11-02T06%3A57%3A25Z&sks=b&skv=2024-08-04&sig=EPirkTsTO7xoSMbRTIaTw1YsZcI1aVFNfTAo5fzYjZg%3D",
+      "revisedPrompt": "A hyper-realistic image that portrays a historic moment in a bustling marketplace in Fez in the early 13th century. An Arab-Berber boy is standing next to his father, under the warm glow of the late afternoon sun that casts elongated shadows on the cobblestone street. He's wearing a simple but well-made tunic and a modest turbah, gripping tightly a scroll—an invite to train under a military mentor—with the other hand on a wooden practice sword at his side. Surrounding them are colorful stalls of vendors showcasing luscious textiles, aromatic spices, and intricate pottery, all under the elaborate archways and domes of Almohad architecture. The image sharply focuses on the boy's young yet resolute expression, and the fine details of his attire, reflecting the vibrant energy of the marketplace backdrop. The high details and natural lighting give a sense of realism and immediacy, creating an immersive experience of this historic moment.",
+      "sourceType": "unknown",
+      "sourceId": "",
+      "timestamp": "2025-11-01T16:13:29.950Z"
+    }
+  ],
+  "executionLogs": [
+    {
+      "agentId": "historicalContext",
+      "agentName": "Historical Context Agent",
+      "startTime": "2025-11-01T16:05:33.717Z",
+      "endTime": "2025-11-01T16:05:44.244Z",
+      "duration": 10527,
+      "inputData": {
+        "input.date": "1200-01-05",
+        "input.location": "North Africa"
+      },
+      "outputData": {
+        "_structure": "country, description, politicalSituation, religion, socialStructure, economy, conflicts, culturalHighlights, additionalContext"
+      },
+      "success": true
+    },
+    {
+      "agentId": "personaGeneration",
+      "agentName": "Persona Generation Agent",
+      "startTime": "2025-11-01T16:06:09.327Z",
+      "endTime": "2025-11-01T16:06:23.708Z",
+      "duration": 14381,
+      "inputData": {
+        "historicalContext": "{country, description, politicalSituation, religion, socialStructure, economy, conflicts, culturalHighlights, additionalContext}",
+        "config.numberOfPersonaOptions": 4
+      },
+      "outputData": {
+        "optionsCount": 4,
+        "_structure": "options, timestamp"
+      },
+      "success": true
+    },
+    {
+      "agentId": "lifelineGeneration",
+      "agentName": "Lifeline Generation Agent",
+      "startTime": "2025-11-01T16:06:57.064Z",
+      "endTime": "2025-11-01T16:07:15.419Z",
+      "duration": 18355,
+      "inputData": {
+        "historicalContext": "{country, description, politicalSituation, religion, socialStructure, economy, conflicts, culturalHighlights, additionalContext}",
+        "selectedPersona": "{id, title, familyBackground, birthCircumstances, initialAttributes, probability, opportunities, challenges}",
+        "lifelines": "[Array with 0 items]"
+      },
+      "outputData": {
+        "id": "lifeline-persona-4",
+        "startAge": 0,
+        "endAge": 13,
+        "_structure": "id, startAge, endAge, narrative, events, characterDevelopment, pivotalMomentReached, imagePrompt"
+      },
+      "success": true
+    },
+    {
+      "agentId": "imagePromptGeneration",
+      "agentName": "Image Prompt Generation Agent",
+      "startTime": "2025-11-01T16:07:27.885Z",
+      "endTime": "2025-11-01T16:07:33.039Z",
+      "duration": 5154,
+      "inputData": {
+        "lifelines": "[Array with 1 items]",
+        "pivotalMoments": "[Array with 0 items]",
+        "historicalContext": "{country, description, politicalSituation, religion, socialStructure, economy, conflicts, culturalHighlights, additionalContext}"
+      },
+      "outputData": {
+        "id": "prompt-1762013247886",
+        "_structure": "id, prompt, sourceType, sourceId, timestamp"
+      },
+      "success": true
+    },
+    {
+      "agentId": "imageGeneration",
+      "agentName": "Image Generation Agent",
+      "startTime": "2025-11-01T16:07:33.041Z",
+      "endTime": "2025-11-01T16:08:05.180Z",
+      "duration": 32139,
+      "inputData": {
+        "imagePrompts": "[Array with 1 items]",
+        "historicalContext": "{country, description, politicalSituation, religion, socialStructure, economy, conflicts, culturalHighlights, additionalContext}"
+      },
+      "outputData": {
+        "id": "image-1762013285179",
+        "_structure": "id, url, revisedPrompt, sourceType, sourceId, timestamp"
+      },
+      "success": true
+    },
+    {
+      "agentId": "pivotalMomentGeneration",
+      "agentName": "Pivotal Moment Agent",
+      "startTime": "2025-11-01T16:08:47.621Z",
+      "endTime": "2025-11-01T16:09:06.443Z",
+      "duration": 18823,
+      "inputData": {
+        "historicalContext": "{country, description, politicalSituation, religion, socialStructure, economy, conflicts, culturalHighlights, additionalContext}",
+        "lifelines": "[Array with 1 items]",
+        "pivotalMoments": "[Array with 0 items]"
+      },
+      "outputData": {
+        "id": "pivotal-moment-001",
+        "title": "The Call of Duty and Destiny",
+        "age": 13,
+        "year": "1218",
+        "choicesCount": 4,
+        "_structure": "id, age, year, title, situation, context, stakes, choices, timeConstraint, influencingFactors, imagePrompt"
+      },
+      "success": true
+    },
+    {
+      "agentId": "imagePromptGeneration",
+      "agentName": "Image Prompt Generation Agent",
+      "startTime": "2025-11-01T16:12:50.174Z",
+      "endTime": "2025-11-01T16:12:56.890Z",
+      "duration": 6714,
+      "inputData": {
+        "lifelines": "[Array with 1 items]",
+        "pivotalMoments": "[Array with 1 items]",
+        "historicalContext": "{country, description, politicalSituation, religion, socialStructure, economy, conflicts, culturalHighlights, additionalContext}"
+      },
+      "outputData": {
+        "id": "prompt-1762013570187",
+        "_structure": "id, prompt, sourceType, sourceId, timestamp"
+      },
+      "success": true
+    },
+    {
+      "agentId": "imageGeneration",
+      "agentName": "Image Generation Agent",
+      "startTime": "2025-11-01T16:12:56.892Z",
+      "endTime": "2025-11-01T16:13:29.953Z",
+      "duration": 33061,
+      "inputData": {
+        "imagePrompts": "[Array with 2 items]",
+        "historicalContext": "{country, description, politicalSituation, religion, socialStructure, economy, conflicts, culturalHighlights, additionalContext}"
+      },
+      "outputData": {
+        "id": "image-1762013609950",
+        "_structure": "id, url, revisedPrompt, sourceType, sourceId, timestamp"
+      },
+      "success": true
+    }
+  ],
+  "gameState": {
+    "isAlive": true
+  },
+  "historicalContext": {
+    "country": "Almohad Caliphate",
+    "description": "In the early 13th century, North Africa was a region characterized by the dominance of the Almohad Caliphate, which had established a vast empire stretching from the Iberian Peninsula to Tripolitania (modern-day Libya). This period was marked by the influence of Islamic culture, architecture, and scholarship, particularly in urban centers such as Marrakesh and Tunis.",
+    "politicalSituation": {
+      "rulers": [
+        "Muhammad al-Nasir"
+      ],
+      "governance": "Caliphate",
+      "details": "The Almohad Caliphate, founded on the principles of strict monotheism and reformist Islam, was ruled by Caliph Muhammad al-Nasir around this time. The political landscape was shaped by efforts to consolidate power and suppress internal dissent, as well as the ongoing Reconquista in the Iberian Peninsula, where the Almohads sought to defend their territories against Christian forces."
+    },
+    "religion": {
+      "dominant": "Islam",
+      "culturalBackground": "Islam was the dominant religion, with a significant emphasis on the Almohad interpretation of Islamic orthodoxy. The region was a hub of Islamic scholarship, with religious and educational institutions promoting the study of the Quran, Hadith, and philosophy."
+    },
+    "socialStructure": "The social hierarchy was influenced by Islamic principles, with a ruling elite comprising the caliph, his family, and key military and religious leaders. Below them were the urban merchant and artisan classes, followed by rural farmers and laborers. Non-Muslims, such as Christians and Jews, were present and often lived in separate communities, enjoying a degree of autonomy but subject to certain taxes and restrictions.",
+    "economy": "The economy was diverse, with agriculture forming the backbone, especially in the fertile regions of the Maghreb. Trade was vital, with caravans traversing the Sahara Desert and maritime routes connecting to Europe and the Middle East. Key products included textiles, grains, olive oil, and gold.",
+    "conflicts": [
+      "Reconquista (Christian reconquest in Iberia)"
+    ],
+    "culturalHighlights": [
+      "Development of Islamic architecture, such as the construction of the Kutubiyya Mosque in Marrakesh",
+      "Advancements in philosophy and science, building on earlier Islamic scholarship"
+    ],
+    "additionalContext": {
+      "key": "The Almohad Caliphate was known for its architectural achievements and the promotion of intellectual activities. It was a period of both cultural flourish and military challenges, as the Almohads faced external pressures from Christian kingdoms in Iberia and internal dissent from various tribes and factions within their empire."
+    }
+  },
+  "personaOptions": {
+    "options": [
+      {
+        "id": "persona-1",
+        "title": "Son of a Wealthy Merchant",
+        "familyBackground": {
+          "socialClass": "Urban merchant class",
+          "occupation": "Textile merchant",
+          "wealth": "very wealthy",
+          "familySize": 8,
+          "parentalStatus": "Both parents alive",
+          "location": "Marrakesh"
+        },
+        "birthCircumstances": "Born during the prosperous season when trade caravans returned from across the Sahara",
+        "initialAttributes": {
+          "gender": "male",
+          "ethnicity": "Berber",
+          "physicalTraits": [
+            "tall",
+            "strong build"
+          ],
+          "earlyChildhood": "Grew up in a large house near the city center, surrounded by luxury and learning."
+        },
+        "probability": 30,
+        "opportunities": [
+          "Inherit family business",
+          "Travel with trade caravans"
+        ],
+        "challenges": [
+          "Navigating political tensions",
+          "Competition with other merchants"
+        ]
+      },
+      {
+        "id": "persona-2",
+        "title": "Daughter of a Rural Farmer",
+        "familyBackground": {
+          "socialClass": "Rural laborer class",
+          "occupation": "Olive farmer",
+          "wealth": "modest",
+          "familySize": 6,
+          "parentalStatus": "Single parent (father passed away)",
+          "location": "Countryside near Tunis"
+        },
+        "birthCircumstances": "Born during harvest season, one of several children helping on the farm",
+        "initialAttributes": {
+          "gender": "female",
+          "ethnicity": "Arab",
+          "physicalTraits": [
+            "slight build",
+            "sun-tanned skin"
+          ],
+          "earlyChildhood": "Spent early days playing among olive groves, learning to tend the trees."
+        },
+        "probability": 25,
+        "opportunities": [
+          "Assist in family farm expansions",
+          "Marry into a better-off family"
+        ],
+        "challenges": [
+          "Limited educational opportunities",
+          "Hard labor from a young age"
+        ]
+      },
+      {
+        "id": "persona-3",
+        "title": "Jewish Scholar's Child",
+        "familyBackground": {
+          "socialClass": "Intellectual class",
+          "occupation": "Religious scholar",
+          "wealth": "comfortable",
+          "familySize": 4,
+          "parentalStatus": "Both parents alive",
+          "location": "Jewish quarter in Cordoba"
+        },
+        "birthCircumstances": "Born during a significant Jewish festival in the local community",
+        "initialAttributes": {
+          "gender": "female",
+          "ethnicity": "Sephardic Jewish",
+          "physicalTraits": [
+            "dark curly hair",
+            "bright eyes"
+          ],
+          "earlyChildhood": "Raised in a scholarly environment, with constant exposure to religious texts."
+        },
+        "probability": 20,
+        "opportunities": [
+          "Pursue advanced studies in philosophy",
+          "Connect with intellectuals across the empire"
+        ],
+        "challenges": [
+          "Religious restrictions and taxes",
+          "Tensions with surrounding communities"
+        ]
+      },
+      {
+        "id": "persona-4",
+        "title": "Son of a Military Leader",
+        "familyBackground": {
+          "socialClass": "Military elite",
+          "occupation": "High-ranking officer in the Almohad army",
+          "wealth": "wealthy",
+          "familySize": 7,
+          "parentalStatus": "Both parents alive",
+          "location": "Fez"
+        },
+        "birthCircumstances": "Born in a military camp during a campaign against Christian forces",
+        "initialAttributes": {
+          "gender": "male",
+          "ethnicity": "Arab-Berber",
+          "physicalTraits": [
+            "athletic",
+            "sharp features"
+          ],
+          "earlyChildhood": "Raised with strict discipline, learning the arts of leadership and warfare."
+        },
+        "probability": 25,
+        "opportunities": [
+          "Join military campaigns",
+          "Rise to high command"
+        ],
+        "challenges": [
+          "Pressure to succeed militarily",
+          "Dangers of battlefield"
+        ]
+      }
+    ],
+    "timestamp": "2025-11-01T00:00:00.000Z"
+  },
+  "selectedPersona": {
+    "id": "persona-4",
+    "title": "Son of a Military Leader",
+    "familyBackground": {
+      "socialClass": "Military elite",
+      "occupation": "High-ranking officer in the Almohad army",
+      "wealth": "wealthy",
+      "familySize": 7,
+      "parentalStatus": "Both parents alive",
+      "location": "Fez"
+    },
+    "birthCircumstances": "Born in a military camp during a campaign against Christian forces",
+    "initialAttributes": {
+      "gender": "male",
+      "ethnicity": "Arab-Berber",
+      "physicalTraits": [
+        "athletic",
+        "sharp features"
+      ],
+      "earlyChildhood": "Raised with strict discipline, learning the arts of leadership and warfare."
+    },
+    "probability": 25,
+    "opportunities": [
+      "Join military campaigns",
+      "Rise to high command"
+    ],
+    "challenges": [
+      "Pressure to succeed militarily",
+      "Dangers of battlefield"
+    ]
+  }
+}
