@@ -123,16 +123,18 @@ Selected Persona:
 
 \${previousLifelineSection}
 
+\${continuationContext}
+
 You must return EXACTLY this JSON structure with ACTUAL narrative and events:
 
 {
   "id": "lifeline-unique-id",
-  "startAge": 0,
-  "endAge": 15,
+  "startAge": MUST_BE_NUMBER (use \${expectedStartAge} as the starting age),
+  "endAge": MUST_BE_NUMBER (advance \${yearsToAdvance} years from startAge),
   "narrative": "A detailed, immersive narrative covering this period of life in 2-3 paragraphs. Write as if documenting a real person's life with specific details and experiences.",
   "events": [
     {
-      "age": 5,
+      "age": MUST_BE_NUMBER,
       "year": "Actual year",
       "event": "Specific event description",
       "impact": "minor" | "moderate" | "significant" | "major",
@@ -152,11 +154,12 @@ You must return EXACTLY this JSON structure with ACTUAL narrative and events:
 }
 
 IMPORTANT:
-- Cover 5-15 years of life
-- Include 3-5 specific life events
+- Start at age \${expectedStartAge} and advance \${yearsToAdvance} years
+- Include 3-5 specific life events within this age range
 - Build toward a natural decision point
 - Maintain historical accuracy
-- Write vivid, documentary-realistic narrative`,
+- Write vivid, documentary-realistic narrative
+\${ageRangeWarning}`,
 
   lifelineGenerationWithPreviousChoice: `\${previousLifelineSection}
 
@@ -178,8 +181,8 @@ You must return EXACTLY this JSON structure with ACTUAL dramatic choices:
 
 {
   "id": "pivotal-moment-unique-id",
-  "age": 25,
-  "year": "Actual year",
+  "age": MUST_BE_NUMBER (use the character's current age from the lifeline endAge: \${currentAge}),
+  "year": "Actual year (calculate from birth year and current age)",
   "title": "Compelling title of the pivotal moment",
   "situation": "Detailed 2-3 sentence description of the situation the character faces",
   "context": "Why this moment is pivotal and what led to it",
@@ -201,6 +204,7 @@ You must return EXACTLY this JSON structure with ACTUAL dramatic choices:
 }
 
 IMPORTANT:
+- The pivotal moment MUST occur at the character's current age: \${currentAge}
 - Present 3-4 meaningful choices
 - Make each choice dramatically different
 - Ensure choices emerge naturally from circumstances

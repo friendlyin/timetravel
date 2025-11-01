@@ -201,6 +201,14 @@ function buildPromptVariables(
     variables['momentNumber'] = '1';
   }
   
+  // Add current age for pivotal moment generation
+  if (session.lifelines.length > 0) {
+    const latestLifeline = session.lifelines[session.lifelines.length - 1];
+    variables['currentAge'] = String(latestLifeline.endAge);
+  } else {
+    variables['currentAge'] = '0';
+  }
+  
   // Add config values
   variables['numberOfOptions'] = String(session.config.numberOfPersonaOptions || 4);
   
@@ -210,6 +218,52 @@ function buildPromptVariables(
     variables['previousLifelineSection'] = `Previous Lifelines:\n${previousLifelines}`;
   } else {
     variables['previousLifelineSection'] = '';
+  }
+  
+  // Calculate expected age range for lifeline generation
+  let expectedStartAge = 0;
+  let yearsToAdvance = 10; // Default
+  
+  if (session.lifelines.length > 0) {
+    // Continuing from previous lifeline
+    const lastLifeline = session.lifelines[session.lifelines.length - 1];
+    expectedStartAge = lastLifeline.endAge;
+    
+    // Calculate years to advance (5-15 years, shorter as character ages)
+    const characterAge = expectedStartAge;
+    if (characterAge < 20) {
+      yearsToAdvance = Math.floor(Math.random() * 6) + 10; // 10-15 years
+    } else if (characterAge < 40) {
+      yearsToAdvance = Math.floor(Math.random() * 6) + 7; // 7-12 years
+    } else {
+      yearsToAdvance = Math.floor(Math.random() * 6) + 5; // 5-10 years
+    }
+  } else {
+    // First lifeline - start from birth
+    expectedStartAge = 0;
+    yearsToAdvance = Math.floor(Math.random() * 6) + 10; // 10-15 years
+  }
+  
+  variables['expectedStartAge'] = String(expectedStartAge);
+  variables['yearsToAdvance'] = String(yearsToAdvance);
+  
+  // Add continuation context if this is not the first lifeline
+  if (session.lifelines.length > 0 && session.choices.length > 0) {
+    const lastChoice = session.choices[session.choices.length - 1];
+    const lastPivotalMoment = session.pivotalMoments[session.pivotalMoments.length - 1];
+    
+    variables['continuationContext'] = `CONTINUATION CONTEXT:
+- The character is now ${expectedStartAge} years old
+- Previous pivotal moment: "${lastPivotalMoment?.title || 'Unknown'}"
+- The character chose: "${lastChoice.choiceTitle}"
+- You MUST continue the story from age ${expectedStartAge}, NOT from birth
+- Show the consequences and outcomes of their choice
+- Advance the narrative approximately ${yearsToAdvance} years forward`;
+    
+    variables['ageRangeWarning'] = `⚠️ CRITICAL: You MUST start at age ${expectedStartAge} (not 0). This is a CONTINUATION of an existing life story.`;
+  } else {
+    variables['continuationContext'] = `This is the character's first lifeline, starting from birth (age 0).`;
+    variables['ageRangeWarning'] = '';
   }
   
   return variables;

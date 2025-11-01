@@ -1,0 +1,1005 @@
+{
+  "metadata": {
+    "sessionId": "session-20251101-144031",
+    "startTime": "2025-11-01T14:40:31.468Z",
+    "currentStep": "Lifeline Generation Agent",
+    "status": "active",
+    "totalSteps": 10
+  },
+  "input": {
+    "date": "900-01-02",
+    "location": "Sweden"
+  },
+  "config": {
+    "numberOfPersonaOptions": 4,
+    "maxPivotalMoments": 5,
+    "generateImages": false
+  },
+  "lifelines": [
+    {
+      "id": "lifeline-1-persona-3",
+      "startAge": 0,
+      "endAge": 10,
+      "narrative": "Born into the shadow of the master’s hall in Sigtuna, young Oleksiy’s earliest memories were a blend of the earth’s rich scent and the sight of hardy Norsefolk bustling about. His parents, both thralls, toiled from dawn to dusk under the watchful gaze of their chieftain, carefully balancing between the duties of the household and the fields. Yet, even within these bounds, Oleksiy found small joys. His sturdy build and dark hair set him apart, yet his unyielding spirit mirrored the resolve of those around him. As he grew, his small hands learned to tend the crops and mend the fences, skills that were unremarkable to the free but vital to him. By observing the chieftain’s children, he gleaned the ways of the ruling class—a world tantalizingly close yet infinitely distant.",
+      "events": [
+        {
+          "age": 4,
+          "year": "904 AD",
+          "event": "Witnessed a grand feast in the chieftain's hall for the first time.",
+          "impact": "minor",
+          "location": "Sigtuna"
+        },
+        {
+          "age": 6,
+          "year": "906 AD",
+          "event": "Learned the basics of animal husbandry from his father.",
+          "impact": "moderate",
+          "location": "Sigtuna"
+        },
+        {
+          "age": 8,
+          "year": "908 AD",
+          "event": "Survived a harsh winter that claimed the lives of several thralls.",
+          "impact": "significant",
+          "location": "Sigtuna"
+        },
+        {
+          "age": 10,
+          "year": "910 AD",
+          "event": "Saved another child from drowning in a nearby river.",
+          "impact": "major",
+          "location": "Sigtuna"
+        }
+      ],
+      "characterDevelopment": {
+        "skills": [
+          "Agriculture",
+          "Animal husbandry",
+          "Basic swimming"
+        ],
+        "relationships": [
+          "Close bond with his parents",
+          "Friendship with another thrall child"
+        ],
+        "beliefs": [
+          "Value of hard work",
+          "Hope for freedom"
+        ],
+        "reputation": "Known as a resourceful and brave young thrall",
+        "physicalCondition": "Healthy but beginning to show signs of the hard labor",
+        "mentalState": "Resilient yet yearning for freedom"
+      },
+      "pivotalMomentReached": true,
+      "imagePrompt": "A young boy with dark hair and a sturdy build stands by a river, his expression determined, as he pulls a younger child to safety on a clear autumnday in 910 AD, surrounded by lush Nordic landscapes."
+    },
+    {
+      "id": "lifeline-2-persona-3",
+      "startAge": 10,
+      "endAge": 23,
+      "narrative": "Embracing the whispers of the warrior's path, Oleksiy found himself drawn to the tales spun by the skalds and the warriors who passed through Sigtuna. Though a thrall, his daring rescue of a child had caught the eye of the household's chieftain, who saw potential beyond Oleksiy's servile status. By age 12, Oleksiy was granted the rare opportunity to accompany the chieftain's sons to the training grounds. Under the tutelage of seasoned fighters, he learned the art of swordplay and the discipline of the shield wall. Each swing of the sword and every bruise he bore became marks of his growing skill and determination.\n\nBy 16, Oleksiy had become a skilled warrior, known among the thralls and free folk alike for his prowess and resilience. His status was still bound by servitude, yet he carried himself with the pride of one who knew his worth. The chieftain's sons became both rivals and allies, sharing with him not only the battlefield but the camaraderie of kin. It was during a raid on the distant shores of Britannia, at 20, that Oleksiy's fate turned. He saved the life of the chieftain’s eldest son, earning a newfound respect and an offer of freedom—a chance to step beyond the bounds of his birthright.\n\nBy 23, Oleksiy's life was poised on the cusp of change. Freed from the bindings of thrallhood, he faced a pivotal choice: to continue his life among the warriors of the North, embracing the sea's call and the sword's song, or to seek a new path—perhaps as a free man, a trader, or even a leader who might shape the land he once served.",
+      "events": [
+        {
+          "age": 12,
+          "year": "912 AD",
+          "event": "Granted permission to train with the chieftain's sons in combat.",
+          "impact": "significant",
+          "location": "Sigtuna"
+        },
+        {
+          "age": 16,
+          "year": "916 AD",
+          "event": "Participated in a local skirmish, proving his mettle as a warrior.",
+          "impact": "major",
+          "location": "Sigtuna"
+        },
+        {
+          "age": 20,
+          "year": "920 AD",
+          "event": "Saved the chieftain's eldest son during a raid in Britannia.",
+          "impact": "major",
+          "location": "Britannia"
+        },
+        {
+          "age": 23,
+          "year": "923 AD",
+          "event": "Granted freedom by the chieftain in recognition of his valor.",
+          "impact": "major",
+          "location": "Sigtuna"
+        }
+      ],
+      "characterDevelopment": {
+        "skills": [
+          "Swordsmanship",
+          "Tactical combat",
+          "Leadership"
+        ],
+        "relationships": [
+          "Bonded with the chieftain's sons",
+          "Respected by fellow warriors"
+        ],
+        "beliefs": [
+          "Valor and honor in battle",
+          "Aspiration for personal freedom"
+        ],
+        "reputation": "Esteemed as a courageous and skilled warrior",
+        "physicalCondition": "Robust and battle-hardened",
+        "mentalState": "Determined and hopeful for his future"
+      },
+      "pivotalMomentReached": true,
+      "imagePrompt": "A young man with dark hair and a sturdy build, standing amidst a group of Norse warriors, sword in hand, with a distant coastline in the background, the sky overcast with an impending storm, capturing the tension and promise of new beginnings in 923 AD."
+    },
+    {
+      "id": "lifeline-3-persona-3",
+      "startAge": 23,
+      "endAge": 33,
+      "narrative": "Having chosen the path of a trader, Oleksiy embarked on his journey across the Norse territories and beyond. The sea, once a symbol of conquest, became his realm of commerce and opportunity. His years as a warrior served him well; he navigated not only the treacherous waters of the North Sea but also the intricate web of alliances and trade networks spanning from the Frankish lands to the distant Byzantine markets.\n\nInitially, Oleksiy joined a crew of seasoned merchants, learning the intricacies of trade, from bartering furs and amber to negotiating for exotic silks and spices. His robust build and commanding presence lent him an air of authority among the crew, and soon he rose to become the captain of his own ship. He established routes that connected Sigtuna with bustling trade hubs like Hedeby and Kiev, fostering relationships with craftsmen, fellow traders, and even influential leaders.\n\nBy the age of 33, Oleksiy had amassed considerable wealth and respect. Known for his fair dealings and diplomatic acumen, he was often sought after to mediate disputes. Yet, as the whispers of a new era loomed—one where Christianity began to reshape the cultural and economic landscape—Oleksiy stood at another crossroads. He faced a decision: to embrace the changing tides and reshape his ventures to align with the emerging powers or to hold steadfast to the old ways, risking obsolescence in a rapidly evolving world.",
+      "events": [
+        {
+          "age": 24,
+          "year": "924 AD",
+          "event": "Joined a trading crew bound for the Frankish Empire.",
+          "impact": "significant",
+          "location": "North Sea"
+        },
+        {
+          "age": 27,
+          "year": "927 AD",
+          "event": "Acquired his own trading vessel after a successful series of trades.",
+          "impact": "major",
+          "location": "Sigtuna"
+        },
+        {
+          "age": 30,
+          "year": "930 AD",
+          "event": "Established a lucrative trade route between Sigtuna and Hedeby.",
+          "impact": "major",
+          "location": "Hedeby"
+        },
+        {
+          "age": 32,
+          "year": "932 AD",
+          "event": "Negotiated peace between rival trading factions in Kiev.",
+          "impact": "significant",
+          "location": "Kiev"
+        }
+      ],
+      "characterDevelopment": {
+        "skills": [
+          "Navigation",
+          "Trade negotiation",
+          "Leadership"
+        ],
+        "relationships": [
+          "Allies with traders across regions",
+          "Respected by chieftains"
+        ],
+        "beliefs": [
+          "Adaptability in commerce",
+          "Respect for diverse cultures"
+        ],
+        "reputation": "Renowned as a shrewd and honorable trader",
+        "physicalCondition": "Fit and healthy from life at sea",
+        "mentalState": "Optimistic but cautious of cultural shifts"
+      },
+      "pivotalMomentReached": true,
+      "imagePrompt": "A rugged man with dark hair and a determined gaze, standing on the deck of a Viking trading ship, surrounded by crates of goods and maps, under a sky of swirling clouds, capturing the essence of commerce and exploration in 933 AD."
+    },
+    {
+      "id": "lifeline-4-persona-3",
+      "startAge": 33,
+      "endAge": 40,
+      "narrative": "Embracing the new dawn of Christianity, Oleksiy navigated the complex waters of faith and commerce with the same deftness that had marked his trading ventures. At 33, he converted to Christianity, recognizing its potential to open new doors in regions previously hesitant to engage with Norse traders. His baptism was a modest affair, yet its implications rippled through the communities he frequented, both softening and strengthening his ties with Christian leaders across Europe. Trading with the newly converted regions of the British Isles and Frankish territories became more seamless, allowing him to forge alliances that would have been unattainable before.\n\nHis role as a mediator gained prominence as he facilitated agreements between pagan Norse traders and Christian rulers, often in the halls of kings who valued his unique insights into both worlds. At 35, Oleksiy established a trading post in Ribe, a bustling port town that was fast becoming a center for Christian influence. This strategic move cemented his status as a key player in the evolving trade networks. By 37, he was instrumental in organizing an assembly of traders and local leaders in Sigtuna, advocating for a unified approach to commerce that respected both pagan and Christian traditions.\n\nDespite his successes, Oleksiy faced the growing tension between the old ways and the new faith. This internal struggle came to a head at 40, when he was offered a position as an advisor to a Christian jarl, requiring him to fully renounce the Norse gods. This pivotal moment forced him to weigh his loyalties and consider the path of integration versus preservation of his cultural roots.",
+      "events": [
+        {
+          "age": 33,
+          "year": "933 AD",
+          "event": "Converted to Christianity, altering his trading strategies.",
+          "impact": "significant",
+          "location": "Sigtuna"
+        },
+        {
+          "age": 35,
+          "year": "935 AD",
+          "event": "Established a trading post in Ribe, enhancing Christian trade networks.",
+          "impact": "major",
+          "location": "Ribe"
+        },
+        {
+          "age": 37,
+          "year": "937 AD",
+          "event": "Organized a traders' assembly in Sigtuna, promoting religious tolerance.",
+          "impact": "major",
+          "location": "Sigtuna"
+        },
+        {
+          "age": 40,
+          "year": "940 AD",
+          "event": "Offered an advisory role by a Christian jarl, sparking a personal conflict of faith.",
+          "impact": "major",
+          "location": "Sigtuna"
+        }
+      ],
+      "characterDevelopment": {
+        "skills": [
+          "Diplomacy in multicultural settings",
+          "Strategic trade planning",
+          "Religious mediation"
+        ],
+        "relationships": [
+          "Alliances with Christian leaders",
+          "Respect from both pagan and Christian traders"
+        ],
+        "beliefs": [
+          "The potential of religious integration",
+          "The importance of cultural heritage"
+        ],
+        "reputation": "Respected as a bridge between cultures",
+        "physicalCondition": "Remains healthy and robust",
+        "mentalState": "Contemplative and torn between traditions"
+      },
+      "pivotalMomentReached": true,
+      "imagePrompt": "A mature man with dark hair, standing at a bustling port in Ribe, surrounded by traders and clergy, holding a wooden cross, symbolizing his dual role in trade and faith in 940 AD."
+    }
+  ],
+  "pivotalMoments": [
+    {
+      "id": "pivotal-moment-1-oleksiy",
+      "age": 10,
+      "year": "910 AD",
+      "title": "Whispers of Freedom",
+      "situation": "After saving a child from drowning, Oleksiy is summoned to the chieftain's hall. There, the chieftain praises his bravery, offering a rare opportunity to learn the ways of the warriors, which could lead to a change in his status. Meanwhile, his parents are worried about the increasing dangers of regional skirmishes.",
+      "context": "This moment is pivotal as it challenges Oleksiy's place in the social hierarchy and tests his yearning for freedom against familial loyalty. His actions during the rescue garnered him the chieftain's attention, making this a rare crossroad for a thrall child.",
+      "stakes": "Choosing could define his future - he might gain freedom and status or risk everything he knows.",
+      "choices": [
+        {
+          "id": "choice-1",
+          "title": "Embrace the Warrior's Path",
+          "description": "Accept the chieftain's offer to train and potentially become a free warrior in the future.",
+          "immediateConsequences": [
+            "Begins training, distancing from his family",
+            "Enjoys better treatment and respect"
+          ],
+          "potentialOutcomes": [
+            "Becomes a respected warrior",
+            "Faces danger in battle"
+          ],
+          "risk": "high",
+          "alignment": [
+            "Ambition",
+            "Bravery"
+          ]
+        },
+        {
+          "id": "choice-2",
+          "title": "Remain Loyal to Family",
+          "description": "Decline the offer, choosing to stay with his family and continue aiding them as a thrall.",
+          "immediateConsequences": [
+            "Strengthens bond with parents",
+            "Misses out on opportunities for personal advancement"
+          ],
+          "potentialOutcomes": [
+            "Continues a life of servitude",
+            "Safeguards family ties"
+          ],
+          "risk": "medium",
+          "alignment": [
+            "Familial Duty",
+            "Loyalty"
+          ]
+        },
+        {
+          "id": "choice-3",
+          "title": "Seek Freedom through Escape",
+          "description": "Use the opportunity as a cover to plan an escape, aiming to find freedom elsewhere.",
+          "immediateConsequences": [
+            "Begins secret preparations to flee",
+            "Faces suspicion from others"
+          ],
+          "potentialOutcomes": [
+            "Achieves freedom and independence",
+            "Faces severe punishment if caught"
+          ],
+          "risk": "extreme",
+          "alignment": [
+            "Freedom",
+            "Rebellion"
+          ]
+        },
+        {
+          "id": "choice-4",
+          "title": "Leverage for Bargaining",
+          "description": "Negotiate terms with the chieftain, seeking better conditions for himself and his family as a group effort.",
+          "immediateConsequences": [
+            "Engages in delicate negotiations",
+            "Family's status is uncertain"
+          ],
+          "potentialOutcomes": [
+            "Improved conditions for the family",
+            "Enmity from other thralls"
+          ],
+          "risk": "high",
+          "alignment": [
+            "Diplomacy",
+            "Empathy"
+          ]
+        }
+      ],
+      "timeConstraint": "The offer from the chieftain must be accepted or declined by the end of the week.",
+      "influencingFactors": [
+        "The chieftain's unpredictable nature",
+        "Parents' fears of war",
+        "Oleksiy's personal ambitions"
+      ],
+      "imagePrompt": "Inside a grand Norse hall, a young boy with sturdy build and dark hair stands before a seated chieftain. His expression is a mix of determination and contemplation as he weighs his options, with a flickering fire illuminating the scene."
+    },
+    {
+      "id": "pivotal-moment-oleksiy-23",
+      "age": 23,
+      "year": "923 AD",
+      "title": "The Crossroads of Three Paths",
+      "situation": "With his freedom newly granted, Oleksiy stands at the threshold of three distinct paths: to remain with the warriors whom he has trained with, to seek fortune as a trader across the Norse world, or to use his newfound status to rally support and leadership within a fragmented region yearning for unity.",
+      "context": "Freed from servitude, Oleksiy's life is at a critical juncture where his decisions could transform not just his future but potentially influence the shifting tides of Norse society around him. His experience as a warrior and his survival against all odds place him in a unique position.",
+      "stakes": "Oleksiy could gain wealth, power, or community, but risks alienation, loss of identity, or danger on foreign shores. Each path carries substantial promise and peril that will shape his legacy.",
+      "choices": [
+        {
+          "id": "choice-1",
+          "title": "The Warrior's Oath",
+          "description": "Commit to a life among the chieftain's warriors, leading raids across the seas and defending local territories, living by the sword and the honor of battle.",
+          "immediateConsequences": [
+            "Earn the respect of seasoned warriors",
+            "Immediate preparation for the next raid"
+          ],
+          "potentialOutcomes": [
+            "Potential rise to a leadership role in warrior bands",
+            "Risk of death or capture during raids"
+          ],
+          "risk": "high",
+          "alignment": [
+            "Valor",
+            "Duty",
+            "Adventure"
+          ]
+        },
+        {
+          "id": "choice-2",
+          "title": "The Trader's Voyage",
+          "description": "Use the skills and connections gained through warfare to embark on a new life as a trader, navigating the intricate web of Norse commerce from the Baltic to Byzantium.",
+          "immediateConsequences": [
+            "Gain access to trading ships and networks",
+            "Acquire wealth through trade"
+          ],
+          "potentialOutcomes": [
+            "Establish a prosperous trading enterprise",
+            "Risk of piracy or financial ruin"
+          ],
+          "risk": "medium",
+          "alignment": [
+            "Ambition",
+            "Wealth",
+            "Independence"
+          ]
+        },
+        {
+          "id": "choice-3",
+          "title": "The Leader's Vision",
+          "description": "Attempt to unite the scattered Norse territories by building alliances and asserting leadership, leveraging the newfound respect among the chieftain's circle to influence change.",
+          "immediateConsequences": [
+            "Garner local support and allies",
+            "Initiate political maneuverings"
+          ],
+          "potentialOutcomes": [
+            "Possible establishment as a renowned leader or chieftain",
+            "Provocation of rival factions leading to conflict"
+          ],
+          "risk": "extreme",
+          "alignment": [
+            "Leadership",
+            "Unity",
+            "Legacy"
+          ]
+        }
+      ],
+      "timeConstraint": "The decision must be made before the next turning of the season as opportunities and support might wane with inaction.",
+      "influencingFactors": [
+        "Oleksiy's reputation as a skilled warrior",
+        "The chieftain's patronage",
+        "The growing influence of Christianity"
+      ],
+      "imagePrompt": "A crossroads scene at the edge of a Norse village, with Oleksiy standing contemplatively, surrounded by symbols of each path: a warrior's shield, a trader's ship, and a leader's banner under a sky that blends dusk and dawn, symbolizing change."
+    },
+    {
+      "id": "pivotal-moment-oleksiy-933",
+      "age": 33,
+      "year": "933 AD",
+      "title": "The Turning of the Tides",
+      "situation": "Oleksiy stands at a crucial juncture as the winds of change sweep across the Norse territories. Christianity is gaining a foothold, altering trade practices and alliances. A delegation from the south has approached him, offering lucrative new trade routes in exchange for his support in spreading the new faith.",
+      "context": "Oleksiy's trading success and diplomatic skills have placed him in a position of influence. Now, he must choose between maintaining his adherence to Norse pagan traditions or embracing Christianity, a decision that will affect his personal and professional future.",
+      "stakes": "At stake is Oleksiy's identity, his alliances, and the future prosperity of his trading ventures. Embracing the new faith could bring wealth and new opportunities, but also alienate old allies and challenge his beliefs.",
+      "choices": [
+        {
+          "id": "choice-1",
+          "title": "Embrace Christianity and new trade routes",
+          "description": "Join forces with the southern delegation, adopting Christianity to secure their support and access to expanded markets.",
+          "immediateConsequences": [
+            "Gain access to new trade routes",
+            "Start receiving criticism from pagan allies"
+          ],
+          "potentialOutcomes": [
+            "Increased wealth and influence",
+            "Erosion of traditional alliances"
+          ],
+          "risk": "medium",
+          "alignment": [
+            "Ambition",
+            "Adaptability",
+            "Progress"
+          ]
+        },
+        {
+          "id": "choice-2",
+          "title": "Uphold Norse traditions",
+          "description": "Reject the delegation's offer, choosing instead to continue trading within the existing Norse networks and maintaining his pagan faith.",
+          "immediateConsequences": [
+            "Preserve alliances with traditional factions",
+            "Miss out on immediate economic growth"
+          ],
+          "potentialOutcomes": [
+            "Strengthened cultural identity",
+            "Gradual decline in competitive edge"
+          ],
+          "risk": "medium",
+          "alignment": [
+            "Faithfulness",
+            "Cultural preservation",
+            "Loyalty"
+          ]
+        },
+        {
+          "id": "choice-3",
+          "title": "Forge a balance",
+          "description": "Attempt to navigate a neutral path by secretly facilitating trade with the southern delegation while publicly maintaining pagan traditions.",
+          "immediateConsequences": [
+            "Gain insights into both cultures",
+            "Risk of being exposed as deceitful"
+          ],
+          "potentialOutcomes": [
+            "Unique position as a cultural mediator",
+            "Potential collapse of trust if discovered"
+          ],
+          "risk": "high",
+          "alignment": [
+            "Diplomacy",
+            "Cunning",
+            "Flexibility"
+          ]
+        },
+        {
+          "id": "choice-4",
+          "title": "Step back from leadership",
+          "description": "Hand over trading responsibilities to a trusted ally, allowing him to retreat temporarily to reflect and observe the changing environment.",
+          "immediateConsequences": [
+            "Lose immediate control over trade",
+            "Gain time for introspection"
+          ],
+          "potentialOutcomes": [
+            "Renewed vision after reflection",
+            "Possibly weakened influence"
+          ],
+          "risk": "medium",
+          "alignment": [
+            "Introspection",
+            "Wisdom",
+            "Patience"
+          ]
+        }
+      ],
+      "timeConstraint": "The delegation requires a decision by the next trading season to finalize partnerships.",
+      "influencingFactors": [
+        "Pressure from pagan allies",
+        "Economic allure of southern trade routes",
+        "Personal belief in Norse gods"
+      ],
+      "imagePrompt": "Oleksiy stands at the helm of his ship, the sun setting over a vast sea. To his left, a small group of Christian delegates in foreign attire. To his right, old Norse allies with traditional symbols. An internal struggle reflects on his face as he contemplates the horizon."
+    },
+    {
+      "id": "pivotal-moment-oleksiy-940",
+      "age": 40,
+      "year": "940 AD",
+      "title": "Crossroads of Faith and Tradition",
+      "situation": "Oleksiy stands before a crowd in Sigtuna, with the Christian jarl’s advisor offer hanging heavily in the air. He knows accepting would mean renouncing the Norse gods forever, a decision that could sever ties with his old life. Across the room, a group of pagan traders watch him expectantly, their fate intertwined with his choice.",
+      "context": "This moment is pivotal as Oleksiy must decide whether to embrace his role as a unifier between the old pagan ways and the new Christian faith fully. His earlier conversion was strategic, but this decision will define his personal and professional legacy, testing his multicultural diplomacy skills.",
+      "stakes": "At risk is Oleksiy’s identity and his relationships with both Christian and pagan communities. Embracing the advisor role might unlock powerful alliances, but it could alienate those who still adhere to the old gods and ways of life.",
+      "choices": [
+        {
+          "id": "choice-1",
+          "title": "Embrace the Advisor Role",
+          "description": "Accept the Christian jarl's offer to become an advisor, fully committing to Christianity and its tenets.",
+          "immediateConsequences": [
+            "Gain influence and authority in Christian regions",
+            "Immediate estrangement from pagan allies"
+          ],
+          "potentialOutcomes": [
+            "Forge a legacy of integration and progress",
+            "Potential backlash from traditionalists"
+          ],
+          "risk": "high",
+          "alignment": [
+            "ambition",
+            "progress",
+            "faith"
+          ]
+        },
+        {
+          "id": "choice-2",
+          "title": "Remain Neutral",
+          "description": "Choose not to accept the advisor position, maintaining his current status as a mediator without fully committing to Christianity.",
+          "immediateConsequences": [
+            "Retain current alliances with both communities",
+            "Lose immediate political influence"
+          ],
+          "potentialOutcomes": [
+            "Continue as a respected mediator",
+            "Risk being sidelined as factions polarize"
+          ],
+          "risk": "medium",
+          "alignment": [
+            "balance",
+            "neutrality",
+            "community"
+          ]
+        },
+        {
+          "id": "choice-3",
+          "title": "Return to the Old Gods",
+          "description": "Publicly renounce Christianity and reaffirm allegiance to Norse Paganism, becoming a staunch defender of the old ways.",
+          "immediateConsequences": [
+            "Regain trust and support from pagan followers",
+            "Sever relations with Christian leaders"
+          ],
+          "potentialOutcomes": [
+            "Lead a resurgence of pagan culture",
+            "Potential conflict and isolation from broader trade networks"
+          ],
+          "risk": "extreme",
+          "alignment": [
+            "heritage",
+            "tradition",
+            "identity"
+          ]
+        },
+        {
+          "id": "choice-4",
+          "title": "Forge a New Path",
+          "description": "Initiate a new religious and cultural movement that attempts to synthesize Norse and Christian beliefs.",
+          "immediateConsequences": [
+            "Create confusion and intrigue among both communities",
+            "Struggle with initial acceptance"
+          ],
+          "potentialOutcomes": [
+            "Pioneer a unique cultural synthesis",
+            "Risk being branded as heretical by both sides"
+          ],
+          "risk": "extreme",
+          "alignment": [
+            "innovation",
+            "unity",
+            "vision"
+          ]
+        }
+      ],
+      "timeConstraint": "The jarl expects a decision within a fortnight to proceed with upcoming regional negotiations.",
+      "influencingFactors": [
+        "Traditional ties with pagan traders",
+        "New alliances with Christian leaders",
+        "Personal beliefs about identity and faith"
+      ],
+      "imagePrompt": "Oleksiy standing at a crossroads in a Nordic town square, surrounded by both pagan and Christian symbols, with a wooden cross in one hand and a Thor’s hammer in the other, symbolizing his choice between two worlds."
+    }
+  ],
+  "choices": [
+    {
+      "pivotalMomentId": "pivotal-moment-1-oleksiy",
+      "choiceId": "choice-1",
+      "choiceTitle": "Embrace the Warrior's Path",
+      "timestamp": "2025-11-01T14:46:02.520Z"
+    },
+    {
+      "pivotalMomentId": "pivotal-moment-oleksiy-23",
+      "choiceId": "choice-2",
+      "choiceTitle": "The Trader's Voyage",
+      "timestamp": "2025-11-01T14:48:09.682Z"
+    },
+    {
+      "pivotalMomentId": "pivotal-moment-oleksiy-933",
+      "choiceId": "choice-1",
+      "choiceTitle": "Embrace Christianity and new trade routes",
+      "timestamp": "2025-11-01T14:49:26.935Z"
+    }
+  ],
+  "images": [],
+  "executionLogs": [
+    {
+      "agentId": "historicalContext",
+      "agentName": "Historical Context Agent",
+      "startTime": "2025-11-01T14:40:43.700Z",
+      "endTime": "2025-11-01T14:40:56.293Z",
+      "duration": 12593,
+      "inputData": {
+        "input.date": "900-01-02",
+        "input.location": "Sweden"
+      },
+      "outputData": {
+        "_structure": "country, description, politicalSituation, religion, socialStructure, economy, conflicts, culturalHighlights, additionalContext"
+      },
+      "success": true
+    },
+    {
+      "agentId": "personaGeneration",
+      "agentName": "Persona Generation Agent",
+      "startTime": "2025-11-01T14:41:23.203Z",
+      "endTime": "2025-11-01T14:41:39.188Z",
+      "duration": 15985,
+      "inputData": {
+        "historicalContext": "{country, description, politicalSituation, religion, socialStructure, economy, conflicts, culturalHighlights, additionalContext}",
+        "config.numberOfPersonaOptions": 4
+      },
+      "outputData": {
+        "optionsCount": 4,
+        "_structure": "options, timestamp"
+      },
+      "success": true
+    },
+    {
+      "agentId": "lifelineGeneration",
+      "agentName": "Lifeline Generation Agent",
+      "startTime": "2025-11-01T14:42:29.218Z",
+      "endTime": "2025-11-01T14:42:42.042Z",
+      "duration": 12824,
+      "inputData": {
+        "historicalContext": "{country, description, politicalSituation, religion, socialStructure, economy, conflicts, culturalHighlights, additionalContext}",
+        "selectedPersona": "{id, title, familyBackground, birthCircumstances, initialAttributes, probability, opportunities, challenges}",
+        "lifelines": "[Array with 0 items]"
+      },
+      "outputData": {
+        "id": "lifeline-1-persona-3",
+        "startAge": 0,
+        "endAge": 10,
+        "_structure": "id, startAge, endAge, narrative, events, characterDevelopment, pivotalMomentReached, imagePrompt"
+      },
+      "success": true
+    },
+    {
+      "agentId": "pivotalMomentGeneration",
+      "agentName": "Pivotal Moment Agent",
+      "startTime": "2025-11-01T14:45:17.518Z",
+      "endTime": "2025-11-01T14:45:34.328Z",
+      "duration": 16809,
+      "inputData": {
+        "historicalContext": "{country, description, politicalSituation, religion, socialStructure, economy, conflicts, culturalHighlights, additionalContext}",
+        "lifelines": "[Array with 1 items]",
+        "pivotalMoments": "[Array with 0 items]"
+      },
+      "outputData": {
+        "id": "pivotal-moment-1-oleksiy",
+        "title": "Whispers of Freedom",
+        "age": 10,
+        "year": "910 AD",
+        "choicesCount": 4,
+        "_structure": "id, age, year, title, situation, context, stakes, choices, timeConstraint, influencingFactors, imagePrompt"
+      },
+      "success": true
+    },
+    {
+      "agentId": "lifelineGeneration",
+      "agentName": "Lifeline Generation Agent",
+      "startTime": "2025-11-01T14:46:07.150Z",
+      "endTime": "2025-11-01T14:46:27.961Z",
+      "duration": 20811,
+      "inputData": {
+        "historicalContext": "{country, description, politicalSituation, religion, socialStructure, economy, conflicts, culturalHighlights, additionalContext}",
+        "selectedPersona": "{id, title, familyBackground, birthCircumstances, initialAttributes, probability, opportunities, challenges}",
+        "lifelines": "[Array with 1 items]"
+      },
+      "outputData": {
+        "id": "lifeline-2-persona-3",
+        "startAge": 10,
+        "endAge": 23,
+        "_structure": "id, startAge, endAge, narrative, events, characterDevelopment, pivotalMomentReached, imagePrompt"
+      },
+      "success": true
+    },
+    {
+      "agentId": "pivotalMomentGeneration",
+      "agentName": "Pivotal Moment Agent",
+      "startTime": "2025-11-01T14:47:08.462Z",
+      "endTime": "2025-11-01T14:47:25.507Z",
+      "duration": 17044,
+      "inputData": {
+        "historicalContext": "{country, description, politicalSituation, religion, socialStructure, economy, conflicts, culturalHighlights, additionalContext}",
+        "lifelines": "[Array with 2 items]",
+        "pivotalMoments": "[Array with 1 items]"
+      },
+      "outputData": {
+        "id": "pivotal-moment-oleksiy-23",
+        "title": "The Crossroads of Three Paths",
+        "age": 23,
+        "year": "923 AD",
+        "choicesCount": 3,
+        "_structure": "id, age, year, title, situation, context, stakes, choices, timeConstraint, influencingFactors, imagePrompt"
+      },
+      "success": true
+    },
+    {
+      "agentId": "lifelineGeneration",
+      "agentName": "Lifeline Generation Agent",
+      "startTime": "2025-11-01T14:48:13.975Z",
+      "endTime": "2025-11-01T14:48:26.536Z",
+      "duration": 12561,
+      "inputData": {
+        "historicalContext": "{country, description, politicalSituation, religion, socialStructure, economy, conflicts, culturalHighlights, additionalContext}",
+        "selectedPersona": "{id, title, familyBackground, birthCircumstances, initialAttributes, probability, opportunities, challenges}",
+        "lifelines": "[Array with 2 items]"
+      },
+      "outputData": {
+        "id": "lifeline-3-persona-3",
+        "startAge": 23,
+        "endAge": 33,
+        "_structure": "id, startAge, endAge, narrative, events, characterDevelopment, pivotalMomentReached, imagePrompt"
+      },
+      "success": true
+    },
+    {
+      "agentId": "pivotalMomentGeneration",
+      "agentName": "Pivotal Moment Agent",
+      "startTime": "2025-11-01T14:48:42.439Z",
+      "endTime": "2025-11-01T14:48:55.298Z",
+      "duration": 12859,
+      "inputData": {
+        "historicalContext": "{country, description, politicalSituation, religion, socialStructure, economy, conflicts, culturalHighlights, additionalContext}",
+        "lifelines": "[Array with 3 items]",
+        "pivotalMoments": "[Array with 2 items]"
+      },
+      "outputData": {
+        "id": "pivotal-moment-oleksiy-933",
+        "title": "The Turning of the Tides",
+        "age": 33,
+        "year": "933 AD",
+        "choicesCount": 4,
+        "_structure": "id, age, year, title, situation, context, stakes, choices, timeConstraint, influencingFactors, imagePrompt"
+      },
+      "success": true
+    },
+    {
+      "agentId": "lifelineGeneration",
+      "agentName": "Lifeline Generation Agent",
+      "startTime": "2025-11-01T14:49:36.785Z",
+      "endTime": "2025-11-01T14:49:47.960Z",
+      "duration": 11175,
+      "inputData": {
+        "historicalContext": "{country, description, politicalSituation, religion, socialStructure, economy, conflicts, culturalHighlights, additionalContext}",
+        "selectedPersona": "{id, title, familyBackground, birthCircumstances, initialAttributes, probability, opportunities, challenges}",
+        "lifelines": "[Array with 3 items]"
+      },
+      "outputData": {
+        "id": "lifeline-4-persona-3",
+        "startAge": 33,
+        "endAge": 40,
+        "_structure": "id, startAge, endAge, narrative, events, characterDevelopment, pivotalMomentReached, imagePrompt"
+      },
+      "success": true
+    },
+    {
+      "agentId": "pivotalMomentGeneration",
+      "agentName": "Pivotal Moment Agent",
+      "startTime": "2025-11-01T14:50:05.909Z",
+      "endTime": "2025-11-01T14:50:24.510Z",
+      "duration": 18601,
+      "inputData": {
+        "historicalContext": "{country, description, politicalSituation, religion, socialStructure, economy, conflicts, culturalHighlights, additionalContext}",
+        "lifelines": "[Array with 4 items]",
+        "pivotalMoments": "[Array with 3 items]"
+      },
+      "outputData": {
+        "id": "pivotal-moment-oleksiy-940",
+        "title": "Crossroads of Faith and Tradition",
+        "age": 40,
+        "year": "940 AD",
+        "choicesCount": 4,
+        "_structure": "id, age, year, title, situation, context, stakes, choices, timeConstraint, influencingFactors, imagePrompt"
+      },
+      "success": true
+    }
+  ],
+  "gameState": {
+    "isAlive": true
+  },
+  "historicalContext": {
+    "country": "Norse territories",
+    "description": "In 900 AD, the region now known as Sweden was part of the Norse territories, a period characterized by the Viking Age. This era was marked by the expansion of Norse culture across Europe through trade, exploration, and raids. Sweden was not yet a unified nation but was a patchwork of small kingdoms and chiefdoms, each ruled by local chieftains or petty kings.",
+    "politicalSituation": {
+      "rulers": [
+        "Olaf the Swede (Olof Skötkonung)",
+        "Rurik dynasty influence in some eastern parts"
+      ],
+      "governance": "Tribal Monarchy",
+      "details": "The political landscape was fragmented, with various regional leaders controlling different areas. The concept of a centralized monarchy was beginning to form, but true unification would not occur until later in the 10th century. Olaf the Swede is one of the earliest historically attested kings of Sweden, though his reign is more firmly documented in the early 11th century."
+    },
+    "religion": {
+      "dominant": "Norse Paganism",
+      "culturalBackground": "Norse Paganism was the dominant religious belief, characterized by the worship of gods such as Odin, Thor, and Freyja. This period saw religious practices centered around rituals, sacrifices, and the veneration of natural sites. The influence of Christianity was beginning to seep in from the south and through trade routes, but it would not become dominant until the end of the Viking Age."
+    },
+    "socialStructure": "The social hierarchy was stratified into several classes: the ruling class (kings and chieftains), the free farmers and traders (karls), and slaves (thralls). Society was patriarchal, with power concentrated in the hands of male leaders, although women could hold significant roles in managing households and estates.",
+    "economy": "The economy was based on agriculture, animal husbandry, and trade. The Vikings were adept seafarers and merchants, trading far and wide with regions as distant as Byzantium and the Islamic Caliphate. Key exports included furs, amber, and iron, while imports ranged from silver and silk to spices.",
+    "conflicts": [
+      "Viking raids across Europe",
+      "Internal skirmishes between regional chieftains"
+    ],
+    "culturalHighlights": [
+      "Runestones serving as both commemorative monuments and storytelling devices",
+      "The development of Viking art styles characterized by intricate metalwork and woodcarving"
+    ],
+    "additionalContext": {
+      "key": "This period marked the peak of Viking explorations and the beginning of a transition towards more settled and agrarian societies influenced by emerging Christian ideas."
+    }
+  },
+  "personaOptions": {
+    "options": [
+      {
+        "id": "persona-1",
+        "title": "Son of a Regional Chieftain",
+        "familyBackground": {
+          "socialClass": "Ruling class",
+          "occupation": "Chieftain",
+          "wealth": "wealthy",
+          "familySize": 7,
+          "parentalStatus": "Both parents alive",
+          "location": "Vestergotland, Norse territories"
+        },
+        "birthCircumstances": "Born into a powerful and influential family with strong alliances.",
+        "initialAttributes": {
+          "gender": "male",
+          "ethnicity": "Norse",
+          "physicalTraits": [
+            "tall stature",
+            "blonde hair"
+          ],
+          "earlyChildhood": "Grew up in a large hall surrounded by warriors and was trained in leadership and combat skills from an early age."
+        },
+        "probability": 30,
+        "opportunities": [
+          "Leadership role in future",
+          "Access to education and training"
+        ],
+        "challenges": [
+          "Pressure to maintain power",
+          "Possible conflicts with neighboring chieftains"
+        ]
+      },
+      {
+        "id": "persona-2",
+        "title": "Daughter of a Free Farmer",
+        "familyBackground": {
+          "socialClass": "Karls (free farmers)",
+          "occupation": "Farmer",
+          "wealth": "modest",
+          "familySize": 6,
+          "parentalStatus": "Single parent",
+          "location": "Uppsala, Norse territories"
+        },
+        "birthCircumstances": "Born during a prosperous harvest season, securing the family's modest livelihood.",
+        "initialAttributes": {
+          "gender": "female",
+          "ethnicity": "Norse",
+          "physicalTraits": [
+            "freckled skin",
+            "brown hair"
+          ],
+          "earlyChildhood": "Assisted with farm chores, learned weaving and household management skills."
+        },
+        "probability": 25,
+        "opportunities": [
+          "Marriage into a wealthier family",
+          "Managing family farm"
+        ],
+        "challenges": [
+          "Limited access to resources",
+          "Vulnerability to raids"
+        ]
+      },
+      {
+        "id": "persona-3",
+        "title": "Thrall's Child in Norse Household",
+        "familyBackground": {
+          "socialClass": "Thralls (slaves)",
+          "occupation": "Domestic and agricultural laborers",
+          "wealth": "poor",
+          "familySize": 4,
+          "parentalStatus": "Both parents alive",
+          "location": "Sigtuna, Norse territories"
+        },
+        "birthCircumstances": "Born into servitude within a prosperous Norse household.",
+        "initialAttributes": {
+          "gender": "male",
+          "ethnicity": "Slavic",
+          "physicalTraits": [
+            "dark hair",
+            "sturdy build"
+          ],
+          "earlyChildhood": "Grew up amidst labor, witnessing the contrasting lives of the ruling class."
+        },
+        "probability": 20,
+        "opportunities": [
+          "Possibility of freedom through service",
+          "Skilled in agriculture and crafts"
+        ],
+        "challenges": [
+          "Lack of personal freedom",
+          "Harsh working conditions"
+        ]
+      },
+      {
+        "id": "persona-4",
+        "title": "Merchant's Apprentice",
+        "familyBackground": {
+          "socialClass": "Karls (free traders)",
+          "occupation": "Trader",
+          "wealth": "comfortable",
+          "familySize": 5,
+          "parentalStatus": "Both parents alive",
+          "location": "Birka, Norse territories"
+        },
+        "birthCircumstances": "Born into a family actively engaged in trade with distant lands.",
+        "initialAttributes": {
+          "gender": "female",
+          "ethnicity": "Norse",
+          "physicalTraits": [
+            "light eyes",
+            "athletic build"
+          ],
+          "earlyChildhood": "Exposed to diverse cultures and goods, helping in the family trade from a young age."
+        },
+        "probability": 25,
+        "opportunities": [
+          "Access to trade networks",
+          "Exposure to new ideas and goods"
+        ],
+        "challenges": [
+          "Risk of piracy during trade voyages",
+          "Competition in trade markets"
+        ]
+      }
+    ],
+    "timestamp": "2025-11-01T00:00:00.000Z"
+  },
+  "selectedPersona": {
+    "id": "persona-3",
+    "title": "Thrall's Child in Norse Household",
+    "familyBackground": {
+      "socialClass": "Thralls (slaves)",
+      "occupation": "Domestic and agricultural laborers",
+      "wealth": "poor",
+      "familySize": 4,
+      "parentalStatus": "Both parents alive",
+      "location": "Sigtuna, Norse territories"
+    },
+    "birthCircumstances": "Born into servitude within a prosperous Norse household.",
+    "initialAttributes": {
+      "gender": "male",
+      "ethnicity": "Slavic",
+      "physicalTraits": [
+        "dark hair",
+        "sturdy build"
+      ],
+      "earlyChildhood": "Grew up amidst labor, witnessing the contrasting lives of the ruling class."
+    },
+    "probability": 20,
+    "opportunities": [
+      "Possibility of freedom through service",
+      "Skilled in agriculture and crafts"
+    ],
+    "challenges": [
+      "Lack of personal freedom",
+      "Harsh working conditions"
+    ]
+  }
+}
