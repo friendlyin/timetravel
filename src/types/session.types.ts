@@ -8,7 +8,7 @@
 import { HistoricalContext } from './context.types';
 import { PersonaOptions, PersonaOption } from './persona.types';
 import { Lifeline } from './lifeline.types';
-import { PivotalMoment, Choice } from './pivotalMoment.types';
+import { PivotalMoment } from './pivotalMoment.types';
 
 /**
  * Initial input provided by the user
@@ -87,6 +87,25 @@ export interface SessionMetadata {
   currentStep: string;
   status: 'active' | 'completed' | 'failed';
   totalSteps: number;
+}
+
+/**
+ * Lightweight representation of a stored session entry used by the UI history sidebar
+ */
+export interface SessionHistoryItem {
+  id: string;
+  label: string;
+  subtitle: string;
+  createdAt: number;
+  sessionDataId?: string;
+}
+
+/**
+ * Compact store payload persisted to disk for quick UI hydration
+ */
+export interface StoredSessions {
+  sessions: SessionHistoryItem[];
+  selectedId: string | null;
 }
 
 /**
@@ -202,4 +221,3 @@ export function getLatestChoice(session: SessionData): UserChoice | undefined {
   if (session.choices.length === 0) return undefined;
   return session.choices[session.choices.length - 1];
 }
-

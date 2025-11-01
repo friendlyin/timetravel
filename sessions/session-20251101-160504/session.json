@@ -1,0 +1,215 @@
+{
+  "metadata": {
+    "sessionId": "session-20251101-160504",
+    "startTime": "2025-11-01T16:05:04.309Z",
+    "currentStep": "Awaiting persona selection",
+    "status": "active",
+    "totalSteps": 2
+  },
+  "input": {
+    "date": "0610-01-01",
+    "location": "Siberia, Gokturk Khaganate"
+  },
+  "config": {
+    "numberOfPersonaOptions": 4,
+    "maxPivotalMoments": 5,
+    "generateImages": false
+  },
+  "lifelines": [],
+  "pivotalMoments": [],
+  "choices": [],
+  "imagePrompts": [],
+  "images": [],
+  "executionLogs": [
+    {
+      "agentId": "historicalContext",
+      "agentName": "Historical Context Agent",
+      "startTime": "2025-11-01T16:05:04.310Z",
+      "endTime": "2025-11-01T16:05:18.725Z",
+      "duration": 14415,
+      "inputData": {
+        "input.date": "0610-01-01",
+        "input.location": "Siberia, Gokturk Khaganate"
+      },
+      "outputData": {
+        "_structure": "country, description, politicalSituation, religion, socialStructure, economy, conflicts, culturalHighlights, additionalContext"
+      },
+      "success": true
+    },
+    {
+      "agentId": "personaGeneration",
+      "agentName": "Persona Generation Agent",
+      "startTime": "2025-11-01T16:05:18.732Z",
+      "endTime": "2025-11-01T16:05:41.566Z",
+      "duration": 22834,
+      "inputData": {
+        "historicalContext": "{country, description, politicalSituation, religion, socialStructure, economy, conflicts, culturalHighlights, additionalContext}",
+        "config.numberOfPersonaOptions": 4
+      },
+      "outputData": {
+        "optionsCount": 4,
+        "_structure": "options, timestamp"
+      },
+      "success": true
+    }
+  ],
+  "gameState": {
+    "isAlive": true
+  },
+  "historicalContext": {
+    "country": "Gokturk Khaganate",
+    "description": "In the year 610, Siberia was part of the vast Gokturk Khaganate, which controlled a significant portion of Central Asia. The region was characterized by its nomadic tribes who roamed the steppes, living in yurts and relying heavily on horse culture. The landscape was dominated by vast grasslands, forests, and river valleys, providing both sustenance and mobility for the Turkic tribes. The Gokturk Khaganate was known for its skill in horseback riding and archery, which were essential for their way of life.",
+    "politicalSituation": {
+      "rulers": [
+        "Bumin Khagan",
+        "Mukan Khagan"
+      ],
+      "governance": "Khaganate (Monarchy)",
+      "details": "The Gokturk Khaganate was established in the 6th century and was a powerful political entity at this time. Bumin Khagan, the founder, had united various Turkic tribes, and upon his death, his son Mukan Khagan took over. The khaganate was marked by a centralized authority under the khagan, but it also allowed for a degree of autonomy among the various tribes. During this period, the Gokturks were involved in both trade and military expansion, asserting their influence over neighboring regions."
+    },
+    "religion": {
+      "dominant": "Tengrism",
+      "culturalBackground": "Tengrism, a shamanistic and animistic belief system centered around the sky god Tengri, was the dominant religion among the Turkic peoples. This belief system emphasized the connection between nature and the spiritual world, with shamans serving as mediators. The cultural practices were deeply intertwined with the nomadic lifestyle and the reverence for ancestral spirits."
+    },
+    "socialStructure": "The social structure was primarily tribal and clan-based, with a clear hierarchy led by the khagan at the top, followed by nobility (ashina clan) who held military and administrative power. Below them were free warriors and herders, while the lower classes included dependents and slaves. Social mobility was possible through acts of valor in battle or significant contributions to the tribe.",
+    "economy": "The Gokturk economy was predominantly pastoral, revolving around the herding of horses, sheep, and goats. Trade routes facilitated commerce with neighboring states, including the Byzantine Empire and Sassanian Persia, where they exchanged goods such as furs, horses, and textiles. The Gokturks were also involved in the silk trade, which connected them to the greater trade networks of Asia.",
+    "conflicts": [
+      "Ongoing conflicts with the Sassanian Empire to the southwest and the Byzantine Empire to the west, as well as internal tribal rivalries and skirmishes with neighboring tribes."
+    ],
+    "culturalHighlights": [
+      "The use of the Orkhon script, which was developed during this time for recording the Turkic language; the epic poetry and oral traditions that reflected the nomadic lifestyle; and the establishment of trade relations that contributed to cultural exchanges with other civilizations."
+    ],
+    "additionalContext": {
+      "key": "The Gokturk Khaganate played a significant role in the history of the Turkic peoples, influencing the formation of later Turkic states and cultures. The khaganate's decline would eventually lead to the fragmentation of Turkic power in the region, paving the way for the rise of later empires."
+    }
+  },
+  "personaOptions": {
+    "options": [
+      {
+        "id": "persona-1",
+        "title": "Noble Warrior of the Ashina Clan",
+        "familyBackground": {
+          "socialClass": "Nobility",
+          "occupation": "Military leader",
+          "wealth": "wealthy",
+          "familySize": 4,
+          "parentalStatus": "Both parents alive",
+          "location": "Central region of the Gokturk Khaganate"
+        },
+        "birthCircumstances": "Born into a prominent noble family, celebrated for their military prowess and leadership in tribal conflicts.",
+        "initialAttributes": {
+          "gender": "male",
+          "ethnicity": "Turkic",
+          "physicalTraits": [
+            "tall",
+            "strong"
+          ],
+          "earlyChildhood": "Raised in a warrior culture, trained in horseback riding and archery from a young age."
+        },
+        "probability": 35,
+        "opportunities": [
+          "Access to the khagan's court",
+          "Military training and education"
+        ],
+        "challenges": [
+          "Pressure to uphold family honor",
+          "Frequent warfare and conflict"
+        ]
+      },
+      {
+        "id": "persona-2",
+        "title": "Nomadic Herdsman",
+        "familyBackground": {
+          "socialClass": "Free herder",
+          "occupation": "Herdsman",
+          "wealth": "modest",
+          "familySize": 6,
+          "parentalStatus": "Both parents alive",
+          "location": "Southern steppes of Siberia"
+        },
+        "birthCircumstances": "Born to a family of herders, living a traditional nomadic lifestyle, moving with the seasons.",
+        "initialAttributes": {
+          "gender": "male",
+          "ethnicity": "Turkic",
+          "physicalTraits": [
+            "athletic",
+            "weathered skin"
+          ],
+          "earlyChildhood": "Learned to care for animals and assist in herding from an early age, fostering a deep connection to nature."
+        },
+        "probability": 30,
+        "opportunities": [
+          "Trade opportunities with neighboring tribes",
+          "Community support in times of need"
+        ],
+        "challenges": [
+          "Harsh weather conditions",
+          "Risk of raids from rival tribes"
+        ]
+      },
+      {
+        "id": "persona-3",
+        "title": "Shaman's Apprentice",
+        "familyBackground": {
+          "socialClass": "Lower class (dependent)",
+          "occupation": "Shaman's apprentice",
+          "wealth": "poor",
+          "familySize": 3,
+          "parentalStatus": "Orphan",
+          "location": "Forest edge near a river valley"
+        },
+        "birthCircumstances": "Orphaned at a young age, taken in by a shaman who recognized the potential for spiritual leadership.",
+        "initialAttributes": {
+          "gender": "female",
+          "ethnicity": "Turkic",
+          "physicalTraits": [
+            "slender",
+            "bright eyes"
+          ],
+          "earlyChildhood": "Spent early years in hardship but found purpose in learning the ways of Tengrism and healing."
+        },
+        "probability": 20,
+        "opportunities": [
+          "Training in spiritual practices",
+          "Potential to become a respected healer"
+        ],
+        "challenges": [
+          "Social stigma as an orphan",
+          "Limited resources and support"
+        ]
+      },
+      {
+        "id": "persona-4",
+        "title": "Wealthy Silk Trader",
+        "familyBackground": {
+          "socialClass": "Merchant class",
+          "occupation": "Silk trader",
+          "wealth": "very wealthy",
+          "familySize": 7,
+          "parentalStatus": "Both parents alive",
+          "location": "Trade hub near the Orkhon River"
+        },
+        "birthCircumstances": "Born into a merchant family that prospered through trade along the Silk Road, gaining wealth and influence.",
+        "initialAttributes": {
+          "gender": "male",
+          "ethnicity": "Turkic",
+          "physicalTraits": [
+            "well-groomed",
+            "charismatic"
+          ],
+          "earlyChildhood": "Educated about trade and languages, introduced to the wealth of different cultures and goods."
+        },
+        "probability": 15,
+        "opportunities": [
+          "Access to vast trade networks",
+          "Influence in political matters through economic power"
+        ],
+        "challenges": [
+          "Competition from other traders",
+          "Vulnerable to political instability and conflict"
+        ]
+      }
+    ],
+    "timestamp": "2025-11-01T00:00:00.000Z"
+  }
+}

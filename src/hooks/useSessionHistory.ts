@@ -5,9 +5,14 @@ import {
   SessionHistoryItem,
   StoredSessions,
 } from '@/types/session.types';
+import type {
+  StartSessionRequest,
+  StartSessionResponse,
+} from '@/types/api.types';
 
 const SESSIONS_ENDPOINT = '/api/sessions';
 const SELECT_ENDPOINT = '/api/sessions/select';
+const START_ENDPOINT = '/api/sessions/start';
 const JSON_HEADERS = { 'Content-Type': 'application/json' } as const;
 
 export function useSessionHistory() {
@@ -16,6 +21,23 @@ export function useSessionHistory() {
     null,
   );
   const [isHydrated, setHydrated] = useState(false);
+
+  const applyServerState = useCallback((data: StoredSessions) => {
+    setSessions(data.sessions ?? []);
+    setSelectedSessionId(data.selectedId ?? null);
+  }, []);
+
+  const loadSessions = useCallback(async () => {
+    const response = await fetch(SESSIONS_ENDPOINT, {
+      cache: 'no-store',
+    });
+
+    if (!response.ok) {
+      throw new Error('Failed to load sessions');
+    }
+
+    return (await response.json()) as StoredSessions;
+  }, []);
 
   useEffect(() => {
     let cancelled = false;
@@ -26,21 +48,12 @@ export function useSessionHistory() {
       }
 
       try {
-        const response = await fetch(SESSIONS_ENDPOINT, {
-          cache: 'no-store',
-        });
-
-        if (!response.ok) {
-          throw new Error('Failed to load sessions');
-        }
-
-        const payload = (await response.json()) as StoredSessions;
+        const payload = await loadSessions();
         if (cancelled) {
           return;
         }
 
-        setSessions(payload.sessions ?? []);
-        setSelectedSessionId(payload.selectedId ?? null);
+        applyServerState(payload);
       } catch (error) {
         if (!cancelled) {
           console.error(error);
@@ -58,12 +71,7 @@ export function useSessionHistory() {
     return () => {
       cancelled = true;
     };
-  }, []);
-
-  const applyServerState = useCallback((data: StoredSessions) => {
-    setSessions(data.sessions ?? []);
-    setSelectedSessionId(data.selectedId ?? null);
-  }, []);
+  }, [applyServerState, loadSessions]);
 
   const createSession = useCallback(async () => {
     if (!isHydrated) {
@@ -150,6 +158,45 @@ export function useSessionHistory() {
     [applyServerState, isHydrated, sessions],
   );
 
+  const refreshSessions = useCallback(async () => {
+    try {
+      const payload = await loadSessions();
+      applyServerState(payload);
+    } catch (error) {
+      console.error(error);
+    }
+  }, [applyServerState, loadSessions]);
+
+  const startSession = useCallback(
+    async (payload: StartSessionRequest) => {
+      if (!isHydrated) {
+        throw new Error('Session history is not ready yet');
+      }
+
+      try {
+        const response = await fetch(START_ENDPOINT, {
+          method: 'POST',
+          headers: JSON_HEADERS,
+          body: JSON.stringify(payload),
+        });
+
+        const data = (await response.json()) as StartSessionResponse;
+
+        if (!response.ok || !data.success || !data.data) {
+          const errorMessage = data.error ?? 'Failed to start session';
+          throw new Error(errorMessage);
+        }
+
+        applyServerState(data.data.sessions);
+        return data.data.sessionId;
+      } catch (error) {
+        console.error(error);
+        throw error;
+      }
+    },
+    [applyServerState, isHydrated],
+  );
+
   const value = useMemo(
     () => ({
       sessions,
@@ -157,12 +204,16 @@ export function useSessionHistory() {
       createSession,
       selectSession,
       renameSession,
+      refreshSessions,
+      startSession,
       isHydrated,
     }),
     [
       createSession,
+      refreshSessions,
       isHydrated,
       renameSession,
+      startSession,
       selectSession,
       selectedSessionId,
       sessions,
@@ -171,3 +222,5 @@ export function useSessionHistory() {
 
   return value;
 }
+
+export type SessionHistoryController = ReturnType<typeof useSessionHistory>;

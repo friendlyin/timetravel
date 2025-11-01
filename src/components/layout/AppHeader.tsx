@@ -31,10 +31,10 @@ export function AppHeader({ isHistoryOpen, onToggleHistory }: AppHeaderProps) {
               </button>
               <div>
                   <p className="text-xs uppercase tracking-[0.3em] text-slate-500 dark:text-slate-400">
-                      Time Threads
+                      Time quest
                   </p>
                   <h1 className="text-lg font-semibold text-slate-900 dark:text-slate-100">
-                      Temporal Life Architect
+                      Live thru ages
                   </h1>
               </div>
           </div>

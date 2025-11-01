@@ -27,77 +27,77 @@ export interface ImageModelConfig {
  * Model configurations for each generation step
  */
 export const MODELS = {
-  /**
-   * Historical Context Generation
-   * Requires high accuracy and detailed knowledge
-   */
-  historicalContext: {
-    model: 'gpt-4o',
-    temperature: 0.7,
-    maxTokens: 2000,
-  } as ModelConfig,
+    /**
+     * Historical Context Generation
+     * Requires high accuracy and detailed knowledge
+     */
+    historicalContext: {
+        model: 'gpt-4o',
+        temperature: 0.7,
+        maxTokens: 2000
+    } as ModelConfig,
 
-  /**
-   * Persona Generation
-   * Needs creativity while maintaining historical accuracy
-   */
-  personaGeneration: {
-    model: 'gpt-4o',
-    temperature: 0.8,
-    maxTokens: 2500,
-  } as ModelConfig,
+    /**
+     * Persona Generation
+     * Needs creativity while maintaining historical accuracy
+     */
+    personaGeneration: {
+        model: 'gpt-4o',
+        temperature: 0.8,
+        maxTokens: 2500
+    } as ModelConfig,
 
-  /**
-   * Lifeline Generation
-   * Requires narrative creativity and historical plausibility
-   */
-  lifelineGeneration: {
-    model: 'gpt-4o',
-    temperature: 0.8,
-    maxTokens: 3000,
-  } as ModelConfig,
+    /**
+     * Lifeline Generation
+     * Requires narrative creativity and historical plausibility
+     */
+    lifelineGeneration: {
+        model: 'gpt-4o',
+        temperature: 0.8,
+        maxTokens: 3000
+    } as ModelConfig,
 
-  /**
-   * Pivotal Moment Generation
-   * Needs drama and meaningful choices while staying historically accurate
-   */
-  pivotalMomentGeneration: {
-    model: 'gpt-4o',
-    temperature: 0.9,
-    maxTokens: 2000,
-  } as ModelConfig,
+    /**
+     * Pivotal Moment Generation
+     * Needs drama and meaningful choices while staying historically accurate
+     */
+    pivotalMomentGeneration: {
+        model: 'gpt-4o',
+        temperature: 0.9,
+        maxTokens: 2000
+    } as ModelConfig,
 
-  /**
-   * Image Prompt Generation
-   * Crafts detailed, historically accurate prompts for image generation
-   */
-  imagePromptGeneration: {
-    model: 'gpt-4o',
-    temperature: 0.7,
-    maxTokens: 1000,
-  } as ModelConfig,
+    /**
+     * Image Prompt Generation
+     * Crafts detailed, historically accurate prompts for image generation
+     */
+    imagePromptGeneration: {
+        model: 'gpt-4o',
+        temperature: 0.7,
+        maxTokens: 1000
+    } as ModelConfig,
 
-  /**
-   * Image Generation
-   * Documentary-realistic historical visualization
-   */
-  imageGeneration: {
-    model: 'dall-e-3',
-    size: '1792x1024',
-    quality: 'hd',
-    style: 'natural',
-  } as ImageModelConfig,
+    /**
+     * Image Generation
+     * Documentary-realistic historical visualization
+     */
+    imageGeneration: {
+        model: 'dall-e-3',
+        size: '1792x1024',
+        quality: 'hd',
+        style: 'natural'
+    } as ImageModelConfig,
 
-  /**
-   * Location Resolution
-   * Translates coordinates and a year into historical place names
-   */
-  locationResolution: {
-    model: 'gpt-4o-mini',
-    temperature: 0.2,
-    maxTokens: 600,
-  } as ModelConfig,
-} as const;
+    /**
+     * Location Resolution
+     * Translates coordinates and a year into historical place names
+     */
+    locationResolution: {
+        model: 'gpt-4o-mini',
+        temperature: 0.2,
+        maxTokens: 600
+    } as ModelConfig
+} as const
 
 /**
  * Helper function to get model config for a specific step

@@ -21,11 +21,13 @@ export type GeoCoordinate = {
 type GeoCoordinateSelectorProps = {
   value: GeoCoordinate | null;
   onChange: (coordinate: GeoCoordinate) => void;
+  disabled?: boolean;
 };
 
 export function GeoCoordinateSelector({
   value,
   onChange,
+  disabled = false,
 }: GeoCoordinateSelectorProps) {
   const mapElementRef = useRef<HTMLDivElement | null>(null);
   const mapRef = useRef<Map | null>(null);
@@ -82,10 +84,13 @@ export function GeoCoordinateSelector({
 
   const handleMapClick = useCallback(
     (event: MapBrowserEvent<unknown>) => {
+      if (disabled) {
+        return;
+      }
       const coordinate = toLonLat(event.coordinate);
       onChange({ lon: coordinate[0], lat: coordinate[1] });
     },
-    [onChange],
+    [disabled, onChange],
   );
 
   useEffect(() => {
@@ -133,8 +138,23 @@ export function GeoCoordinateSelector({
   }, []);
 
   return (
-    <div className="flex h-64 w-full overflow-hidden rounded-lg border border-slate-200 bg-slate-50 shadow-inner dark:border-slate-700 dark:bg-slate-900">
-      <div ref={handleMapRef} className="h-full w-full" />
+    <div
+      className={[
+        'relative flex h-64 w-full overflow-hidden rounded-lg border border-slate-200 bg-slate-50 shadow-inner dark:border-slate-700 dark:bg-slate-900',
+        disabled ? 'opacity-60' : '',
+      ].join(' ')}
+      aria-disabled={disabled}
+    >
+      <div
+        ref={handleMapRef}
+        className={[
+          'h-full w-full',
+          disabled ? 'pointer-events-none' : '',
+        ].join(' ')}
+      />
+      {disabled && (
+        <div className="absolute inset-0" aria-hidden />
+      )}
     </div>
   );
 }
