@@ -1,29 +1,36 @@
 'use client';
 
-import { useSessionHistory } from '@/hooks/useSessionHistory';
+import type { SessionHistoryItem } from '@/types/session.types';
 
 type SessionHistoryProps = {
   isOpen: boolean;
+  sessions: SessionHistoryItem[];
+  selectedSessionId: string | null;
+  isHydrated: boolean;
+  onCreateSession?: () => void;
+  onSelectSession: (id: string) => void;
+  onRenameSession: (id: string) => void;
 };
 
-export function SessionHistory({ isOpen }: SessionHistoryProps) {
-  const {
-    sessions,
-    selectedSessionId,
-    createSession,
-    selectSession,
-    renameSession,
-    isHydrated,
-  } = useSessionHistory();
-
+export function SessionHistory({
+  isOpen,
+  sessions,
+  selectedSessionId,
+  isHydrated,
+  onCreateSession,
+  onSelectSession,
+  onRenameSession,
+}: SessionHistoryProps) {
   const activeSession = sessions.find(
     (session) => session.id === selectedSessionId,
   );
 
+  const canCreateSession = typeof onCreateSession === 'function';
+
   return (
       <aside
           className={[
-              'relative flex h-full flex-col border-r border-slate-200 bg-white/85 transition-[width] duration-300 ease-in-out backdrop-blur dark:border-slate-800 dark:bg-slate-900/70',
+              'fixed left-0 top-[73px] bottom-0 z-40 flex flex-col border-r border-slate-200 bg-white/85 transition-[width] duration-300 ease-in-out backdrop-blur dark:border-slate-800 dark:bg-slate-900/70',
               isOpen ? 'w-72 pointer-events-auto' : 'w-0 pointer-events-none'
           ].join(' ')}
       >
@@ -41,15 +48,19 @@ export function SessionHistory({ isOpen }: SessionHistoryProps) {
                           {activeSession?.label ?? 'No session selected'}
                       </span>
                   </div>
-                  <button
-                      type="button"
-                      onClick={() => {
-                          void createSession();
-                      }}
-                      className="rounded-md border border-slate-200 bg-white px-2 py-1 text-xs font-medium shadow-sm transition hover:border-slate-300 hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-slate-400 dark:border-slate-700 dark:bg-slate-900 dark:hover:border-slate-600 dark:hover:bg-slate-800 dark:focus:ring-slate-500"
-                  >
-                      New
-                  </button>
+                  {canCreateSession && (
+                      <button
+                          type="button"
+                          onClick={() => {
+                              if (onCreateSession) {
+                                  void onCreateSession()
+                              }
+                          }}
+                          className="rounded-md border border-slate-200 bg-white px-2 py-1 text-xs font-medium shadow-sm transition hover:border-slate-300 hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-slate-400 dark:border-slate-700 dark:bg-slate-900 dark:hover:border-slate-600 dark:hover:bg-slate-800 dark:focus:ring-slate-500"
+                      >
+                          New
+                      </button>
+                  )}
               </div>
 
               <ul className="flex-1 space-y-2 overflow-y-auto px-2 py-3">
@@ -59,7 +70,7 @@ export function SessionHistory({ isOpen }: SessionHistoryProps) {
                       </li>
                   ) : sessions.length === 0 ? (
                       <li className="rounded-md border border-dashed border-slate-200 bg-white/60 px-3 py-4 text-xs text-slate-500 dark:border-slate-700 dark:bg-slate-900/60 dark:text-slate-400">
-                          Create a session to begin shaping a life across time.
+                          Use the configuration panel to start a new session.
                       </li>
                   ) : (
                       sessions.map((session) => (
@@ -67,10 +78,10 @@ export function SessionHistory({ isOpen }: SessionHistoryProps) {
                               <button
                                   type="button"
                                   onClick={() => {
-                                      void selectSession(session.id);
+                                      void onSelectSession(session.id)
                                   }}
                                   onDoubleClick={() => {
-                                      void renameSession(session.id);
+                                      void onRenameSession(session.id)
                                   }}
                                   className={[
                                       'group flex w-full flex-col rounded-md border px-3 py-2 text-left text-sm transition',

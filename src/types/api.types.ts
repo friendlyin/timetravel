@@ -6,6 +6,7 @@ import { HistoricalContext, HistoricalContextInput } from './context.types';
 import { PersonaOptions, PersonaGenerationInput } from './persona.types';
 import { Lifeline, LifelineGenerationInput } from './lifeline.types';
 import { PivotalMoment, PivotalMomentGenerationInput } from './pivotalMoment.types';
+import { SessionData, StoredSessions } from './session.types';
 import {
   LocationResolutionContext,
   LocationResolutionResult,
@@ -73,3 +74,28 @@ export interface ResolveLocationRequest {
 }
 
 export type ResolveLocationResponse = ApiResponse<LocationResolutionResult>;
+
+// Session details API
+export type SessionDetailsResponse = ApiResponse<SessionData>;
+
+// Start session API
+export interface StartSessionRequest {
+  year: number;
+  coordinate: {
+    lat: number;
+    lon: number;
+  };
+  location: {
+    label: string;
+    area?: string;
+    country?: string;
+    settlement?: string;
+    provider?: string;
+  };
+}
+
+export type StartSessionResponse = ApiResponse<{
+  sessionId: string;
+  sessionPath: string;
+  sessions: StoredSessions;
+}>;

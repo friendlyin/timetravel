@@ -1,29 +1,44 @@
 {
   "sessions": [
     {
-      "id": "session-1762001611189",
-      "label": "It's ok",
-      "subtitle": "Created Nov 1, 2025, 12:53 PM",
-      "createdAt": 1762001611189
+      "id": "session-1762015472150",
+      "label": "New life 6",
+      "subtitle": "Created Nov 1, 2025, 4:44 PM",
+      "createdAt": 1762015472150
     },
     {
-      "id": "session-1762001603517",
+      "id": "session-20251101-162659",
+      "label": "Bukhara, Transoxiana, Timurid Empire · Year 1581",
+      "subtitle": "Started Nov 1, 2025, 4:26 PM · Source OPENAI",
+      "createdAt": 1762014419309,
+      "sessionDataId": "session-20251101-162659"
+    },
+    {
+      "id": "session-1762013924618",
       "label": "Yo",
-      "subtitle": "Created Nov 1, 2025, 12:53 PM",
-      "createdAt": 1762001603517
+      "subtitle": "Created Nov 1, 2025, 4:18 PM",
+      "createdAt": 1762013924618
     },
     {
-      "id": "session-1762001426707",
-      "label": "Georgii",
-      "subtitle": "Created Nov 1, 2025, 12:50 PM",
-      "createdAt": 1762001426707
+      "id": "session-20251101-161337",
+      "label": "Moscow, Moscow Governorate, Russian Empire · Year 1907",
+      "subtitle": "Started Nov 1, 2025, 4:13 PM",
+      "createdAt": 1762013617214,
+      "sessionDataId": "session-20251101-161337"
     },
     {
-      "id": "session-1762000725872",
-      "label": "Another guy",
-      "subtitle": "Created Nov 1, 2025, 12:38 PM",
-      "createdAt": 1762000725872
+      "id": "session-1762013599133",
+      "label": "New life 2",
+      "subtitle": "Created Nov 1, 2025, 4:13 PM",
+      "createdAt": 1762013599133
+    },
+    {
+      "id": "session-20251101-160504",
+      "label": "Siberia, Gokturk Khaganate · Year 610",
+      "subtitle": "Started Nov 1, 2025, 4:05 PM · Source OPENAI",
+      "createdAt": 1762013104309,
+      "sessionDataId": "session-20251101-160504"
     }
   ],
-  "selectedId": "session-1762000725872"
+  "selectedId": "session-1762015472150"
 }

@@ -40,8 +40,13 @@ async function readStorage(): Promise<StoredSessions> {
     const raw = await fs.readFile(STORAGE_FILE, 'utf-8');
     const parsed = JSON.parse(raw) as StoredSessions;
 
+    const sessions = (parsed.sessions ?? []).map((session) => ({
+      ...session,
+      sessionDataId: session.sessionDataId ?? undefined,
+    } satisfies SessionHistoryItem));
+
     return {
-      sessions: parsed.sessions ?? [],
+      sessions,
       selectedId: parsed.selectedId ?? null,
     };
   } catch (error) {
@@ -68,11 +73,48 @@ export async function createSession(): Promise<StoredSessions> {
     label: `New life ${current.sessions.length + 1}`,
     subtitle: `Created ${DATE_FORMATTER.format(timestamp)}`,
     createdAt: timestamp,
+    sessionDataId: undefined,
   };
 
   const nextState: StoredSessions = {
     sessions: [newSession, ...current.sessions],
     selectedId: newSession.id,
+  };
+
+  await writeStorage(nextState);
+  return nextState;
+}
+
+export async function registerSession(
+  sessionId: string,
+  options?: {
+    label?: string;
+    subtitle?: string;
+    createdAt?: number;
+  },
+): Promise<StoredSessions> {
+  const current = await readStorage();
+  const timestamp = options?.createdAt ?? Date.now();
+
+  const label = options?.label ?? `Life in ${sessionId}`;
+  const subtitle =
+    options?.subtitle ?? `Created ${DATE_FORMATTER.format(timestamp)}`;
+
+  const newSession: SessionHistoryItem = {
+    id: sessionId,
+    label,
+    subtitle,
+    createdAt: timestamp,
+    sessionDataId: sessionId,
+  };
+
+  const dedupedSessions = current.sessions.filter(
+    (session) => session.id !== sessionId,
+  );
+
+  const nextState: StoredSessions = {
+    sessions: [newSession, ...dedupedSessions],
+    selectedId: sessionId,
   };
 
   await writeStorage(nextState);
