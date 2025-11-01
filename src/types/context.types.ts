@@ -23,6 +23,5 @@ export interface HistoricalContext {
   economy: string; // Economic situation and primary industries
   conflicts: string[]; // Ongoing wars, conflicts, or tensions
   culturalHighlights: string[]; // Notable cultural aspects of the time
-  additionalContext: Record<string, any>; // Flexible field for other contextual information
+  additionalContext: Record<string, unknown>; // Flexible field for other contextual information
 }
-

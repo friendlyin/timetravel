@@ -6,6 +6,10 @@ import { HistoricalContext, HistoricalContextInput } from './context.types';
 import { PersonaOptions, PersonaGenerationInput } from './persona.types';
 import { Lifeline, LifelineGenerationInput } from './lifeline.types';
 import { PivotalMoment, PivotalMomentGenerationInput } from './pivotalMoment.types';
+import {
+  LocationResolutionContext,
+  LocationResolutionResult,
+} from './location.types';
 
 // Standard API response wrapper
 export interface ApiResponse<T> {
@@ -20,28 +24,28 @@ export interface GenerateContextRequest {
   input: HistoricalContextInput;
 }
 
-export interface GenerateContextResponse extends ApiResponse<HistoricalContext> {}
+export type GenerateContextResponse = ApiResponse<HistoricalContext>;
 
 // Generate Personas API
 export interface GeneratePersonasRequest {
   input: PersonaGenerationInput;
 }
 
-export interface GeneratePersonasResponse extends ApiResponse<PersonaOptions> {}
+export type GeneratePersonasResponse = ApiResponse<PersonaOptions>;
 
 // Generate Lifeline API
 export interface GenerateLifelineRequest {
   input: LifelineGenerationInput;
 }
 
-export interface GenerateLifelineResponse extends ApiResponse<Lifeline> {}
+export type GenerateLifelineResponse = ApiResponse<Lifeline>;
 
 // Generate Pivotal Moment API
 export interface GeneratePivotalMomentRequest {
   input: PivotalMomentGenerationInput;
 }
 
-export interface GeneratePivotalMomentResponse extends ApiResponse<PivotalMoment> {}
+export type GeneratePivotalMomentResponse = ApiResponse<PivotalMoment>;
 
 // Generate Image API
 export interface ImageGenerationInput {
@@ -61,5 +65,11 @@ export interface GeneratedImage {
   timestamp: string;
 }
 
-export interface GenerateImageResponse extends ApiResponse<GeneratedImage> {}
+export type GenerateImageResponse = ApiResponse<GeneratedImage>;
 
+// Resolve Location API
+export interface ResolveLocationRequest {
+  input: LocationResolutionContext;
+}
+
+export type ResolveLocationResponse = ApiResponse<LocationResolutionResult>;
