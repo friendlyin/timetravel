@@ -1,0 +1,5 @@
+---
+alwaysApply: true
+---
+
+Don't generate additional md documentation unless user explicitly asks for that. Instead provide explaations in chat.

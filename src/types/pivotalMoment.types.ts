@@ -33,5 +33,6 @@ export interface PivotalMoment {
   timeConstraint?: string; // Optional: time pressure or urgency
   influencingFactors: string[]; // Factors that should influence the decision
   imagePrompt?: string; // Optional: suggested prompt for image generation
+  characterDied?: boolean; // Whether the character died at this moment
 }
 

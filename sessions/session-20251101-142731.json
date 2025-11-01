@@ -1,0 +1,522 @@
+{
+  "metadata": {
+    "sessionId": "session-20251101-142731",
+    "startTime": "2025-11-01T14:27:31.599Z",
+    "currentStep": "Lifeline Generation Agent",
+    "status": "active",
+    "totalSteps": 5
+  },
+  "input": {
+    "date": "1300-01-02",
+    "location": "Scotland"
+  },
+  "config": {
+    "numberOfPersonaOptions": 4,
+    "maxPivotalMoments": 5,
+    "generateImages": false
+  },
+  "lifelines": [
+    {
+      "id": "lifeline-3b1f2",
+      "startAge": 0,
+      "endAge": 15,
+      "narrative": "Born in the small but bustling town of Perth, our young apprentice was cradled by the warmth and clangor of the family forge. His early years were marked by the rhythmic pounding of hammers and the glowing embers of the forge, where he would often play, entranced by the dance of shadows and sparks. As he grew, his strong build and keen eyes made him an apt learner, eager to soak up the skills of his father's trade. By the age of ten, he could be found with soot-streaked cheeks, assisting in crafting horseshoes and tools, and occasionally, in these turbulent times, the blades that would find their way to the hands of soldiers and rebels alike.\n\nThe political climate of early 14th century Scotland cast a long shadow over his formative years. The frequent tales of skirmishes and the growing legend of William Wallace stirred something within him—a longing for a sense of purpose larger than the clink of metal on anvil. Yet, the forge offered a sanctuary, a place where he could mold his ambitions much like the iron he shaped. By age fifteen, he faced a critical decision: to apprentice under a renowned master blacksmith in Edinburgh, a chance to refine his craft and gain prestige, or to remain in Perth, keeping the family business thriving amidst the uncertainty of war.",
+      "events": [
+        {
+          "age": 5,
+          "year": "1300",
+          "event": "First exposure to the forge, helping his father with small tasks like fetching tools.",
+          "impact": "minor",
+          "location": "Family workshop in Perth"
+        },
+        {
+          "age": 8,
+          "year": "1303",
+          "event": "Witnessed a dramatic confrontation between townsfolk and English soldiers demanding weapons.",
+          "impact": "moderate",
+          "location": "Perth town center"
+        },
+        {
+          "age": 12,
+          "year": "1307",
+          "event": "Visited Edinburgh with his father to deliver a batch of finely crafted swords.",
+          "impact": "significant",
+          "location": "Edinburgh market"
+        },
+        {
+          "age": 14,
+          "year": "1309",
+          "event": "His father falls ill, thrusting him into a more prominent role at the forge.",
+          "impact": "major",
+          "location": "Family workshop in Perth"
+        }
+      ],
+      "characterDevelopment": {
+        "skills": [
+          "Blacksmithing",
+          "Basic trade negotiation",
+          "Weapon crafting"
+        ],
+        "relationships": [
+          "Father as mentor",
+          "Friendly rivalry with a fellow apprentice",
+          "Respect from townsfolk"
+        ],
+        "beliefs": [
+          "Hard work is vital",
+          "Value of craftsmanship",
+          "Emerging sense of Scottish identity"
+        ],
+        "reputation": "Respected young craftsman in Perth",
+        "physicalCondition": "Strong and healthy",
+        "mentalState": "Eager and contemplative, with a growing sense of duty"
+      },
+      "pivotalMomentReached": true,
+      "imagePrompt": "A young blacksmith in a medieval Scottish forge, surrounded by glowing embers, contemplating a decision while holding a newly crafted sword, the workshop bustling with activity."
+    },
+    {
+      "id": "lifeline-3b1f2",
+      "startAge": 0,
+      "endAge": 15,
+      "narrative": "In the heart of medieval Perth, nestled among cobblestone streets and the echoes of market chatter, a young boy named Alasdair was born into the cadence of hammers and the glow of forge fires. His early years were spent in the comforting arms of his family workshop, where his father, a respected blacksmith, shaped iron with precision and purpose. By the age of five, Alasdair was already an integral part of the forge's rhythm, fetching tools and eagerly watching the sparks fly as his father worked. This early exposure kindled a passion within him, and as he grew, his strong build and inquisitive, dark eyes became fixtures in the workshop.\n\nAt the age of eight, the harsh reality of his times struck him with force when he witnessed a tense standoff in Perth's town center. English soldiers, eyes cold and commanding, demanded weapons from the townsfolk, illustrating the growing unrest and occupation under Edward I. This event left an indelible mark on his young mind, awakening a nascent sense of Scottish identity and resistance. By twelve, Alasdair's skills had matured significantly, evidenced by a memorable venture to Edinburgh with his father. There, amidst the bustling market, he delivered finely crafted swords, gaining firsthand experience in trade and the broader world beyond Perth.\n\nAs Alasdair turned fourteen, his life took a pivotal turn. His father fell gravely ill, thrusting upon him the responsibility of the forge. This challenge tested his mettle, but with the support of the community and his father's teachings, he rose to the occasion. The townsfolk, aware of the economic and social pressures of the era, rallied around him, their respect deepening as he maintained the quality of the craftsmanship that had long defined his family. With the demands of war increasing, Alasdair faced a crucial choice: to accept an apprenticeship with a master blacksmith in Edinburgh or to remain in Perth, safeguarding his family's legacy amidst the turbulence.",
+      "events": [
+        {
+          "age": 5,
+          "year": "1300",
+          "event": "First exposure to the forge, helping his father with small tasks like fetching tools.",
+          "impact": "minor",
+          "location": "Family workshop in Perth"
+        },
+        {
+          "age": 8,
+          "year": "1303",
+          "event": "Witnessed a dramatic confrontation between townsfolk and English soldiers demanding weapons.",
+          "impact": "moderate",
+          "location": "Perth town center"
+        },
+        {
+          "age": 12,
+          "year": "1307",
+          "event": "Visited Edinburgh with his father to deliver a batch of finely crafted swords.",
+          "impact": "significant",
+          "location": "Edinburgh market"
+        },
+        {
+          "age": 14,
+          "year": "1309",
+          "event": "His father falls ill, thrusting him into a more prominent role at the forge.",
+          "impact": "major",
+          "location": "Family workshop in Perth"
+        }
+      ],
+      "characterDevelopment": {
+        "skills": [
+          "Blacksmithing",
+          "Basic trade negotiation",
+          "Weapon crafting"
+        ],
+        "relationships": [
+          "Father as mentor",
+          "Friendly rivalry with a fellow apprentice",
+          "Respect from townsfolk"
+        ],
+        "beliefs": [
+          "Hard work is vital",
+          "Value of craftsmanship",
+          "Emerging sense of Scottish identity"
+        ],
+        "reputation": "Respected young craftsman in Perth",
+        "physicalCondition": "Strong and healthy",
+        "mentalState": "Eager and contemplative, with a growing sense of duty"
+      },
+      "pivotalMomentReached": true,
+      "imagePrompt": "A young blacksmith in a medieval Scottish forge, surrounded by glowing embers, contemplating a decision while holding a newly crafted sword, the workshop bustling with activity."
+    }
+  ],
+  "pivotalMoments": [
+    {
+      "id": "pivotal-moment-a4f72",
+      "age": 25,
+      "year": "1315",
+      "title": "Call of the Claymore",
+      "situation": "A call to arms has been issued by the new leader of the Scottish resistance, Robert the Bruce, urging all willing and able to join the fight for freedom from English dominion. Our young blacksmith, now a skilled craftsman, stands on the cusp of a monumental decision: to lend his expertise to the rebellion, to protect his family by remaining neutral, or to pursue prosperity in Edinburgh, distant from the conflict.",
+      "context": "Having grown up amidst the tensions of war and with the legend of Wallace inspiring his youth, the blacksmith now faces a moment where his skills and loyalties are tested. The rise of Robert the Bruce reignites Scottish fervor for independence, offering a chance to be part of a pivotal historical moment.",
+      "stakes": "Choosing a path could determine his legacy and the fate of his family. Joining the rebellion risks everything for freedom, staying neutral offers safety but at the cost of moral conflict, and seeking fortune in Edinburgh promises personal growth but with potential alienation.",
+      "choices": [
+        {
+          "id": "choice-1",
+          "title": "Join Robert the Bruce",
+          "description": "Heeding the call of Robert the Bruce, the blacksmith takes up arms and joins the ranks of the Scottish rebels, forging weapons not just for others, but for himself as well.",
+          "immediateConsequences": [
+            "Departure from family and forge",
+            "Become a soldier and smith for the cause"
+          ],
+          "potentialOutcomes": [
+            "Become a hero in the fight for independence",
+            "Suffer personal and financial loss"
+          ],
+          "risk": "high",
+          "alignment": [
+            "duty",
+            "patriotism",
+            "courage"
+          ]
+        },
+        {
+          "id": "choice-2",
+          "title": "Maintain Neutrality",
+          "description": "Deciding to focus on the immediate safety and prosperity of his family, the blacksmith remains in Perth, continuing to supply tools and goods to both sides anonymously.",
+          "immediateConsequences": [
+            "Maintain stability and income",
+            "Avoid direct conflict"
+          ],
+          "potentialOutcomes": [
+            "Prosper as a skilled craftsman",
+            "Risk losing respect and moral standing"
+          ],
+          "risk": "medium",
+          "alignment": [
+            "survival",
+            "pragmatism",
+            "family loyalty"
+          ]
+        },
+        {
+          "id": "choice-3",
+          "title": "Seek Mastery in Edinburgh",
+          "description": "Opting for personal growth and prestige, the blacksmith moves to Edinburgh to learn under a renowned master, distancing himself from the political turmoil.",
+          "immediateConsequences": [
+            "Leave family and familiarize with the city's opportunities",
+            "Expand knowledge and skills"
+          ],
+          "potentialOutcomes": [
+            "Gain wealth and recognition",
+            "Face isolation from the nationalist movement"
+          ],
+          "risk": "medium",
+          "alignment": [
+            "ambition",
+            "personal development",
+            "opportunity"
+          ]
+        },
+        {
+          "id": "choice-4",
+          "title": "Forge a New Alliance",
+          "description": "Using his growing reputation, the blacksmith works to unite local craftsmen in providing covert support to the Scottish cause, creating a network of resistance.",
+          "immediateConsequences": [
+            "Establishes secret alliances",
+            "Risks exposure and retaliation"
+          ],
+          "potentialOutcomes": [
+            "Becomes a key player in the resistance",
+            "Faces potential imprisonment or death"
+          ],
+          "risk": "high",
+          "alignment": [
+            "innovation",
+            "leadership",
+            "nationalism"
+          ]
+        }
+      ],
+      "timeConstraint": "The call to arms requires an urgent decision as the conflict intensifies.",
+      "influencingFactors": [
+        "Family's safety",
+        "Loyalty to Scottish cause",
+        "Desire for personal achievement"
+      ],
+      "imagePrompt": "A determined young blacksmith at his forge, gazing at a newly sharpened claymore, while the shadows of potential paths—freedom, neutrality, opportunity—loom at the edge of the glowing fire."
+    }
+  ],
+  "choices": [
+    {
+      "pivotalMomentId": "pivotal-moment-a4f72",
+      "choiceId": "choice-3",
+      "choiceTitle": "Seek Mastery in Edinburgh",
+      "timestamp": "2025-11-01T14:31:41.572Z"
+    }
+  ],
+  "images": [],
+  "executionLogs": [
+    {
+      "agentId": "historicalContext",
+      "agentName": "Historical Context Agent",
+      "startTime": "2025-11-01T14:27:39.374Z",
+      "endTime": "2025-11-01T14:27:51.704Z",
+      "duration": 12330,
+      "inputData": {
+        "input.date": "1300-01-02",
+        "input.location": "Scotland"
+      },
+      "outputData": {
+        "_structure": "country, description, politicalSituation, religion, socialStructure, economy, conflicts, culturalHighlights, additionalContext"
+      },
+      "success": true
+    },
+    {
+      "agentId": "personaGeneration",
+      "agentName": "Persona Generation Agent",
+      "startTime": "2025-11-01T14:28:10.683Z",
+      "endTime": "2025-11-01T14:28:20.954Z",
+      "duration": 10271,
+      "inputData": {
+        "historicalContext": "{country, description, politicalSituation, religion, socialStructure, economy, conflicts, culturalHighlights, additionalContext}",
+        "config.numberOfPersonaOptions": 4
+      },
+      "outputData": {
+        "optionsCount": 4,
+        "_structure": "options, timestamp"
+      },
+      "success": true
+    },
+    {
+      "agentId": "lifelineGeneration",
+      "agentName": "Lifeline Generation Agent",
+      "startTime": "2025-11-01T14:28:55.753Z",
+      "endTime": "2025-11-01T14:29:04.294Z",
+      "duration": 8541,
+      "inputData": {
+        "historicalContext": "{country, description, politicalSituation, religion, socialStructure, economy, conflicts, culturalHighlights, additionalContext}",
+        "selectedPersona": "{id, title, familyBackground, birthCircumstances, initialAttributes, probability, opportunities, challenges}",
+        "lifelines": "[Array with 0 items]"
+      },
+      "outputData": {
+        "id": "lifeline-3b1f2",
+        "startAge": 0,
+        "endAge": 15,
+        "_structure": "id, startAge, endAge, narrative, events, characterDevelopment, pivotalMomentReached, imagePrompt"
+      },
+      "success": true
+    },
+    {
+      "agentId": "pivotalMomentGeneration",
+      "agentName": "Pivotal Moment Agent",
+      "startTime": "2025-11-01T14:30:16.559Z",
+      "endTime": "2025-11-01T14:30:34.500Z",
+      "duration": 17941,
+      "inputData": {
+        "historicalContext": "{country, description, politicalSituation, religion, socialStructure, economy, conflicts, culturalHighlights, additionalContext}",
+        "lifelines": "[Array with 1 items]",
+        "pivotalMoments": "[Array with 0 items]"
+      },
+      "outputData": {
+        "id": "pivotal-moment-a4f72",
+        "title": "Call of the Claymore",
+        "age": 25,
+        "year": "1315",
+        "choicesCount": 4,
+        "_structure": "id, age, year, title, situation, context, stakes, choices, timeConstraint, influencingFactors, imagePrompt"
+      },
+      "success": true
+    },
+    {
+      "agentId": "lifelineGeneration",
+      "agentName": "Lifeline Generation Agent",
+      "startTime": "2025-11-01T14:32:27.840Z",
+      "endTime": "2025-11-01T14:32:37.327Z",
+      "duration": 9487,
+      "inputData": {
+        "historicalContext": "{country, description, politicalSituation, religion, socialStructure, economy, conflicts, culturalHighlights, additionalContext}",
+        "selectedPersona": "{id, title, familyBackground, birthCircumstances, initialAttributes, probability, opportunities, challenges}",
+        "lifelines": "[Array with 1 items]"
+      },
+      "outputData": {
+        "id": "lifeline-3b1f2",
+        "startAge": 0,
+        "endAge": 15,
+        "_structure": "id, startAge, endAge, narrative, events, characterDevelopment, pivotalMomentReached, imagePrompt"
+      },
+      "success": true
+    }
+  ],
+  "gameState": {
+    "isAlive": true
+  },
+  "historicalContext": {
+    "country": "Kingdom of Scotland",
+    "description": "In the early 14th century, Scotland was a land marked by its rugged landscapes and a society deeply entrenched in medieval feudalism. The weather in January would have been harsh, with short days and cold temperatures, making travel and agriculture challenging. Villages were small and communities were closely knit, often centered around a local lord's manor.",
+    "politicalSituation": {
+      "rulers": [
+        "John Balliol"
+      ],
+      "governance": "Monarchy",
+      "details": "Scotland was under the rule of King John Balliol, who had been placed on the throne in 1292 after the Scottish succession crisis following the death of Alexander III. However, by early 1300, John was no longer in power as Edward I of England had forced him to abdicate in 1296, leading to the First War of Scottish Independence. Scotland was effectively under English occupation, with Edward I asserting control, although resistance was growing, particularly from figures like William Wallace."
+    },
+    "religion": {
+      "dominant": "Roman Catholicism",
+      "culturalBackground": "Religion played a central role in everyday life, with the Roman Catholic Church being the main religious institution. Monasteries and churches were centers of learning and community life, often serving as places of refuge during times of conflict."
+    },
+    "socialStructure": "Scottish society was feudal, with a strict hierarchy. At the top were the king and his noblemen, who held lands granted by the crown. Below them were knights and vassals, who provided military service in exchange for land. Peasants and serfs worked the land and had few rights, living under the authority of their local lord.",
+    "economy": "The economy was primarily agrarian, with most people engaged in farming and livestock rearing. Trade was limited but growing, with wool being a significant export. The economy was also affected by the ongoing conflicts, which disrupted trade routes and agricultural production.",
+    "conflicts": [
+      "First War of Scottish Independence"
+    ],
+    "culturalHighlights": [
+      "The emergence of Scottish national identity and the early legends of William Wallace, whose rebellion against English control would become central to Scottish folklore."
+    ],
+    "additionalContext": {
+      "key": "The political instability and English occupation were pivotal in shaping the future struggle for Scottish independence, fostering a sense of national identity that would echo through the centuries. The early 1300s were a formative period for Scotland, setting the stage for the battles and political maneuvers that would eventually lead to the Declaration of Arbroath in 1320, a key document in asserting Scotland's sovereignty."
+    }
+  },
+  "personaOptions": {
+    "options": [
+      {
+        "id": "persona-1",
+        "title": "Young Squire on a Noble Estate",
+        "familyBackground": {
+          "socialClass": "Nobility",
+          "occupation": "Landholding",
+          "wealth": "wealthy",
+          "familySize": 6,
+          "parentalStatus": "Both parents alive",
+          "location": "Near Stirling, within the noble estate"
+        },
+        "birthCircumstances": "Born in the family manor, with a midwife attending",
+        "initialAttributes": {
+          "gender": "male",
+          "ethnicity": "Scottish",
+          "physicalTraits": [
+            "tall",
+            "broad-shouldered"
+          ],
+          "earlyChildhood": "Raised with education in Latin and chivalry, destined to become a knight"
+        },
+        "probability": 25,
+        "opportunities": [
+          "Training as a knight",
+          "Access to noble networks"
+        ],
+        "challenges": [
+          "Political instability",
+          "Potential involvement in wars"
+        ]
+      },
+      {
+        "id": "persona-2",
+        "title": "Daughter of a Local Farmer",
+        "familyBackground": {
+          "socialClass": "Peasantry",
+          "occupation": "Farming",
+          "wealth": "modest",
+          "familySize": 7,
+          "parentalStatus": "Single parent (father)",
+          "location": "Small village near Edinburgh"
+        },
+        "birthCircumstances": "Born during a harsh winter, in the family cottage",
+        "initialAttributes": {
+          "gender": "female",
+          "ethnicity": "Scottish",
+          "physicalTraits": [
+            "freckled",
+            "brown hair"
+          ],
+          "earlyChildhood": "Helping with household and farm chores from an early age"
+        },
+        "probability": 30,
+        "opportunities": [
+          "Marriage alliance with another farming family",
+          "Learning herbal medicine from local women"
+        ],
+        "challenges": [
+          "Risk of crop failure",
+          "Limited social mobility"
+        ]
+      },
+      {
+        "id": "persona-3",
+        "title": "Apprentice to a Blacksmith",
+        "familyBackground": {
+          "socialClass": "Craftsmen",
+          "occupation": "Blacksmithing",
+          "wealth": "comfortable",
+          "familySize": 4,
+          "parentalStatus": "Both parents alive",
+          "location": "Town of Perth"
+        },
+        "birthCircumstances": "Born in the back room of the family workshop",
+        "initialAttributes": {
+          "gender": "male",
+          "ethnicity": "Scottish",
+          "physicalTraits": [
+            "strong build",
+            "dark eyes"
+          ],
+          "earlyChildhood": "Played around the forge, gradually learning the trade"
+        },
+        "probability": 20,
+        "opportunities": [
+          "Inheriting the family business",
+          "Training under a master blacksmith"
+        ],
+        "challenges": [
+          "Competition from other craftsmen",
+          "Demand for weapons due to conflicts"
+        ]
+      },
+      {
+        "id": "persona-4",
+        "title": "Monk's Novice in a Monastery",
+        "familyBackground": {
+          "socialClass": "Clergy",
+          "occupation": "Monastic life",
+          "wealth": "modest",
+          "familySize": 3,
+          "parentalStatus": "Orphan",
+          "location": "Abbey near Aberdeen"
+        },
+        "birthCircumstances": "Born to layparents, given to the monastery as a child",
+        "initialAttributes": {
+          "gender": "male",
+          "ethnicity": "Scottish",
+          "physicalTraits": [
+            "thin",
+            "blond hair"
+          ],
+          "earlyChildhood": "Raised within the monastery, educated in scripture and letters"
+        },
+        "probability": 25,
+        "opportunities": [
+          "Becoming a scribe or priest",
+          "Access to education and literacy"
+        ],
+        "challenges": [
+          "Vows of poverty and chastity",
+          "Political pressures on the Church"
+        ]
+      }
+    ],
+    "timestamp": "2025-11-01T00:00:00.000Z"
+  },
+  "selectedPersona": {
+    "id": "persona-3",
+    "title": "Apprentice to a Blacksmith",
+    "familyBackground": {
+      "socialClass": "Craftsmen",
+      "occupation": "Blacksmithing",
+      "wealth": "comfortable",
+      "familySize": 4,
+      "parentalStatus": "Both parents alive",
+      "location": "Town of Perth"
+    },
+    "birthCircumstances": "Born in the back room of the family workshop",
+    "initialAttributes": {
+      "gender": "male",
+      "ethnicity": "Scottish",
+      "physicalTraits": [
+        "strong build",
+        "dark eyes"
+      ],
+      "earlyChildhood": "Played around the forge, gradually learning the trade"
+    },
+    "probability": 20,
+    "opportunities": [
+      "Inheriting the family business",
+      "Training under a master blacksmith"
+    ],
+    "challenges": [
+      "Competition from other craftsmen",
+      "Demand for weapons due to conflicts"
+    ]
+  }
+}

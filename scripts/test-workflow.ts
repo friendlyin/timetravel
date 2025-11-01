@@ -20,10 +20,6 @@ import {
   addUserChoice,
   endSession,
   getSessionPath,
-  addHistoricalContext,
-  addPersonaOptions,
-  addLifeline,
-  addPivotalMoment,
   updateSessionMetadata,
 } from '../src/services/sessionService';
 import { generateHistoricalContext } from '../src/services/historicalContextService';
@@ -208,17 +204,18 @@ async function main() {
       // Execute agent based on type
       console.log('\n🔄 Executing agent...');
       
+      // Track whether user made a selection in this step
+      let userMadeSelection = false;
+      
       try {
         if (currentAgent === 'historicalContext') {
           const context = await generateHistoricalContext(sessionId);
-          addHistoricalContext(sessionId, context);
           
           console.log('\n📤 OUTPUT:');
           printJSON('Historical Context', context, 600);
           
         } else if (currentAgent === 'personaGeneration') {
           const personas = await generatePersonaOptions(sessionId);
-          addPersonaOptions(sessionId, personas);
           
           console.log('\n📤 OUTPUT:');
           console.log(`Generated ${personas.options.length} persona options`);
@@ -230,10 +227,10 @@ async function main() {
           setSelectedPersona(sessionId, selectedPersona);
           
           console.log(`\n✅ Selected: ${selectedPersona.title}`);
+          userMadeSelection = true; // User just made a selection
           
         } else if (currentAgent === 'lifelineGeneration') {
           const lifeline = await generateLifeline(sessionId);
-          addLifeline(sessionId, lifeline);
           
           console.log('\n📤 OUTPUT:');
           console.log(`\nLifeline: Age ${lifeline.startAge} → ${lifeline.endAge}`);
@@ -249,7 +246,6 @@ async function main() {
           
         } else if (currentAgent === 'pivotalMomentGeneration') {
           const moment = await generatePivotalMoment(sessionId);
-          addPivotalMoment(sessionId, moment);
           
           console.log('\n📤 OUTPUT:');
           console.log(`\n🎭 ${moment.title}`);
@@ -270,6 +266,7 @@ async function main() {
           });
           
           console.log(`\n✅ You chose: ${selectedChoice.title}`);
+          userMadeSelection = true; // User just made a selection
           
           // Check if we should end the game
           const updatedSession = readSession(sessionId);
@@ -298,9 +295,9 @@ async function main() {
       
       await waitForApproval();
       
-      // Determine next agent
+      // Determine next agent, passing whether user made a selection
       const sessionData = readSession(sessionId);
-      currentAgent = getNextAgent(currentAgent, sessionData);
+      currentAgent = getNextAgent(currentAgent, sessionData, userMadeSelection);
       
       if (currentAgent) {
         console.log(`\n➡️  Next agent: ${getAgentConfig(currentAgent).name}`);

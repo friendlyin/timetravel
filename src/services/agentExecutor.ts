@@ -40,12 +40,10 @@ export async function executeAgent(
     
     // 2. Build prompt with input data
     const promptVariables = buildPromptVariables(inputData, sessionId);
-    console.log(`   📝 Prompt variables:`, JSON.stringify(promptVariables, null, 2));
     const userPrompt = fillPromptTemplate(
       agentConfig.userPromptTemplate,
       promptVariables
     );
-    console.log(`   📄 User prompt preview:`, userPrompt.substring(0, 300) + '...');
     
     // 3. Call OpenAI (or return mock data)
     let output: any;
@@ -72,7 +70,7 @@ export async function executeAgent(
     // 4. Write output to session
     writeAgentOutput(sessionId, agentConfig.outputField, output);
     
-    // 5. Log execution
+    // 5. Log execution with summarized data
     const endTime = new Date().toISOString();
     const duration = Date.now() - startMs;
     
@@ -82,8 +80,8 @@ export async function executeAgent(
       startTime,
       endTime,
       duration,
-      inputData,
-      outputData: output,
+      inputData: summarizeInputData(inputData),
+      outputData: summarizeOutputData(output, agentConfig.outputField),
       success: true,
     };
     
@@ -257,5 +255,73 @@ function getNestedValue(obj: any, path: string): any {
   }
   
   return value;
+}
+
+/**
+ * Summarize input data to reduce JSON size
+ * Instead of including full objects, just include metadata
+ */
+function summarizeInputData(inputData: Record<string, any>): Record<string, any> {
+  const summary: Record<string, any> = {};
+  
+  for (const [key, value] of Object.entries(inputData)) {
+    if (typeof value === 'string' || typeof value === 'number' || typeof value === 'boolean') {
+      // Keep primitives as-is
+      summary[key] = value;
+    } else if (Array.isArray(value)) {
+      // For arrays, just show the count
+      summary[key] = `[Array with ${value.length} items]`;
+    } else if (typeof value === 'object' && value !== null) {
+      // For objects, just show the keys
+      summary[key] = `{${Object.keys(value).join(', ')}}`;
+    } else {
+      summary[key] = value;
+    }
+  }
+  
+  return summary;
+}
+
+/**
+ * Summarize output data to reduce JSON size
+ * Keep only essential information about what was generated
+ */
+function summarizeOutputData(output: any, _outputField: string): any {
+  if (!output) {
+    return null;
+  }
+  
+  // For array outputs (lifelines, pivotalMoments, etc.)
+  if (Array.isArray(output)) {
+    return `[Array with ${output.length} items]`;
+  }
+  
+  // For object outputs, create a minimal summary
+  if (typeof output === 'object') {
+    const summary: Record<string, any> = {};
+    
+    // Keep ID fields
+    if (output.id) summary.id = output.id;
+    if (output.title) summary.title = output.title;
+    if (output.age) summary.age = output.age;
+    if (output.year) summary.year = output.year;
+    
+    // For lifelines
+    if (output.startAge !== undefined) summary.startAge = output.startAge;
+    if (output.endAge !== undefined) summary.endAge = output.endAge;
+    
+    // For persona options
+    if (output.options) summary.optionsCount = output.options.length;
+    
+    // For pivotal moments
+    if (output.choices) summary.choicesCount = output.choices.length;
+    
+    // Show what keys exist without full content
+    summary._structure = Object.keys(output).join(', ');
+    
+    return summary;
+  }
+  
+  return output;
 }
 
