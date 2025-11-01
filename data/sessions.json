@@ -1,6 +1,12 @@
 {
   "sessions": [
     {
+      "id": "session-1762019861872",
+      "label": "New life 22",
+      "subtitle": "Created Nov 1, 2025, 5:57 PM",
+      "createdAt": 1762019861872
+    },
+    {
       "id": "session-20251101-175230",
       "label": "Cairo, Nile Delta, Ottoman Empire · Year 1605",
       "subtitle": "Started Nov 1, 2025, 5:52 PM · Source OPENAI",
