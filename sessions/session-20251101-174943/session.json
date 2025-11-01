@@ -1,0 +1,646 @@
+{
+  "metadata": {
+    "sessionId": "session-20251101-174943",
+    "startTime": "2025-11-01T17:49:43.119Z",
+    "currentStep": "Awaiting choice",
+    "status": "active",
+    "totalSteps": 6
+  },
+  "input": {
+    "date": "1323-01-01",
+    "location": "Marrakesh, North Africa, Kingdom of Morocco"
+  },
+  "config": {
+    "numberOfPersonaOptions": 4,
+    "maxPivotalMoments": 5,
+    "generateImages": false
+  },
+  "lifelines": [
+    {
+      "id": "lifeline-persona-3-001",
+      "startAge": 0,
+      "endAge": 12,
+      "narrative": "Born into the throes of servitude, the young boy known only by his given name, Bakari, arrived in Marrakesh as a mere child. The journey across the scorching sands of the Sahara was but a distant, hazy memory by the time he settled into the routines of the noble household that would define his early years. As he grew, Bakari's days unfolded in the bustling heart of the noble family compound, where he was tasked with simple chores that gradually evolved into more complex duties. The air was thick with the scent of spices and the constant hum of trade, a world at once alien and spectacular to his young eyes. Over time, Bakari picked up the Arabic language, piecing together the phrases and customs that would become a crucial part of his identity. The bustling souks and towering red sandstone edifices of Marrakesh became his playground and classroom, molding him into a resilient and observant young man.",
+      "events": [
+        {
+          "age": 3,
+          "year": "1326",
+          "event": "Bakari witnessed the grandeur of a procession organized for Sultan Abu Sa'id Uthman II passing by the household, sparking a deep curiosity about the power structures of his world.",
+          "impact": "moderate",
+          "location": "Marrakesh, near the noble household"
+        },
+        {
+          "age": 5,
+          "year": "1328",
+          "event": "He began learning basic cooking skills from the kitchen staff, marking the beginning of his formal education in practical tasks.",
+          "impact": "minor",
+          "location": "Noble household kitchen, Marrakesh"
+        },
+        {
+          "age": 8,
+          "year": "1331",
+          "event": "Bakari made a friend among the craftsmen who visited the household, a potter who taught him the art of shaping clay.",
+          "impact": "moderate",
+          "location": "Courtyard of the noble household, Marrakesh"
+        },
+        {
+          "age": 10,
+          "year": "1333",
+          "event": "A neighboring nobleman mentioned the concept of manumission to Bakari, igniting a faint but persistent hope of freedom.",
+          "impact": "significant",
+          "location": "Marketplace, Marrakesh"
+        },
+        {
+          "age": 12,
+          "year": "1335",
+          "event": "During a rare trip to the Ben Youssef Mosque, Bakari was awestruck by the lectures of a scholar, and his interest in learning expanded beyond the practical.",
+          "impact": "major",
+          "location": "Ben Youssef Mosque, Marrakesh"
+        }
+      ],
+      "characterDevelopment": {
+        "skills": [
+          "Basic cooking",
+          "Arabic language",
+          "Clay pottery"
+        ],
+        "relationships": [
+          "Craftsman friend, members of noble household"
+        ],
+        "beliefs": [
+          "Hope for freedom, respect for learning and knowledge"
+        ],
+        "reputation": "Hardworking, observant young servant within the household",
+        "physicalCondition": "Strong and healthy, adapted to physical labor",
+        "mentalState": "Curious, hopeful yet aware of his constrained circumstances"
+      },
+      "pivotalMomentReached": true,
+      "imagePrompt": "A young Bakari, standing in awe beneath the grand archways of the Ben Youssef Mosque, sunlight filtering through, illuminating his face, surrounded by the soft murmurs of scholarly discourse."
+    },
+    {
+      "id": "lifeline-persona-3-002",
+      "startAge": 12,
+      "endAge": 22,
+      "narrative": "From the moment Bakari chose to remain in servitude, his path was set against the vibrant backdrop of Marrakesh's evolving landscape. At 13, the noble household he served was bustling with guests preparing for a grand festival, showcasing the city's rich cultural tapestry. Bakari, tasked with assisting the household's master in organizing the event, absorbed the intricacies of social interactions among the elite, a skill he would refine over the years. As he matured, Bakari's responsibilities grew, encompassing not only household duties but also errands that took him across Marrakesh, further ingraining his connection to the city and its people.\n\nBy the age of 17, Bakari had become invaluable to the household. Trusted to manage more complex tasks, he was often found in the souks, bartering for the finest goods. His ability to navigate the bustling markets with agility and charm did not go unnoticed. It was during these excursions that Bakari met Amir, a young scholar from the Ben Youssef Mosque. Their shared curiosity and thirst for knowledge led to a friendship that opened Bakari's world to new ideas. Despite his status, Bakari quietly pursued learning, mastering reading and writing in Arabic, skills rarely afforded to someone in his position.\n\nAs Bakari approached his 22nd year, the city faced increased tensions between the Marinids and the Almohad remnants, which seeped into daily life. During this period, the household he served was thrust into uncertainty. The master, fearing instability, began speaking of distant lands. This discourse rekindled Bakari's longing for freedom and a life beyond servitude. His conversations with Amir about the world beyond Marrakesh fueled his dreams. Bakari now faced a pivotal choice: remain loyal to the household that had shaped him, or seek a new life of autonomy, potentially with Amir's help, in a world of his own making.",
+      "events": [
+        {
+          "age": 13,
+          "year": "1336",
+          "event": "Assisted in organizing a grand festival for the household, gaining insights into the social dynamics of the elite.",
+          "impact": "moderate",
+          "location": "Noble household, Marrakesh"
+        },
+        {
+          "age": 15,
+          "year": "1338",
+          "event": "Tasked with managing household errands, Bakari honed his negotiation skills in the bustling souks.",
+          "impact": "significant",
+          "location": "Souks of Marrakesh"
+        },
+        {
+          "age": 17,
+          "year": "1340",
+          "event": "Developed a friendship with Amir, a scholar from the Ben Youssef Mosque, who encouraged his pursuit of literacy.",
+          "impact": "major",
+          "location": "Ben Youssef Mosque, Marrakesh"
+        },
+        {
+          "age": 19,
+          "year": "1342",
+          "event": "Witnessed growing tensions in the city as political unrest threatened the stability of the Marinid rule.",
+          "impact": "moderate",
+          "location": "Marrakesh streets"
+        },
+        {
+          "age": 22,
+          "year": "1345",
+          "event": "Faced with a decision as his master considered relocating due to political instability, rekindling Bakari's desire for freedom.",
+          "impact": "major",
+          "location": "Noble household, Marrakesh"
+        }
+      ],
+      "characterDevelopment": {
+        "skills": [
+          "Negotiation and bartering",
+          "Reading and writing in Arabic",
+          "Organizational and event planning"
+        ],
+        "relationships": [
+          "Amir, the young scholar",
+          "Master of the noble household"
+        ],
+        "beliefs": [
+          "Value of knowledge and education",
+          "Desire for personal autonomy"
+        ],
+        "reputation": "Highly regarded servant, known for his intelligence and resourcefulness",
+        "physicalCondition": "Robust and strong, accustomed to physical labor",
+        "mentalState": "Determined, introspective, torn between loyalty and personal aspirations"
+      },
+      "pivotalMomentReached": true,
+      "imagePrompt": "Bakari, standing at a crossroads in Marrakesh, with the bustling market on one side and the serene outline of the Ben Youssef Mosque on the other, contemplating his future as the setting sun casts long shadows."
+    }
+  ],
+  "pivotalMoments": [
+    {
+      "id": "pivotal-moment-001-bakari",
+      "age": 12,
+      "year": "1335",
+      "title": "The Crossroads of Knowledge and Freedom",
+      "situation": "While attending a sermon at the Ben Youssef Mosque, Bakari encounters a scholar who, impressed by Bakari's questions, offers to teach him to read and write, an unusual opportunity for someone in his social position.",
+      "context": "Bakari's exposure to scholarly lectures has ignited within him a passion for learning. This interest, coupled with his growing curiosity about freedom and self-determination, has led him to a pivotal juncture: the possibility of pursuing education and a potential new path in life.",
+      "stakes": "Bakari must choose between remaining in servitude, pursuing knowledge in secret, or striving for freedom—each path promising different opportunities and risks.",
+      "choices": [
+        {
+          "id": "choice-1",
+          "title": "Accept the Scholar's Offer",
+          "description": "Bakari secretly meets the scholar to learn reading and writing, potentially gaining knowledge that could transform his worldview.",
+          "immediateConsequences": [
+            "Begins clandestine studies",
+            "Forms a new mentorship bond"
+          ],
+          "potentialOutcomes": [
+            "New intellectual horizons open",
+            "Increased risk of punishment if discovered"
+          ],
+          "risk": "high",
+          "alignment": [
+            "Ambition",
+            "Curiosity",
+            "Defiance"
+          ]
+        },
+        {
+          "id": "choice-2",
+          "title": "Seek Manumission",
+          "description": "Bakari approaches the nobleman who mentioned manumission, seeking freedom through official channels.",
+          "immediateConsequences": [
+            "Initiates a delicate negotiation",
+            "Possible increase in tensions within household"
+          ],
+          "potentialOutcomes": [
+            "Achieves freedom and self-determination",
+            "Fails and faces stricter conditions"
+          ],
+          "risk": "extreme",
+          "alignment": [
+            "Freedom",
+            "Courage",
+            "Hope"
+          ]
+        },
+        {
+          "id": "choice-3",
+          "title": "Remain in Servitude",
+          "description": "Bakari decides to remain in his current position, continuing his duties while observing and learning quietly from surroundings.",
+          "immediateConsequences": [
+            "Maintains status quo",
+            "Avoids immediate risks"
+          ],
+          "potentialOutcomes": [
+            "Potential for slow improvement",
+            "Stagnation in current status"
+          ],
+          "risk": "low",
+          "alignment": [
+            "Pragmatism",
+            "Survival",
+            "Loyalty"
+          ]
+        },
+        {
+          "id": "choice-4",
+          "title": "Run Away",
+          "description": "Bakari plans an escape from Marrakesh, seeking a new life beyond the confines of servitude.",
+          "immediateConsequences": [
+            "Faces the dangers of desert escape",
+            "Cuts ties with current life"
+          ],
+          "potentialOutcomes": [
+            "New start in a distant place",
+            "Capture and severe punishment"
+          ],
+          "risk": "extreme",
+          "alignment": [
+            "Independence",
+            "Risk-taking",
+            "Desperation"
+          ]
+        }
+      ],
+      "timeConstraint": "The scholar will only remain in Marrakesh for a few months.",
+      "influencingFactors": [
+        "Bakari’s hope for freedom",
+        "His growing thirst for knowledge",
+        "The ever-watchful eyes of the noble household"
+      ],
+      "imagePrompt": "Bakari standing at the mosque's entrance, the scholar gesturing towards a book, the city bustling in the background."
+    },
+    {
+      "id": "pivotal-moment-002",
+      "age": 22,
+      "year": "1345",
+      "title": "Crossroads of Destiny",
+      "situation": "Bakari stands at the edge of the noble courtyard, the murmur of distant unrest reaching his ears. His master's plans to flee Marrakesh due to political instability have been laid bare. Amir, his scholarly friend, beckons him towards a life of learning and freedom. A choice must be made under the waning daylight.",
+      "context": "This moment is pivotal as Bakari's loyalty is tested against his longing for a life of autonomy and knowledge. His master plans to relocate, leaving Bakari to decide whether to remain in a life of servitude or pursue his own path with the help of Amir.",
+      "stakes": "Bakari might lose security and status if he leaves, but he could gain freedom and knowledge. Staying secures his present life but might stifle his dreams.",
+      "choices": [
+        {
+          "id": "choice-1",
+          "title": "Follow the Master",
+          "description": "Remain loyal to the household and follow your master to distant lands, maintaining your current position and status.",
+          "immediateConsequences": [
+            "Secure living conditions are preserved",
+            "Opportunity to travel and see new places"
+          ],
+          "potentialOutcomes": [
+            "Potential for a stable but unremarkable life",
+            "Possibility to rise within the household's ranks"
+          ],
+          "risk": "medium",
+          "alignment": [
+            "Duty",
+            "Security",
+            "Loyalty"
+          ]
+        },
+        {
+          "id": "choice-2",
+          "title": "Join Amir on a Quest for Knowledge",
+          "description": "Embrace freedom and join Amir, leaving servitude behind to pursue a life of learning and exploration in Marrakesh's intellectual circles.",
+          "immediateConsequences": [
+            "Loss of security and shelter",
+            "Increased personal freedom"
+          ],
+          "potentialOutcomes": [
+            "Enriching intellectual growth and self-discovery",
+            "Chance to influence change through knowledge"
+          ],
+          "risk": "high",
+          "alignment": [
+            "Ambition",
+            "Personal growth",
+            "Knowledge"
+          ]
+        },
+        {
+          "id": "choice-3",
+          "title": "Start Anew in the Souks",
+          "description": "Leverage your negotiation skills to begin trading in the souks, crafting an independent life amidst the vibrant markets of Marrakesh.",
+          "immediateConsequences": [
+            "Immediate need for survival through trade",
+            "Potential isolation from former circles"
+          ],
+          "potentialOutcomes": [
+            "Possible success as a merchant",
+            "Risk of failure and poverty"
+          ],
+          "risk": "extreme",
+          "alignment": [
+            "Independence",
+            "Self-reliance",
+            "Entrepreneurship"
+          ]
+        },
+        {
+          "id": "choice-4",
+          "title": "Seek Refuge with a Local Tribe",
+          "description": "Forge a new alliance with a local tribe, offering your skills in exchange for protection and a sense of community.",
+          "immediateConsequences": [
+            "Immediate cultural shift",
+            "Potential acceptance or rejection by the tribe"
+          ],
+          "potentialOutcomes": [
+            "Integration into a new community",
+            "Opportunity to learn new ways of life"
+          ],
+          "risk": "medium",
+          "alignment": [
+            "Community",
+            "Adaptability",
+            "Survival"
+          ]
+        }
+      ],
+      "timeConstraint": "The master's departure is imminent, and Amir's offer will not stand indefinitely.",
+      "influencingFactors": [
+        "Political instability in Marrakesh",
+        "Bakari's skills and ambitions",
+        "Amir's friendship and offer"
+      ],
+      "imagePrompt": "Bakari at the crossroads of a bustling Marrakesh street, torn between the noble household and the mosques, with traders and travelers passing by, as the city's future hangs in balance."
+    }
+  ],
+  "choices": [
+    {
+      "pivotalMomentId": "pivotal-moment-001-bakari",
+      "choiceId": "choice-3",
+      "choiceTitle": "Remain in Servitude",
+      "timestamp": "2025-11-01T17:50:40.747Z"
+    }
+  ],
+  "imagePrompts": [],
+  "images": [],
+  "executionLogs": [
+    {
+      "agentId": "historicalContext",
+      "agentName": "Historical Context Agent",
+      "startTime": "2025-11-01T17:49:43.119Z",
+      "endTime": "2025-11-01T17:49:51.349Z",
+      "duration": 8230,
+      "inputData": {
+        "input.date": "1323-01-01",
+        "input.location": "Marrakesh, North Africa, Kingdom of Morocco"
+      },
+      "outputData": {
+        "_structure": "country, description, politicalSituation, religion, socialStructure, economy, conflicts, culturalHighlights, additionalContext"
+      },
+      "success": true
+    },
+    {
+      "agentId": "personaGeneration",
+      "agentName": "Persona Generation Agent",
+      "startTime": "2025-11-01T17:49:51.353Z",
+      "endTime": "2025-11-01T17:50:08.855Z",
+      "duration": 17502,
+      "inputData": {
+        "historicalContext": "{country, description, politicalSituation, religion, socialStructure, economy, conflicts, culturalHighlights, additionalContext}",
+        "config.numberOfPersonaOptions": 4
+      },
+      "outputData": {
+        "optionsCount": 4,
+        "_structure": "options, timestamp"
+      },
+      "success": true
+    },
+    {
+      "agentId": "lifelineGeneration",
+      "agentName": "Lifeline Generation Agent",
+      "startTime": "2025-11-01T17:50:11.285Z",
+      "endTime": "2025-11-01T17:50:27.049Z",
+      "duration": 15764,
+      "inputData": {
+        "historicalContext": "{country, description, politicalSituation, religion, socialStructure, economy, conflicts, culturalHighlights, additionalContext}",
+        "selectedPersona": "{id, title, familyBackground, birthCircumstances, initialAttributes, probability, opportunities, challenges}",
+        "lifelines": "[Array with 0 items]"
+      },
+      "outputData": {
+        "id": "lifeline-persona-3-001",
+        "startAge": 0,
+        "endAge": 12,
+        "_structure": "id, startAge, endAge, narrative, events, characterDevelopment, pivotalMomentReached, imagePrompt"
+      },
+      "success": true
+    },
+    {
+      "agentId": "pivotalMomentGeneration",
+      "agentName": "Pivotal Moment Agent",
+      "startTime": "2025-11-01T17:50:27.057Z",
+      "endTime": "2025-11-01T17:50:37.220Z",
+      "duration": 10163,
+      "inputData": {
+        "historicalContext": "{country, description, politicalSituation, religion, socialStructure, economy, conflicts, culturalHighlights, additionalContext}",
+        "lifelines": "[Array with 1 items]",
+        "pivotalMoments": "[Array with 0 items]"
+      },
+      "outputData": {
+        "id": "pivotal-moment-001-bakari",
+        "title": "The Crossroads of Knowledge and Freedom",
+        "age": 12,
+        "year": "1335",
+        "choicesCount": 4,
+        "_structure": "id, age, year, title, situation, context, stakes, choices, timeConstraint, influencingFactors, imagePrompt"
+      },
+      "success": true
+    },
+    {
+      "agentId": "lifelineGeneration",
+      "agentName": "Lifeline Generation Agent",
+      "startTime": "2025-11-01T17:50:40.754Z",
+      "endTime": "2025-11-01T17:50:55.683Z",
+      "duration": 14929,
+      "inputData": {
+        "historicalContext": "{country, description, politicalSituation, religion, socialStructure, economy, conflicts, culturalHighlights, additionalContext}",
+        "selectedPersona": "{id, title, familyBackground, birthCircumstances, initialAttributes, probability, opportunities, challenges}",
+        "lifelines": "[Array with 1 items]"
+      },
+      "outputData": {
+        "id": "lifeline-persona-3-002",
+        "startAge": 12,
+        "endAge": 22,
+        "_structure": "id, startAge, endAge, narrative, events, characterDevelopment, pivotalMomentReached, imagePrompt"
+      },
+      "success": true
+    },
+    {
+      "agentId": "pivotalMomentGeneration",
+      "agentName": "Pivotal Moment Agent",
+      "startTime": "2025-11-01T17:50:55.700Z",
+      "endTime": "2025-11-01T17:51:07.089Z",
+      "duration": 11388,
+      "inputData": {
+        "historicalContext": "{country, description, politicalSituation, religion, socialStructure, economy, conflicts, culturalHighlights, additionalContext}",
+        "lifelines": "[Array with 2 items]",
+        "pivotalMoments": "[Array with 1 items]"
+      },
+      "outputData": {
+        "id": "pivotal-moment-002",
+        "title": "Crossroads of Destiny",
+        "age": 22,
+        "year": "1345",
+        "choicesCount": 4,
+        "_structure": "id, age, year, title, situation, context, stakes, choices, timeConstraint, influencingFactors, imagePrompt"
+      },
+      "success": true
+    }
+  ],
+  "gameState": {
+    "isAlive": true
+  },
+  "historicalContext": {
+    "country": "Kingdom of Morocco",
+    "description": "In 1323, Marrakesh was a vibrant city within the Kingdom of Morocco, known for its red sandstone buildings, bustling markets, and as a hub of Islamic culture and learning. The city had established itself as a significant center of commerce and trade in North Africa, linking sub-Saharan Africa to Europe through the trans-Saharan trade routes.",
+    "politicalSituation": {
+      "rulers": [
+        "Abu Sa'id Uthman II"
+      ],
+      "governance": "Monarchy",
+      "details": "Marrakesh was under the rule of the Marinid dynasty, which had taken control from the Almohads. Abu Sa'id Uthman II, the Marinid Sultan at the time, focused on consolidating power and expanding the dynasty's influence across North Africa. His reign was marked by efforts to strengthen the state's administrative structures and support trade."
+    },
+    "religion": {
+      "dominant": "Islam",
+      "culturalBackground": "Islam was the dominant religion, deeply influencing the culture, law, and daily life. The city was home to many mosques and madrasas, serving as centers for religious and scholarly activities. The influence of Islamic law, or Sharia, was pervasive in social and legal matters."
+    },
+    "socialStructure": "The social hierarchy was stratified, with the Sultan and his court at the top. Below them were wealthy merchants and landowners, followed by craftsmen and laborers. At the base of the social structure were slaves, many of whom were brought through the trans-Saharan trade. The society was also characterized by tribal affiliations and loyalties.",
+    "economy": "Marrakesh's economy thrived on trade, with markets bustling with goods like gold, salt, textiles, and spices. The city was a key stop on the trans-Saharan trade routes, connecting the riches of sub-Saharan Africa with the Mediterranean world. Agriculture around Marrakesh also contributed to its economy, producing olives, dates, and grains.",
+    "conflicts": [
+      "Ongoing skirmishes and power struggles between Marinids and remnants of the Almohad supporters"
+    ],
+    "culturalHighlights": [
+      "The architectural developments in Marrakesh, including the completion of the Ben Youssef Mosque and madrasas, reflecting the city's importance as a center of Islamic learning"
+    ],
+    "additionalContext": {
+      "key": "Marrakesh at this time was also known for its beautiful gardens and innovative irrigation systems, which were crucial for sustaining its population and agriculture in the semi-arid region."
+    }
+  },
+  "personaOptions": {
+    "options": [
+      {
+        "id": "persona-1",
+        "title": "Son of a Wealthy Merchant",
+        "familyBackground": {
+          "socialClass": "Wealthy Merchant",
+          "occupation": "Trade in textiles and spices",
+          "wealth": "very wealthy",
+          "familySize": 7,
+          "parentalStatus": "Both parents alive",
+          "location": "Medina of Marrakesh"
+        },
+        "birthCircumstances": "Born in a spacious riad within the bustling medina, surrounded by luxury.",
+        "initialAttributes": {
+          "gender": "male",
+          "ethnicity": "Arab-Berber",
+          "physicalTraits": [
+            "tall",
+            "dark hair"
+          ],
+          "earlyChildhood": "Grew up in comfort, receiving early education from private tutors in mathematics and languages."
+        },
+        "probability": 30,
+        "opportunities": [
+          "Access to family trade networks",
+          "Education in madrasas"
+        ],
+        "challenges": [
+          "Pressure to maintain family's wealth",
+          "Navigating political alliances"
+        ]
+      },
+      {
+        "id": "persona-2",
+        "title": "Daughter of an Artisan",
+        "familyBackground": {
+          "socialClass": "Craftsmen",
+          "occupation": "Metalworking",
+          "wealth": "modest",
+          "familySize": 6,
+          "parentalStatus": "Single parent",
+          "location": "Outskirts of Marrakesh"
+        },
+        "birthCircumstances": "Born at home with the assistance of a midwife in a modest dwelling.",
+        "initialAttributes": {
+          "gender": "female",
+          "ethnicity": "Berber",
+          "physicalTraits": [
+            "slender",
+            "Hazel eyes"
+          ],
+          "earlyChildhood": "Helped her family with daily chores and learned basic skills in her father's workshop."
+        },
+        "probability": 25,
+        "opportunities": [
+          "Apprenticeship in artisan crafts",
+          "Community support"
+        ],
+        "challenges": [
+          "Limited access to formal education",
+          "Economic instability"
+        ]
+      },
+      {
+        "id": "persona-3",
+        "title": "Slave from Sub-Saharan Africa",
+        "familyBackground": {
+          "socialClass": "Slave",
+          "occupation": "Household servant",
+          "wealth": "poor",
+          "familySize": 1,
+          "parentalStatus": "Separated from family",
+          "location": "Noble household in Marrakesh"
+        },
+        "birthCircumstances": "Born into slavery, brought to Marrakesh as a child through trans-Saharan trade.",
+        "initialAttributes": {
+          "gender": "male",
+          "ethnicity": "Sub-Saharan African",
+          "physicalTraits": [
+            "muscular",
+            "dark skin"
+          ],
+          "earlyChildhood": "Grew up working in a noble household, learning the Arabic language and local customs."
+        },
+        "probability": 20,
+        "opportunities": [
+          "Learning new skills from masters",
+          "Possibility of manumission"
+        ],
+        "challenges": [
+          "Lack of freedom",
+          "Separation from cultural roots"
+        ]
+      },
+      {
+        "id": "persona-4",
+        "title": "Son of a Farmer",
+        "familyBackground": {
+          "socialClass": "Peasant",
+          "occupation": "Agriculture (olive and grain farming)",
+          "wealth": "modest",
+          "familySize": 8,
+          "parentalStatus": "Both parents alive",
+          "location": "Rural outskirts of Marrakesh"
+        },
+        "birthCircumstances": "Born in a rural farming community, in a simple mud-brick home.",
+        "initialAttributes": {
+          "gender": "male",
+          "ethnicity": "Berber",
+          "physicalTraits": [
+            "stocky",
+            "brown eyes"
+          ],
+          "earlyChildhood": "Spent early years helping on the farm, learning farming techniques and living close to nature."
+        },
+        "probability": 25,
+        "opportunities": [
+          "Possibility to expand farming operations",
+          "Market access in Marrakesh"
+        ],
+        "challenges": [
+          "Vulnerability to drought",
+          "Heavy labor demands"
+        ]
+      }
+    ],
+    "timestamp": "2025-11-01T00:00:00.000Z"
+  },
+  "selectedPersona": {
+    "id": "persona-3",
+    "title": "Slave from Sub-Saharan Africa",
+    "familyBackground": {
+      "socialClass": "Slave",
+      "occupation": "Household servant",
+      "wealth": "poor",
+      "familySize": 1,
+      "parentalStatus": "Separated from family",
+      "location": "Noble household in Marrakesh"
+    },
+    "birthCircumstances": "Born into slavery, brought to Marrakesh as a child through trans-Saharan trade.",
+    "initialAttributes": {
+      "gender": "male",
+      "ethnicity": "Sub-Saharan African",
+      "physicalTraits": [
+        "muscular",
+        "dark skin"
+      ],
+      "earlyChildhood": "Grew up working in a noble household, learning the Arabic language and local customs."
+    },
+    "probability": 20,
+    "opportunities": [
+      "Learning new skills from masters",
+      "Possibility of manumission"
+    ],
+    "challenges": [
+      "Lack of freedom",
+      "Separation from cultural roots"
+    ]
+  }
+}

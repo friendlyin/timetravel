@@ -1,6 +1,32 @@
 {
   "sessions": [
     {
+      "id": "session-20251101-175230",
+      "label": "Cairo, Nile Delta, Ottoman Empire · Year 1605",
+      "subtitle": "Started Nov 1, 2025, 5:52 PM · Source OPENAI",
+      "createdAt": 1762019550957,
+      "sessionDataId": "session-20251101-175230"
+    },
+    {
+      "id": "session-1762019543935",
+      "label": "New life 20",
+      "subtitle": "Created Nov 1, 2025, 5:52 PM",
+      "createdAt": 1762019543935
+    },
+    {
+      "id": "session-20251101-174943",
+      "label": "Marrakesh, North Africa, Kingdom of Morocco · Year 1323",
+      "subtitle": "Started Nov 1, 2025, 5:49 PM · Source OPENAI",
+      "createdAt": 1762019383119,
+      "sessionDataId": "session-20251101-174943"
+    },
+    {
+      "id": "session-1762019312957",
+      "label": "New life 18",
+      "subtitle": "Created Nov 1, 2025, 5:48 PM",
+      "createdAt": 1762019312957
+    },
+    {
       "id": "session-20251101-174046",
       "label": "Veliky Novgorod, Novgorod Oblast, Soviet Union · Year 1938",
       "subtitle": "Started Nov 1, 2025, 5:40 PM · Source OPENAI",
@@ -113,5 +139,5 @@
       "sessionDataId": "session-20251101-160504"
     }
   ],
-  "selectedId": "session-20251101-174046"
+  "selectedId": "session-20251101-175230"
 }

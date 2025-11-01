@@ -74,32 +74,32 @@ export const WORKFLOW_STEPS: WorkflowStep[] = [
  * Configuration for game flow
  */
 export const GAME_CONFIG = {
-  // Number of persona options to generate
-  defaultPersonaOptions: 4,
-  
-  // Number of pivotal moments before character's death
-  // This can be varied based on the character's circumstances
-  minPivotalMoments: 3,
-  maxPivotalMoments: 7,
-  defaultPivotalMoments: 5,
-  
-  // Age ranges
-  defaultStartAge: 0, // Characters start at birth
-  typicalDeathAgeRange: {
-    min: 30, // Historical life expectancy could be quite low
-    max: 80,
-  },
-  
-  // Image generation preferences
-  generateImageForEachLifeline: true,
-  generateImageForEachPivotalMoment: true,
-  
-  // Lifeline generation preferences
-  typicalYearsBetweenPivotalMoments: {
-    min: 5,
-    max: 15,
-  },
-} as const;
+    // Number of persona options to generate
+    defaultPersonaOptions: 4,
+
+    // Number of pivotal moments before character's death
+    // This can be varied based on the character's circumstances
+    minPivotalMoments: 3,
+    maxPivotalMoments: 7,
+    defaultPivotalMoments: 5,
+
+    // Age ranges
+    defaultStartAge: 0, // Characters start at birth
+    typicalDeathAgeRange: {
+        min: 30, // Historical life expectancy could be quite low
+        max: 80
+    },
+
+    // Image generation preferences
+    generateImageForEachLifeline: true, // Temporarily disabled due to Gemini quota
+    generateImageForEachPivotalMoment: true, // Temporarily disabled due to Gemini quota
+
+    // Lifeline generation preferences
+    typicalYearsBetweenPivotalMoments: {
+        min: 5,
+        max: 15
+    }
+} as const
 
 /**
  * Check if game should end based on session state

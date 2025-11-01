@@ -613,38 +613,23 @@ function LifelineCard({ lifeline, images = [] }: LifelineCardProps) {
             </p>
             {hasImages && (
                 <div className="flex flex-col gap-3">
-                    <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-                        {visibleImages.map((image) => (
-                            <figure
-                                key={image.id}
-                                className="flex flex-col gap-2"
-                            >
-                                <div className="overflow-hidden rounded-lg border border-slate-200 bg-slate-100 dark:border-slate-700 dark:bg-slate-800">
-                                    <Image
-                                        src={image.url}
-                                        alt={
-                                            image.revisedPrompt ??
-                                            lifeline.imagePrompt ??
-                                            'Illustration of the lifeline segment'
-                                        }
-                                        width={896}
-                                        height={512}
-                                        className="h-48 w-full object-cover"
-                                        sizes="(min-width: 640px) 50vw, 100vw"
-                                        loading="lazy"
-                                        unoptimized
-                                    />
-                                </div>
-                                {(image.revisedPrompt ||
-                                    lifeline.imagePrompt) && (
-                                    <figcaption className="text-xs text-slate-500 dark:text-slate-400">
-                                        {image.revisedPrompt ??
-                                            lifeline.imagePrompt}
-                                    </figcaption>
-                                )}
-                            </figure>
-                        ))}
-                    </div>
+                    {visibleImages.map((image) => (
+                        <Image
+                            key={image.id}
+                            src={image.url}
+                            alt={
+                                image.revisedPrompt ??
+                                lifeline.imagePrompt ??
+                                'Illustration of the lifeline segment'
+                            }
+                            width={896}
+                            height={512}
+                            className="w-full object-cover"
+                            sizes="(min-width: 640px) 50vw, 100vw"
+                            loading="lazy"
+                            unoptimized
+                        />
+                    ))}
                 </div>
             )}
             {lifeline.events.length > 0 && (
