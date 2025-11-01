@@ -6,10 +6,16 @@
  */
 
 import { getAgentConfig } from '@/config/agents.config';
-import { executeAgent } from './agentExecutor';
-import { readSession, getImageFilePath, writeSession } from './sessionService';
-import { GeneratedImage } from '@/types/session.types';
 import { downloadImage } from '@/lib/openai';
+import { GeneratedImage } from '@/types/session.types';
+import { executeAgent } from './agentExecutor';
+import { getImageFilePath, readSession, writeSession } from './sessionService';
+
+function buildSessionImagePath(sessionId: string, imageId: string): string {
+  const encodedSession = encodeURIComponent(sessionId);
+  const encodedImage = encodeURIComponent(imageId);
+  return `/api/session-images/${encodedSession}/${encodedImage}`;
+}
 
 /**
  * Generate a documentary-realistic historical image
@@ -60,11 +66,16 @@ export async function generateHistoricalImage(
   // Read the result from session and get latest image
   const session = readSession(sessionId);
   const latestImage = session.images[session.images.length - 1];
-  
+
+  if (!latestImage) {
+    throw new Error('Image generation succeeded but no image found in session');
+  }
+
   // Update the source information
   latestImage.sourceType = sourceType;
   latestImage.sourceId = sourceId;
-  
+  writeSession(sessionId, session);
+
   // Download and save the image to the session folder
   try {
     const imageFilePath = getImageFilePath(sessionId, latestImage.id);
@@ -72,22 +83,19 @@ export async function generateHistoricalImage(
     
     // Update the image with the file path
     latestImage.filePath = imageFilePath;
+
+    // Serve images via internal API when stored locally
+    latestImage.url = buildSessionImagePath(sessionId, latestImage.id);
     
-    // Clear the data URL to avoid cluttering the session JSON
-    // Keep only the file path for reference
-    if (latestImage.url.startsWith('data:')) {
-      latestImage.url = ''; // Clear data URL, file path is sufficient
-    }
-    
-    // Save the updated session with cleared URL
     writeSession(sessionId, session);
     
     console.log(`✅ Image saved to: ${imageFilePath}`);
   } catch (error) {
     console.error(`Failed to download image:`, error);
+    // Persist source information even if download fails
+    writeSession(sessionId, session);
     // Continue without file path - the URL is still available
   }
   
   return latestImage;
 }
-

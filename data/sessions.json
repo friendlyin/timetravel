@@ -1,6 +1,19 @@
 {
   "sessions": [
     {
+      "id": "session-20251101-174046",
+      "label": "Veliky Novgorod, Novgorod Oblast, Soviet Union · Year 1938",
+      "subtitle": "Started Nov 1, 2025, 5:40 PM · Source OPENAI",
+      "createdAt": 1762018846224,
+      "sessionDataId": "session-20251101-174046"
+    },
+    {
+      "id": "session-1762018831204",
+      "label": "New life 16",
+      "subtitle": "Created Nov 1, 2025, 5:40 PM",
+      "createdAt": 1762018831204
+    },
+    {
       "id": "session-20251101-171945",
       "label": "Nubia, Kingdom of Makuria · Year 983",
       "subtitle": "Started Nov 1, 2025, 5:19 PM · Source OPENAI",
@@ -100,5 +113,5 @@
       "sessionDataId": "session-20251101-160504"
     }
   ],
-  "selectedId": "session-20251101-171945"
+  "selectedId": "session-20251101-174046"
 }

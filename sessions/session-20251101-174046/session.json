@@ -1,0 +1,702 @@
+{
+  "metadata": {
+    "sessionId": "session-20251101-174046",
+    "startTime": "2025-11-01T17:40:46.224Z",
+    "currentStep": "Awaiting choice",
+    "status": "active",
+    "totalSteps": 10
+  },
+  "input": {
+    "date": "1938-01-01",
+    "location": "Veliky Novgorod, Novgorod Oblast, Soviet Union"
+  },
+  "config": {
+    "numberOfPersonaOptions": 4,
+    "maxPivotalMoments": 5,
+    "generateImages": true
+  },
+  "lifelines": [
+    {
+      "id": "lifeline-3-001",
+      "startAge": 0,
+      "endAge": 12,
+      "narrative": "Born into the harsh realities of a Soviet collective farm near Veliky Novgorod in 1938, Dmitry Petrov's early life was dictated by the rhythms of agricultural toil and the edicts of Stalinist policies. From the cramped confines of their small wooden house, Dmitry's world was one of laborious days in the fields alongside his mother and siblings. His father had been a victim of the Great Purge, leaving his mother to shoulder the burden of both farm and family. Despite limited formal education, Dmitry's days were rich with life lessons in survival, resilience, and community. The farm's collective spirit was both a source of strength and a reminder of the state's omnipresence.\n\nBy the time he was seven, Dmitry had become adept at handling small tasks on the farm. His lean frame and tanned skin bore the marks of hard work, but also of a childhood spent under the sun's watchful gaze. Food shortages were a frequent challenge, their rationed meals barely enough to keep hunger at bay. Yet, amidst these struggles, Dmitry found moments of joy in the rustic simplicity of village life—splashing in the river with friends, or listening to the elders recount tales of old Novgorod, igniting his imagination and fostering a deep sense of belonging to their land.\n\nAs he approached twelve, the winds of change began to stir within Dmitry. The state agricultural programs introduced by Moscow promised new opportunities, a chance for betterment that kindled hope in the hearts of many young villagers. Such prospects were a beacon for Dmitry, a chance to escape the shadows of poverty and carve a path of his own. It was during this time that Dmitry understood the power of knowledge, the lure of education fueled by whispers of youth migrating towards burgeoning cities. His pivotal moment arrived when a government representative visited the farm, offering scholarships for promising young minds to attend a state-sponsored school in the city—a chance Dmitry could not ignore.",
+      "events": [
+        {
+          "age": 3,
+          "year": "1941",
+          "event": "The German invasion of the Soviet Union disrupts life, causing increased strain on resources.",
+          "impact": "major",
+          "location": "Veliky Novgorod region"
+        },
+        {
+          "age": 6,
+          "year": "1944",
+          "event": "The Soviet army liberates Veliky Novgorod, restoring a semblance of normalcy.",
+          "impact": "significant",
+          "location": "Veliky Novgorod"
+        },
+        {
+          "age": 10,
+          "year": "1948",
+          "event": "Dmitry participates in a state agricultural program, winning recognition for his hard work.",
+          "impact": "moderate",
+          "location": "Collective farm near Veliky Novgorod"
+        },
+        {
+          "age": 12,
+          "year": "1950",
+          "event": "A government representative offers scholarships for education in urban centers.",
+          "impact": "major",
+          "location": "Collective farm near Veliky Novgorod"
+        }
+      ],
+      "characterDevelopment": {
+        "skills": [
+          "Farming techniques",
+          "Basic literacy",
+          "Problem-solving"
+        ],
+        "relationships": [
+          "Close bond with mother",
+          "Friendship with local children"
+        ],
+        "beliefs": [
+          "Value of hard work",
+          "Importance of education",
+          "Community solidarity"
+        ],
+        "reputation": "Diligent and hopeful young worker",
+        "physicalCondition": "Physically strong but often hungry",
+        "mentalState": "Resilient and hopeful, driven by a desire for a better future"
+      },
+      "pivotalMomentReached": true,
+      "imagePrompt": "A young boy standing in a field, with a backdrop of wooden houses and distant, imposing Soviet-era buildings. The sun casts long shadows, hinting at the end of a long day's work."
+    },
+    {
+      "id": "lifeline-3-002",
+      "startAge": 12,
+      "endAge": 23,
+      "narrative": "At the age of 12, Dmitry Petrov took his first steps down the path of education, balancing his duties on the collective farm with part-time studies in a nearby town. Despite the challenges of juggling school and farm work, Dmitry's determination never waned. He would rise before dawn to tend to the fields, attending classes in the afternoon, driven by a thirst for knowledge and a vision of a life beyond the farm.\n\nBy the age of 16, Dmitry had become more than just proficient in reading and writing; he was an active participant in agricultural innovations introduced through state programs. His knack for embracing new techniques brought recognition from local authorities, and his farm was often highlighted as a model for collective work. However, these accolades came with their own set of pressures, as expectations grew for him to remain a key figure in the local agricultural community.\n\nAs Dmitry turned 20, the winds of change swept through the Soviet Union, and his town wasn't spared. The death of Stalin in 1953 marked the beginning of the Khrushchev Thaw, a period of political relaxation and cultural revival. Dmitry found himself at another crossroads. His studies had ignited a passion for agronomy, and he was offered a position at an agricultural institute in Leningrad. This opportunity promised a new world of possibilities and a chance to contribute to the country's agricultural advancements on a larger scale. However, the decision weighed heavily on him, as it meant leaving behind his family and the community that had shaped him.",
+      "events": [
+        {
+          "age": 14,
+          "year": "1952",
+          "event": "Participation in a regional agricultural fair, where Dmitry's collective farm is recognized for innovative practices.",
+          "impact": "significant",
+          "location": "Veliky Novgorod"
+        },
+        {
+          "age": 16,
+          "year": "1954",
+          "event": "Completion of part-time studies with honors, gaining local media attention and praise from authorities.",
+          "impact": "major",
+          "location": "Veliky Novgorod"
+        },
+        {
+          "age": 18,
+          "year": "1956",
+          "event": "First visit to Leningrad, where Dmitry attends a national agricultural conference, broadening his horizons.",
+          "impact": "moderate",
+          "location": "Leningrad"
+        },
+        {
+          "age": 20,
+          "year": "1958",
+          "event": "Offered a position at a prestigious agricultural institute in Leningrad, prompting a pivotal life decision.",
+          "impact": "major",
+          "location": "Leningrad"
+        }
+      ],
+      "characterDevelopment": {
+        "skills": [
+          "Advanced farming techniques",
+          "Public speaking",
+          "Analytical thinking"
+        ],
+        "relationships": [
+          "Mentorship with a local agronomist",
+          "Friendship with fellow students"
+        ],
+        "beliefs": [
+          "Value of innovation in agriculture",
+          "Importance of continuous learning"
+        ],
+        "reputation": "Respected young farmer and scholar",
+        "physicalCondition": "Fit and robust, accustomed to hard labor",
+        "mentalState": "Optimistic and ambitious, eager for new challenges"
+      },
+      "pivotalMomentReached": true,
+      "imagePrompt": "A young man standing at a train station, suitcase in hand, gazing toward the horizon with determination. The platform is bustling with the energy of post-war Soviet life, reflecting hope and uncertainty."
+    }
+  ],
+  "pivotalMoments": [
+    {
+      "id": "pivotal-moment-001-1950",
+      "age": 12,
+      "year": "1950",
+      "title": "A Fork in the Earth: The Path to Knowledge or Duty",
+      "situation": "Dmitry stands at a crossroads as a government representative offers him a scholarship to further his education in the city. It's a rare opportunity for a boy of his background, yet it comes with the heavy decision of leaving his struggling family behind.",
+      "context": "The visit from the government official is a beacon of possibility for Dmitry, whose life has been spent working the fields. His recognition in the state agricultural program has marked him as a promising candidate for further education, a chance to escape the poverty that defines his existence.",
+      "stakes": "Dmitry could gain an education that opens doors to a future beyond the fields, but he risks abandoning his family when they are most vulnerable, leaving them without his support.",
+      "choices": [
+        {
+          "id": "choice-1",
+          "title": "Accept the Scholarship",
+          "description": "Dmitry decides to take the scholarship and move to the city for education, hoping this knowledge will ultimately benefit his family and community.",
+          "immediateConsequences": [
+            "Leaves his family and farm",
+            "Begins a new life in the city"
+          ],
+          "potentialOutcomes": [
+            "Becomes a successful engineer aiding state projects",
+            "Loses touch with rural roots"
+          ],
+          "risk": "medium",
+          "alignment": [
+            "ambition",
+            "hope for a better future"
+          ]
+        },
+        {
+          "id": "choice-2",
+          "title": "Stay and Support the Family",
+          "description": "Dmitry decides to decline the scholarship, choosing to remain on the farm to support his mother and siblings through their struggles.",
+          "immediateConsequences": [
+            "Continues life on the farm",
+            "Strengthens family bonds"
+          ],
+          "potentialOutcomes": [
+            "Family survives hardships with his help",
+            "Misses out on educational opportunities"
+          ],
+          "risk": "high",
+          "alignment": [
+            "duty",
+            "family loyalty"
+          ]
+        },
+        {
+          "id": "choice-3",
+          "title": "Pursue Part-Time Studies",
+          "description": "Dmitry negotiates to study while continuing to contribute to the farm, attempting to balance education with family obligations.",
+          "immediateConsequences": [
+            "Begins a challenging routine",
+            "Splits time between farm and school"
+          ],
+          "potentialOutcomes": [
+            "Gains practical knowledge without leaving",
+            "Struggles with exhaustion and divided attention"
+          ],
+          "risk": "high",
+          "alignment": [
+            "compromise",
+            "resourcefulness"
+          ]
+        },
+        {
+          "id": "choice-4",
+          "title": "Join the State Agriculture Program",
+          "description": "Dmitry opts to immerse himself in the advanced state agricultural program, believing he can learn and apply modern farming techniques at home.",
+          "immediateConsequences": [
+            "Receives training in agriculture",
+            "Stays closer to home"
+          ],
+          "potentialOutcomes": [
+            "Elevates local farming practices",
+            "Risks being caught in political tides"
+          ],
+          "risk": "medium",
+          "alignment": [
+            "innovation",
+            "community service"
+          ]
+        }
+      ],
+      "timeConstraint": "Offer must be accepted or declined within a week",
+      "influencingFactors": [
+        "Family's dire financial needs",
+        "Dmitry's personal aspirations",
+        "Pressure from community expectations"
+      ],
+      "imagePrompt": "A young boy at a dirt crossroads, with one path leading towards the distant city skyline and the other winding back to a small, weathered farmhouse."
+    },
+    {
+      "id": "pivotal-moment-002",
+      "age": 23,
+      "year": "1961",
+      "title": "Crossroads of Destiny in Soviet Agricultural Revolution",
+      "situation": "Dmitry Petrov stands at the precipice of a significant decision that could redefine his future: stay committed to his community in Veliky Novgorod, or accept a groundbreaking opportunity in Leningrad that promises to elevate his career in agronomy. The choice looms over him as he prepares to board a train, with his suitcase symbolizing the weight of leaving behind all that is familiar.",
+      "context": "Having proven himself as an innovative farmer and a bright scholar, Dmitry's talents have caught the attention of national leaders in agriculture. His decision is influenced by the recent shifts in Soviet policy under the Khrushchev Thaw, which encourages scientific advancements and offers more personal freedoms. This choice represents a culmination of his earlier achievements and his desire to impact Soviet agriculture on a grander scale.",
+      "stakes": "Dmitry's decision will either solidify his role as a local leader and family pillar or project him onto the national stage, aiding in pioneering agricultural reforms. However, it also risks alienating him from his roots or missing out on transformative opportunities.",
+      "choices": [
+        {
+          "id": "choice-1",
+          "title": "Embrace Innovation in Leningrad",
+          "description": "Accept the offer from the agricultural institute in Leningrad, propelling your career into the national spotlight and participating in cutting-edge research.",
+          "immediateConsequences": [
+            "Leave Veliky Novgorod",
+            "Begin work and studies in a prestigious institute"
+          ],
+          "potentialOutcomes": [
+            "Become a renowned expert in agronomy",
+            "Contribute to significant agricultural policy reforms"
+          ],
+          "risk": "medium",
+          "alignment": [
+            "ambition",
+            "innovation",
+            "progress"
+          ]
+        },
+        {
+          "id": "choice-2",
+          "title": "Strengthen Community Roots",
+          "description": "Refuse the offer and stay in Veliky Novgorod, continuing your work with the collective farm and focusing on local agricultural improvements.",
+          "immediateConsequences": [
+            "Remain with family and community",
+            "Enhance local farming techniques"
+          ],
+          "potentialOutcomes": [
+            "Become a respected local leader",
+            "Miss out on broader scientific advancements"
+          ],
+          "risk": "low",
+          "alignment": [
+            "duty",
+            "community",
+            "stability"
+          ]
+        },
+        {
+          "id": "choice-3",
+          "title": "Advocate for Change Locally",
+          "description": "Leverage your position to advocate for adopting new agricultural practices in your region, balancing local commitments with progressive ideas.",
+          "immediateConsequences": [
+            "Launch campaigns for agricultural reform",
+            "Face resistance from traditionalists"
+          ],
+          "potentialOutcomes": [
+            "Transform the local agricultural landscape",
+            "Risk straining community relationships"
+          ],
+          "risk": "high",
+          "alignment": [
+            "innovation",
+            "balance",
+            "leadership"
+          ]
+        },
+        {
+          "id": "choice-4",
+          "title": "Explore a Hybrid Path",
+          "description": "Negotiate a compromise where you spend part-time in Leningrad for advanced training, while maintaining ties and responsibilities in Veliky Novgorod.",
+          "immediateConsequences": [
+            "Split time between cities",
+            "Diversify experiences and skills"
+          ],
+          "potentialOutcomes": [
+            "Develop a unique career path",
+            "Struggle with divided focus and resources"
+          ],
+          "risk": "medium",
+          "alignment": [
+            "flexibility",
+            "growth",
+            "family"
+          ]
+        }
+      ],
+      "timeConstraint": "The train to Leningrad leaves soon, creating urgency in Dmitry's decision.",
+      "influencingFactors": [
+        "Family expectations",
+        "Desire for personal growth",
+        "National agricultural policy shifts"
+      ],
+      "imagePrompt": "A young man standing at a train station, suitcase in hand, gazing toward the horizon with determination. The platform is bustling with the energy of post-war Soviet life, reflecting hope and uncertainty."
+    }
+  ],
+  "choices": [
+    {
+      "pivotalMomentId": "pivotal-moment-001-1950",
+      "choiceId": "choice-3",
+      "choiceTitle": "Pursue Part-Time Studies",
+      "timestamp": "2025-11-01T17:42:01.386Z"
+    }
+  ],
+  "imagePrompts": [
+    {
+      "id": "prompt-1762018892880",
+      "prompt": "A photorealistic photograph of young Dmitry Petrov standing in the sunlit fields of a Soviet collective farm near Veliky Novgorod in 1944. He is wearing a simple, worn-out linen shirt and patched trousers, characteristic of the rural Soviet attire of the era. The morning light casts long shadows, illuminating his lean frame and sun-tanned skin with realistic tones. In the background, a wooden farmhouse with a thatched roof is visible, surrounded by rows of crops stretching towards the horizon. The scene captures the essence of rural Soviet life during Stalin's regime, with tools like a scythe and a wooden cart nearby, all in sharp focus and high detail. The photograph is taken in natural lighting, emphasizing the rustic simplicity and resilience of the time in a documentary photography style.",
+      "sourceType": "lifeline",
+      "sourceId": "lifeline-3-001",
+      "timestamp": "2023-10-22T18:30:00Z"
+    },
+    {
+      "id": "prompt-1762018941090",
+      "prompt": "A photorealistic photograph capturing Dmitry Petrov, a young boy of 12, balancing his life on a Soviet collective farm in 1938 Veliky Novgorod. Dmitry is seen in the foreground, wearing a worn but neatly patched woolen vest over a plain white shirt, with traditional knee-length trousers and sturdy leather boots, typical for a rural Soviet youth of the time. He stands in a sun-drenched field, the early morning light casting long shadows across the freshly tilled soil. In his hands, he holds a wooden bucket, a symbol of his daily chores, while a school satchel is slung over his shoulder, representing his pursuit of education. Behind him, the rustic wooden architecture of a collective farm building is visible, with a red Soviet flag fluttering atop, indicative of the political climate. The photograph is in sharp focus, highlighting the textures of the soil and the determined expression on Dmitry’s face. The natural lighting brings out realistic skin tones and the earthy colors of the scene, captured in high detail, emphasizing the documentary photography style.",
+      "sourceType": "lifeline",
+      "sourceId": "lifeline-3-002",
+      "timestamp": "2023-10-14T12:00:00Z"
+    }
+  ],
+  "images": [],
+  "executionLogs": [
+    {
+      "agentId": "historicalContext",
+      "agentName": "Historical Context Agent",
+      "startTime": "2025-11-01T17:40:46.225Z",
+      "endTime": "2025-11-01T17:40:54.509Z",
+      "duration": 8284,
+      "inputData": {
+        "input.date": "1938-01-01",
+        "input.location": "Veliky Novgorod, Novgorod Oblast, Soviet Union"
+      },
+      "outputData": {
+        "_structure": "country, description, politicalSituation, religion, socialStructure, economy, conflicts, culturalHighlights, additionalContext"
+      },
+      "success": true
+    },
+    {
+      "agentId": "personaGeneration",
+      "agentName": "Persona Generation Agent",
+      "startTime": "2025-11-01T17:40:54.512Z",
+      "endTime": "2025-11-01T17:41:10.528Z",
+      "duration": 16016,
+      "inputData": {
+        "historicalContext": "{country, description, politicalSituation, religion, socialStructure, economy, conflicts, culturalHighlights, additionalContext}",
+        "config.numberOfPersonaOptions": 4
+      },
+      "outputData": {
+        "optionsCount": 4,
+        "_structure": "options, timestamp"
+      },
+      "success": true
+    },
+    {
+      "agentId": "lifelineGeneration",
+      "agentName": "Lifeline Generation Agent",
+      "startTime": "2025-11-01T17:41:13.233Z",
+      "endTime": "2025-11-01T17:41:32.870Z",
+      "duration": 19637,
+      "inputData": {
+        "historicalContext": "{country, description, politicalSituation, religion, socialStructure, economy, conflicts, culturalHighlights, additionalContext}",
+        "selectedPersona": "{id, title, familyBackground, birthCircumstances, initialAttributes, probability, opportunities, challenges}",
+        "lifelines": "[Array with 0 items]"
+      },
+      "outputData": {
+        "id": "lifeline-3-001",
+        "startAge": 0,
+        "endAge": 12,
+        "_structure": "id, startAge, endAge, narrative, events, characterDevelopment, pivotalMomentReached, imagePrompt"
+      },
+      "success": true
+    },
+    {
+      "agentId": "imagePromptGeneration",
+      "agentName": "Image Prompt Generation Agent",
+      "startTime": "2025-11-01T17:41:32.879Z",
+      "endTime": "2025-11-01T17:41:36.114Z",
+      "duration": 3235,
+      "inputData": {
+        "lifelines": "[Array with 1 items]",
+        "pivotalMoments": "[Array with 0 items]",
+        "historicalContext": "{country, description, politicalSituation, religion, socialStructure, economy, conflicts, culturalHighlights, additionalContext}"
+      },
+      "outputData": {
+        "id": "prompt-1762018892880",
+        "_structure": "id, prompt, sourceType, sourceId, timestamp"
+      },
+      "success": true
+    },
+    {
+      "agentId": "imageGeneration",
+      "agentName": "Image Generation Agent",
+      "startTime": "2025-11-01T17:41:36.124Z",
+      "endTime": "2025-11-01T17:41:36.543Z",
+      "duration": 419,
+      "inputData": {},
+      "outputData": null,
+      "success": false,
+      "error": "Failed to generate image with Gemini: {\"error\":{\"code\":429,\"message\":\"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0\\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0\\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0\\nPlease retry in 23.703523182s.\",\"status\":\"RESOURCE_EXHAUSTED\",\"details\":[{\"@type\":\"type.googleapis.com/google.rpc.Help\",\"links\":[{\"description\":\"Learn more about Gemini API quotas\",\"url\":\"https://ai.google.dev/gemini-api/docs/rate-limits\"}]},{\"@type\":\"type.googleapis.com/google.rpc.QuotaFailure\",\"violations\":[{\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\"quotaId\":\"GenerateRequestsPerDayPerProjectPerModel-FreeTier\",\"quotaDimensions\":{\"location\":\"global\",\"model\":\"gemini-2.5-flash-preview-image\"}},{\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\"quotaId\":\"GenerateRequestsPerMinutePerProjectPerModel-FreeTier\",\"quotaDimensions\":{\"location\":\"global\",\"model\":\"gemini-2.5-flash-preview-image\"}},{\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_input_token_count\",\"quotaId\":\"GenerateContentInputTokensPerModelPerMinute-FreeTier\",\"quotaDimensions\":{\"model\":\"gemini-2.5-flash-preview-image\",\"location\":\"global\"}}]},{\"@type\":\"type.googleapis.com/google.rpc.RetryInfo\",\"retryDelay\":\"23s\"}]}}"
+    },
+    {
+      "agentId": "pivotalMomentGeneration",
+      "agentName": "Pivotal Moment Agent",
+      "startTime": "2025-11-01T17:41:36.579Z",
+      "endTime": "2025-11-01T17:41:52.952Z",
+      "duration": 16373,
+      "inputData": {
+        "historicalContext": "{country, description, politicalSituation, religion, socialStructure, economy, conflicts, culturalHighlights, additionalContext}",
+        "lifelines": "[Array with 1 items]",
+        "pivotalMoments": "[Array with 0 items]"
+      },
+      "outputData": {
+        "id": "pivotal-moment-001-1950",
+        "title": "A Fork in the Earth: The Path to Knowledge or Duty",
+        "age": 12,
+        "year": "1950",
+        "choicesCount": 4,
+        "_structure": "id, age, year, title, situation, context, stakes, choices, timeConstraint, influencingFactors, imagePrompt"
+      },
+      "success": true
+    },
+    {
+      "agentId": "lifelineGeneration",
+      "agentName": "Lifeline Generation Agent",
+      "startTime": "2025-11-01T17:42:01.389Z",
+      "endTime": "2025-11-01T17:42:21.067Z",
+      "duration": 19678,
+      "inputData": {
+        "historicalContext": "{country, description, politicalSituation, religion, socialStructure, economy, conflicts, culturalHighlights, additionalContext}",
+        "selectedPersona": "{id, title, familyBackground, birthCircumstances, initialAttributes, probability, opportunities, challenges}",
+        "lifelines": "[Array with 1 items]"
+      },
+      "outputData": {
+        "id": "lifeline-3-002",
+        "startAge": 12,
+        "endAge": 23,
+        "_structure": "id, startAge, endAge, narrative, events, characterDevelopment, pivotalMomentReached, imagePrompt"
+      },
+      "success": true
+    },
+    {
+      "agentId": "imagePromptGeneration",
+      "agentName": "Image Prompt Generation Agent",
+      "startTime": "2025-11-01T17:42:21.087Z",
+      "endTime": "2025-11-01T17:42:25.222Z",
+      "duration": 4135,
+      "inputData": {
+        "lifelines": "[Array with 2 items]",
+        "pivotalMoments": "[Array with 1 items]",
+        "historicalContext": "{country, description, politicalSituation, religion, socialStructure, economy, conflicts, culturalHighlights, additionalContext}"
+      },
+      "outputData": {
+        "id": "prompt-1762018941090",
+        "_structure": "id, prompt, sourceType, sourceId, timestamp"
+      },
+      "success": true
+    },
+    {
+      "agentId": "imageGeneration",
+      "agentName": "Image Generation Agent",
+      "startTime": "2025-11-01T17:42:25.240Z",
+      "endTime": "2025-11-01T17:42:25.584Z",
+      "duration": 344,
+      "inputData": {},
+      "outputData": null,
+      "success": false,
+      "error": "Failed to generate image with Gemini: {\"error\":{\"code\":429,\"message\":\"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0\\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0\\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0\\nPlease retry in 34.607233232s.\",\"status\":\"RESOURCE_EXHAUSTED\",\"details\":[{\"@type\":\"type.googleapis.com/google.rpc.Help\",\"links\":[{\"description\":\"Learn more about Gemini API quotas\",\"url\":\"https://ai.google.dev/gemini-api/docs/rate-limits\"}]},{\"@type\":\"type.googleapis.com/google.rpc.QuotaFailure\",\"violations\":[{\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_input_token_count\",\"quotaId\":\"GenerateContentInputTokensPerModelPerMinute-FreeTier\",\"quotaDimensions\":{\"location\":\"global\",\"model\":\"gemini-2.5-flash-preview-image\"}},{\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\"quotaId\":\"GenerateRequestsPerMinutePerProjectPerModel-FreeTier\",\"quotaDimensions\":{\"location\":\"global\",\"model\":\"gemini-2.5-flash-preview-image\"}},{\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\"quotaId\":\"GenerateRequestsPerDayPerProjectPerModel-FreeTier\",\"quotaDimensions\":{\"model\":\"gemini-2.5-flash-preview-image\",\"location\":\"global\"}}]},{\"@type\":\"type.googleapis.com/google.rpc.RetryInfo\",\"retryDelay\":\"34s\"}]}}"
+    },
+    {
+      "agentId": "pivotalMomentGeneration",
+      "agentName": "Pivotal Moment Agent",
+      "startTime": "2025-11-01T17:42:25.624Z",
+      "endTime": "2025-11-01T17:42:40.909Z",
+      "duration": 15285,
+      "inputData": {
+        "historicalContext": "{country, description, politicalSituation, religion, socialStructure, economy, conflicts, culturalHighlights, additionalContext}",
+        "lifelines": "[Array with 2 items]",
+        "pivotalMoments": "[Array with 1 items]"
+      },
+      "outputData": {
+        "id": "pivotal-moment-002",
+        "title": "Crossroads of Destiny in Soviet Agricultural Revolution",
+        "age": 23,
+        "year": "1961",
+        "choicesCount": 4,
+        "_structure": "id, age, year, title, situation, context, stakes, choices, timeConstraint, influencingFactors, imagePrompt"
+      },
+      "success": true
+    }
+  ],
+  "gameState": {
+    "isAlive": true
+  },
+  "historicalContext": {
+    "country": "Soviet Union",
+    "description": "On January 1, 1938, Veliky Novgorod, a city with a rich historical legacy, was under Soviet control. Known for its medieval architecture and as a cradle of Russian civilization, the city was experiencing the effects of Stalin's policies, including industrialization and collectivization. The cultural and historical significance of Veliky Novgorod was overshadowed by the political atmosphere and the drive for modernization.",
+    "politicalSituation": {
+      "rulers": [
+        "Joseph Stalin"
+      ],
+      "governance": "Single-party Communist state",
+      "details": "1938 was a tense period in the Soviet Union, marked by the Great Purge, a campaign of political repression led by Stalin. Many were arrested or executed on charges of counter-revolutionary activities. The atmosphere was one of fear and suspicion, with local governance aligned with central directives from Moscow."
+    },
+    "religion": {
+      "dominant": "Eastern Orthodoxy (suppressed)",
+      "culturalBackground": "The Soviet regime was officially atheist and sought to diminish the influence of the Orthodox Church. Churches were closed or repurposed, and religious leaders were often persecuted. Despite this, many people in Veliky Novgorod retained their religious beliefs in private."
+    },
+    "socialStructure": "Society was structured according to communist ideology, emphasizing classlessness. However, there was a clear hierarchy with Communist Party members enjoying privileges. The purges created a climate of instability, affecting social dynamics.",
+    "economy": "The economy was centrally planned, focusing on heavy industry and collectivized agriculture. Veliky Novgorod was part of the broader Soviet effort to industrialize rapidly. Economic life was characterized by state control and shortages of consumer goods.",
+    "conflicts": [
+      "Great Purge"
+    ],
+    "culturalHighlights": [
+      "Despite suppression, traditional Russian crafts and music were preserved by locals. The city was known for its historical monuments, which were later targeted for preservation post-Stalin era."
+    ],
+    "additionalContext": {
+      "key": "Veliky Novgorod's strategic and historical importance was recognized by the Soviet regime, but the focus during this period was on aligning with the broader goals of industrialization and political conformity."
+    }
+  },
+  "personaOptions": {
+    "options": [
+      {
+        "id": "persona-1",
+        "title": "Factory Worker's Daughter",
+        "familyBackground": {
+          "socialClass": "Working class",
+          "occupation": "Factory worker",
+          "wealth": "poor",
+          "familySize": 6,
+          "parentalStatus": "Both parents alive",
+          "location": "Outskirts of Veliky Novgorod"
+        },
+        "birthCircumstances": "Born in a small communal apartment shared with another family, amidst economic hardship",
+        "initialAttributes": {
+          "gender": "female",
+          "ethnicity": "Russian",
+          "physicalTraits": [
+            "dark hair",
+            "slender frame"
+          ],
+          "earlyChildhood": "Grew up with limited resources, often helping with household chores and looking after younger siblings"
+        },
+        "probability": 30,
+        "opportunities": [
+          "Primary education at a local school",
+          "Access to state-run youth activities"
+        ],
+        "challenges": [
+          "Economic scarcity",
+          "Political indoctrination at school"
+        ]
+      },
+      {
+        "id": "persona-2",
+        "title": "Party Official’s Son",
+        "familyBackground": {
+          "socialClass": "Party elite",
+          "occupation": "Local Communist Party official",
+          "wealth": "comfortable",
+          "familySize": 4,
+          "parentalStatus": "Both parents alive",
+          "location": "Central Veliky Novgorod"
+        },
+        "birthCircumstances": "Born in a well-maintained apartment in a government-owned building",
+        "initialAttributes": {
+          "gender": "male",
+          "ethnicity": "Russian",
+          "physicalTraits": [
+            "blond hair",
+            "sturdy build"
+          ],
+          "earlyChildhood": "Raised with privileges, access to better education and amenities"
+        },
+        "probability": 20,
+        "opportunities": [
+          "Higher education prospects",
+          "Future Party membership"
+        ],
+        "challenges": [
+          "Expectations to conform to Party ideology",
+          "Pressure to succeed in a politically volatile environment"
+        ]
+      },
+      {
+        "id": "persona-3",
+        "title": "Peasant Farmer's Child",
+        "familyBackground": {
+          "socialClass": "Peasantry",
+          "occupation": "Collective farm worker",
+          "wealth": "poor",
+          "familySize": 7,
+          "parentalStatus": "Single parent",
+          "location": "Rural area near Veliky Novgorod"
+        },
+        "birthCircumstances": "Born in a small wooden house on a collective farm",
+        "initialAttributes": {
+          "gender": "male",
+          "ethnicity": "Russian",
+          "physicalTraits": [
+            "tanned skin",
+            "lean frame"
+          ],
+          "earlyChildhood": "Involved in farm work from a young age, limited access to education"
+        },
+        "probability": 25,
+        "opportunities": [
+          "Participation in state agricultural programs",
+          "Potential for urban migration"
+        ],
+        "challenges": [
+          "Hard labor",
+          "Food shortages"
+        ]
+      },
+      {
+        "id": "persona-4",
+        "title": "Craftsman's Granddaughter",
+        "familyBackground": {
+          "socialClass": "Artisan",
+          "occupation": "Traditional woodworker",
+          "wealth": "modest",
+          "familySize": 5,
+          "parentalStatus": "Both parents alive",
+          "location": "Historic district of Veliky Novgorod"
+        },
+        "birthCircumstances": "Born in a home filled with traditional crafts and family artifacts",
+        "initialAttributes": {
+          "gender": "female",
+          "ethnicity": "Russian",
+          "physicalTraits": [
+            "light brown hair",
+            "delicate features"
+          ],
+          "earlyChildhood": "Surrounded by cultural heritage, taught basic craft skills by family"
+        },
+        "probability": 25,
+        "opportunities": [
+          "Learning traditional crafts",
+          "Preservation of cultural heritage"
+        ],
+        "challenges": [
+          "Suppression of traditional practices",
+          "Political conformity pressures"
+        ]
+      }
+    ],
+    "timestamp": "2025-11-01T00:00:00.000Z"
+  },
+  "selectedPersona": {
+    "id": "persona-3",
+    "title": "Peasant Farmer's Child",
+    "familyBackground": {
+      "socialClass": "Peasantry",
+      "occupation": "Collective farm worker",
+      "wealth": "poor",
+      "familySize": 7,
+      "parentalStatus": "Single parent",
+      "location": "Rural area near Veliky Novgorod"
+    },
+    "birthCircumstances": "Born in a small wooden house on a collective farm",
+    "initialAttributes": {
+      "gender": "male",
+      "ethnicity": "Russian",
+      "physicalTraits": [
+        "tanned skin",
+        "lean frame"
+      ],
+      "earlyChildhood": "Involved in farm work from a young age, limited access to education"
+    },
+    "probability": 25,
+    "opportunities": [
+      "Participation in state agricultural programs",
+      "Potential for urban migration"
+    ],
+    "challenges": [
+      "Hard labor",
+      "Food shortages"
+    ]
+  }
+}

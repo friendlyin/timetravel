@@ -7,6 +7,7 @@ import {
   updateSessionMetadata,
   getSessionPath,
 } from '@/services/sessionService';
+import { GAME_CONFIG } from '@/config/workflow.config';
 import { registerSession } from '@/lib/sessionStore';
 import type { StartSessionResponse } from '@/types/api.types';
 
@@ -118,7 +119,9 @@ export async function POST(
 
     const createdAt = Date.now();
 
-    const { sessionId } = createSession(sessionInput);
+    const { sessionId } = createSession(sessionInput, {
+      generateImages: GAME_CONFIG.generateImageForEachLifeline,
+    });
 
     await generateHistoricalContext(sessionId);
     await generatePersonaOptions(sessionId);

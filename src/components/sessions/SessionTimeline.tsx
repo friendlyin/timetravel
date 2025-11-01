@@ -1,13 +1,13 @@
 'use client';
 
+import Image from 'next/image'
 import { useMemo, useState } from 'react'
 
 import { useSessionData } from '@/hooks/useSessionData'
 import type { SessionHistoryController } from '@/hooks/useSessionHistory'
 import type { Lifeline } from '@/types/lifeline.types'
 import type { PivotalMoment } from '@/types/pivotalMoment.types'
-import type { UserChoice } from '@/types/session.types'
-import type { PersonaOption } from '@/types/persona.types'
+import type { GeneratedImage, UserChoice } from '@/types/session.types'
 
 type SessionTimelineProps = {
     sessionHistory: SessionHistoryController
@@ -122,6 +122,29 @@ export function SessionTimeline({ sessionHistory }: SessionTimelineProps) {
             return map
         }, new Map<string, UserChoice>())
     }, [data])
+
+    const lifelineImagesById = useMemo(() => {
+        if (!data?.images || data.images.length === 0) {
+            return new Map<string, GeneratedImage[]>()
+        }
+
+        const map = new Map<string, GeneratedImage[]>()
+
+        for (const image of data.images) {
+            if (image.sourceType !== 'lifeline' || !image.sourceId || !image.url) {
+                continue
+            }
+
+            const existing = map.get(image.sourceId)
+            if (existing) {
+                existing.push(image)
+            } else {
+                map.set(image.sourceId, [image])
+            }
+        }
+
+        return map
+    }, [data?.images])
 
     const timelineEntries = useMemo<TimelineEntry[]>(() => {
         if (!data) {
@@ -462,6 +485,11 @@ export function SessionTimeline({ sessionHistory }: SessionTimelineProps) {
                                             {entry.type === 'lifeline' ? (
                                                 <LifelineCard
                                                     lifeline={entry.lifeline}
+                                                    images={
+                                                        lifelineImagesById.get(
+                                                            entry.lifeline.id
+                                                        ) ?? []
+                                                    }
                                                 />
                                             ) : (
                                                 <PivotalMomentCard
@@ -548,9 +576,15 @@ function ContextCard({ title, description, meta }: ContextCardProps) {
 
 type LifelineCardProps = {
     lifeline: Lifeline
+    images?: GeneratedImage[]
 }
 
-function LifelineCard({ lifeline }: LifelineCardProps) {
+function LifelineCard({ lifeline, images = [] }: LifelineCardProps) {
+    const visibleImages = useMemo(
+        () => images.filter((image) => Boolean(image.url)),
+        [images]
+    )
+    const hasImages = visibleImages.length > 0
     const firstEventYear = lifeline.events[0]?.year
     const lastEventYear = lifeline.events[lifeline.events.length - 1]?.year
     const yearRangeLabel = firstEventYear
@@ -577,6 +611,42 @@ function LifelineCard({ lifeline }: LifelineCardProps) {
             <p className="text-sm text-slate-600 dark:text-slate-300 whitespace-pre-line">
                 {lifeline.narrative}
             </p>
+            {hasImages && (
+                <div className="flex flex-col gap-3">
+                    <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+                        {visibleImages.map((image) => (
+                            <figure
+                                key={image.id}
+                                className="flex flex-col gap-2"
+                            >
+                                <div className="overflow-hidden rounded-lg border border-slate-200 bg-slate-100 dark:border-slate-700 dark:bg-slate-800">
+                                    <Image
+                                        src={image.url}
+                                        alt={
+                                            image.revisedPrompt ??
+                                            lifeline.imagePrompt ??
+                                            'Illustration of the lifeline segment'
+                                        }
+                                        width={896}
+                                        height={512}
+                                        className="h-48 w-full object-cover"
+                                        sizes="(min-width: 640px) 50vw, 100vw"
+                                        loading="lazy"
+                                        unoptimized
+                                    />
+                                </div>
+                                {(image.revisedPrompt ||
+                                    lifeline.imagePrompt) && (
+                                    <figcaption className="text-xs text-slate-500 dark:text-slate-400">
+                                        {image.revisedPrompt ??
+                                            lifeline.imagePrompt}
+                                    </figcaption>
+                                )}
+                            </figure>
+                        ))}
+                    </div>
+                </div>
+            )}
             {lifeline.events.length > 0 && (
                 <div className="flex flex-col gap-2">
                     <h5 className="text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">

@@ -5,9 +5,11 @@
  * until they reach a pivotal moment. Now uses the unified agent executor system.
  */
 
-import { Lifeline } from '@/types/lifeline.types';
 import { getAgentConfig } from '@/config/agents.config';
+import { GAME_CONFIG } from '@/config/workflow.config';
+import { Lifeline } from '@/types/lifeline.types';
 import { executeAgent } from './agentExecutor';
+import { generateSceneImage } from './imageWorkflowService';
 import { readSession } from './sessionService';
 
 /**
@@ -79,6 +81,29 @@ export async function generateLifeline(
   
   // Read the result from session and get latest lifeline
   const session = readSession(sessionId);
-  return session.lifelines[session.lifelines.length - 1];
-}
+  const lifeline = session.lifelines[session.lifelines.length - 1];
 
+  if (lifeline) {
+    const shouldGenerateImage =
+      session.config.generateImages ??
+      GAME_CONFIG.generateImageForEachLifeline;
+    const alreadyHasImage =
+      session.images?.some(
+        (image) =>
+          image.sourceType === 'lifeline' && image.sourceId === lifeline.id,
+      ) ?? false;
+
+    if (shouldGenerateImage && !alreadyHasImage) {
+      try {
+        await generateSceneImage(sessionId, 'lifeline', lifeline.id);
+      } catch (error) {
+        console.error(
+          '⚠️  Failed to auto-generate lifeline image:',
+          error,
+        );
+      }
+    }
+  }
+
+  return lifeline;
+}

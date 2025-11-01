@@ -7,7 +7,7 @@
 
 import { getAgentConfig } from '@/config/agents.config';
 import { executeAgent } from './agentExecutor';
-import { readSession } from './sessionService';
+import { readSession, writeSession } from './sessionService';
 import { ImagePrompt } from '@/types/session.types';
 
 /**
@@ -48,11 +48,15 @@ export async function generateImagePrompt(
   // Read the result from session and get latest prompt
   const session = readSession(sessionId);
   const latestPrompt = session.imagePrompts[session.imagePrompts.length - 1];
+
+  if (!latestPrompt) {
+    throw new Error('Image prompt generation succeeded but no prompt found in session');
+  }
   
-  // Update the source information
+  // Update the source information and persist
   latestPrompt.sourceType = sourceType;
   latestPrompt.sourceId = sourceId;
+  writeSession(sessionId, session);
   
   return latestPrompt;
 }
-
