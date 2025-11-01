@@ -30,7 +30,7 @@ export function SessionHistory({
   return (
       <aside
           className={[
-              'relative flex h-full flex-col border-r border-slate-200 bg-white/85 transition-[width] duration-300 ease-in-out backdrop-blur dark:border-slate-800 dark:bg-slate-900/70',
+              'fixed left-0 top-[73px] bottom-0 z-40 flex flex-col border-r border-slate-200 bg-white/85 transition-[width] duration-300 ease-in-out backdrop-blur dark:border-slate-800 dark:bg-slate-900/70',
               isOpen ? 'w-72 pointer-events-auto' : 'w-0 pointer-events-none'
           ].join(' ')}
       >
@@ -53,7 +53,7 @@ export function SessionHistory({
                           type="button"
                           onClick={() => {
                               if (onCreateSession) {
-                                  void onCreateSession();
+                                  void onCreateSession()
                               }
                           }}
                           className="rounded-md border border-slate-200 bg-white px-2 py-1 text-xs font-medium shadow-sm transition hover:border-slate-300 hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-slate-400 dark:border-slate-700 dark:bg-slate-900 dark:hover:border-slate-600 dark:hover:bg-slate-800 dark:focus:ring-slate-500"
@@ -78,10 +78,10 @@ export function SessionHistory({
                               <button
                                   type="button"
                                   onClick={() => {
-                                      void onSelectSession(session.id);
+                                      void onSelectSession(session.id)
                                   }}
                                   onDoubleClick={() => {
-                                      void onRenameSession(session.id);
+                                      void onRenameSession(session.id)
                                   }}
                                   className={[
                                       'group flex w-full flex-col rounded-md border px-3 py-2 text-left text-sm transition',

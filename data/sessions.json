@@ -1,6 +1,12 @@
 {
   "sessions": [
     {
+      "id": "session-1762015472150",
+      "label": "New life 6",
+      "subtitle": "Created Nov 1, 2025, 4:44 PM",
+      "createdAt": 1762015472150
+    },
+    {
       "id": "session-20251101-162659",
       "label": "Bukhara, Transoxiana, Timurid Empire · Year 1581",
       "subtitle": "Started Nov 1, 2025, 4:26 PM · Source OPENAI",
@@ -34,5 +40,5 @@
       "sessionDataId": "session-20251101-160504"
     }
   ],
-  "selectedId": "session-20251101-162659"
+  "selectedId": "session-1762015472150"
 }

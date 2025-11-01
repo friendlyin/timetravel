@@ -7,7 +7,7 @@ type AppHeaderProps = {
 
 export function AppHeader({ isHistoryOpen, onToggleHistory }: AppHeaderProps) {
   return (
-      <header className="flex items-center justify-between border-b border-slate-200 bg-white/80 px-6 py-4 backdrop-blur transition-colors dark:border-slate-800 dark:bg-slate-900/60">
+      <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between border-b border-slate-200 bg-white/80 px-6 py-4 backdrop-blur transition-colors dark:border-slate-800 dark:bg-slate-900/60">
           <div className="flex items-center gap-3">
               <button
                   type="button"
