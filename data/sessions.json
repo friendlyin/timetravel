@@ -1,6 +1,13 @@
 {
   "sessions": [
     {
+      "id": "session-20251101-162659",
+      "label": "Bukhara, Transoxiana, Timurid Empire · Year 1581",
+      "subtitle": "Started Nov 1, 2025, 4:26 PM · Source OPENAI",
+      "createdAt": 1762014419309,
+      "sessionDataId": "session-20251101-162659"
+    },
+    {
       "id": "session-1762013924618",
       "label": "Yo",
       "subtitle": "Created Nov 1, 2025, 4:18 PM",
@@ -27,5 +34,5 @@
       "sessionDataId": "session-20251101-160504"
     }
   ],
-  "selectedId": "session-1762013924618"
+  "selectedId": "session-20251101-162659"
 }
