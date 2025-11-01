@@ -1,0 +1,214 @@
+{
+  "metadata": {
+    "sessionId": "session-20251101-171945",
+    "startTime": "2025-11-01T17:19:45.557Z",
+    "currentStep": "Awaiting persona selection",
+    "status": "active",
+    "totalSteps": 2
+  },
+  "input": {
+    "date": "0983-01-01",
+    "location": "Nubia, Kingdom of Makuria"
+  },
+  "config": {
+    "numberOfPersonaOptions": 4,
+    "maxPivotalMoments": 5,
+    "generateImages": false
+  },
+  "lifelines": [],
+  "pivotalMoments": [],
+  "choices": [],
+  "imagePrompts": [],
+  "images": [],
+  "executionLogs": [
+    {
+      "agentId": "historicalContext",
+      "agentName": "Historical Context Agent",
+      "startTime": "2025-11-01T17:19:45.557Z",
+      "endTime": "2025-11-01T17:19:57.755Z",
+      "duration": 12198,
+      "inputData": {
+        "input.date": "0983-01-01",
+        "input.location": "Nubia, Kingdom of Makuria"
+      },
+      "outputData": {
+        "_structure": "country, description, politicalSituation, religion, socialStructure, economy, conflicts, culturalHighlights, additionalContext"
+      },
+      "success": true
+    },
+    {
+      "agentId": "personaGeneration",
+      "agentName": "Persona Generation Agent",
+      "startTime": "2025-11-01T17:19:57.759Z",
+      "endTime": "2025-11-01T17:20:18.891Z",
+      "duration": 21132,
+      "inputData": {
+        "historicalContext": "{country, description, politicalSituation, religion, socialStructure, economy, conflicts, culturalHighlights, additionalContext}",
+        "config.numberOfPersonaOptions": 4
+      },
+      "outputData": {
+        "optionsCount": 4,
+        "_structure": "options, timestamp"
+      },
+      "success": true
+    }
+  ],
+  "gameState": {
+    "isAlive": true
+  },
+  "historicalContext": {
+    "country": "Kingdom of Makuria",
+    "description": "In the late 10th century, the Kingdom of Makuria was a powerful Christian Nubian state located along the Nile in what is today southern Egypt and northern Sudan. By 983 AD, Makuria was a center of trade and culture that had successfully resisted both Islamic expansion and the Arabization that had affected much of North Africa. The kingdom was known for its wealth, derived largely from trade routes that passed through its territory, connecting the Byzantine Empire and the Islamic states to sub-Saharan Africa.",
+    "politicalSituation": {
+      "rulers": [
+        "Georgios II"
+      ],
+      "governance": "Monarchy",
+      "details": "During this time, Makuria was ruled by King Georgios II, who was part of the Christian Nobatian lineage. The kingdom was relatively stable and enjoyed peaceful relations with the neighboring Islamic Caliphate, due in part to the Baqt, a treaty between Makuria and the Muslim rulers of Egypt that had been established in the 7th century. This treaty allowed for peaceful coexistence and trade between the two regions."
+    },
+    "religion": {
+      "dominant": "Christianity (Coptic Orthodox)",
+      "culturalBackground": "Makuria was one of the few African Christian kingdoms during this period, with a strong Coptic Orthodox influence. Christianity had been introduced to Nubia in the 6th century, and by the 10th century, it had become deeply ingrained in the cultural and social fabric of the kingdom. Churches and monasteries were important centers of religious and cultural life."
+    },
+    "socialStructure": "Makuria's society was hierarchical, with a king at the top, followed by a noble class that included bishops and other religious figures. Below them were traders and artisans, and at the bottom were farmers and laborers. The society was relatively well-integrated, with a strong emphasis on community and religious life.",
+    "economy": "Makuria's economy was heavily reliant on agriculture, particularly along the fertile banks of the Nile. It was also a hub for trade, with goods such as gold, ivory, and slaves passing through its markets from sub-Saharan Africa to the Mediterranean. The region benefited from its strategic location along major trade routes.",
+    "conflicts": [
+      "There were no major conflicts recorded in Makuria in 983, as the kingdom was in a period of relative peace, largely due to the Baqt treaty with the Islamic Caliphate."
+    ],
+    "culturalHighlights": [
+      "Makuria was renowned for its Christian architecture, including impressive churches and monasteries. The kingdom also had a rich tradition of art and literature, much of which was influenced by Byzantine and Coptic styles."
+    ],
+    "additionalContext": {
+      "key": "The Baqt treaty, which ensured peaceful relations and trade between Makuria and the Islamic Caliphate, was a significant factor in the kingdom's stability and prosperity during this period."
+    }
+  },
+  "personaOptions": {
+    "options": [
+      {
+        "id": "persona-1",
+        "title": "Nobleman's Daughter",
+        "familyBackground": {
+          "socialClass": "Nobility",
+          "occupation": "Landowner and advisor to the king",
+          "wealth": "wealthy",
+          "familySize": 6,
+          "parentalStatus": "Both parents alive",
+          "location": "Old Dongola, the capital of Makuria"
+        },
+        "birthCircumstances": "Born in a well-fortified household, surrounded by the opulence and influence of the royal court.",
+        "initialAttributes": {
+          "gender": "female",
+          "ethnicity": "Nubian",
+          "physicalTraits": [
+            "tall",
+            "dark skin"
+          ],
+          "earlyChildhood": "Spent early years in comfort, with education focused on religious studies and courtly etiquette."
+        },
+        "probability": 30,
+        "opportunities": [
+          "Marriage alliance with a powerful family",
+          "Education in Coptic scriptures"
+        ],
+        "challenges": [
+          "Political intrigue",
+          "Expectations to maintain family honor"
+        ]
+      },
+      {
+        "id": "persona-2",
+        "title": "Artisan's Son",
+        "familyBackground": {
+          "socialClass": "Artisans",
+          "occupation": "Potter",
+          "wealth": "modest",
+          "familySize": 4,
+          "parentalStatus": "Single parent (father died in an accident)",
+          "location": "A village near the Nile"
+        },
+        "birthCircumstances": "Born into a family known for their craftsmanship, with a focus on creating pottery for both local use and trade.",
+        "initialAttributes": {
+          "gender": "male",
+          "ethnicity": "Nubian",
+          "physicalTraits": [
+            "strong build",
+            "curly hair"
+          ],
+          "earlyChildhood": "From a young age, assisted in the pottery workshop, learning the trade alongside his mother."
+        },
+        "probability": 25,
+        "opportunities": [
+          "Apprenticeship with a renowned artisan",
+          "Trade connections through family"
+        ],
+        "challenges": [
+          "Limited financial resources",
+          "Balancing work and family responsibilities"
+        ]
+      },
+      {
+        "id": "persona-3",
+        "title": "Farmer's Youngest Child",
+        "familyBackground": {
+          "socialClass": "Farmers",
+          "occupation": "Agricultural laborers",
+          "wealth": "poor",
+          "familySize": 8,
+          "parentalStatus": "Both parents alive",
+          "location": "Rural area along the Nile"
+        },
+        "birthCircumstances": "Born during the harvest season, welcomed into a large family reliant on farming.",
+        "initialAttributes": {
+          "gender": "female",
+          "ethnicity": "Nubian",
+          "physicalTraits": [
+            "slight frame",
+            "broad smile"
+          ],
+          "earlyChildhood": "Raised among fields, learning to tend crops and care for livestock from an early age."
+        },
+        "probability": 20,
+        "opportunities": [
+          "Learning about sustainable farming practices",
+          "Community support in times of need"
+        ],
+        "challenges": [
+          "Frequent food shortages",
+          "Susceptibility to Nile floods"
+        ]
+      },
+      {
+        "id": "persona-4",
+        "title": "Merchant's Apprentice",
+        "familyBackground": {
+          "socialClass": "Merchants",
+          "occupation": "Trader in luxury goods",
+          "wealth": "comfortable",
+          "familySize": 5,
+          "parentalStatus": "Both parents alive",
+          "location": "Trade hub in Old Dongola"
+        },
+        "birthCircumstances": "Born into a family that has built a steady business dealing in gold and ivory.",
+        "initialAttributes": {
+          "gender": "male",
+          "ethnicity": "Nubian",
+          "physicalTraits": [
+            "stocky",
+            "keen eyes"
+          ],
+          "earlyChildhood": "Grew up in a busy household, surrounded by goods from distant lands and travelers."
+        },
+        "probability": 25,
+        "opportunities": [
+          "Travel with trade caravans",
+          "Exposure to diverse cultures"
+        ],
+        "challenges": [
+          "Navigating complex trade negotiations",
+          "Risk of theft and piracy"
+        ]
+      }
+    ],
+    "timestamp": "2025-11-01T00:00:00.000Z"
+  }
+}

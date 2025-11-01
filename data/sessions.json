@@ -1,6 +1,66 @@
 {
   "sessions": [
     {
+      "id": "session-20251101-171945",
+      "label": "Nubia, Kingdom of Makuria · Year 983",
+      "subtitle": "Started Nov 1, 2025, 5:19 PM · Source OPENAI",
+      "createdAt": 1762017585557,
+      "sessionDataId": "session-20251101-171945"
+    },
+    {
+      "id": "session-1762017489688",
+      "label": "New life 14",
+      "subtitle": "Created Nov 1, 2025, 5:18 PM",
+      "createdAt": 1762017489688
+    },
+    {
+      "id": "session-20251101-171711",
+      "label": "Château-Thierry, Île-de-France, Kingdom of France · Year 1409",
+      "subtitle": "Started Nov 1, 2025, 5:17 PM · Source OPENAI",
+      "createdAt": 1762017431748,
+      "sessionDataId": "session-20251101-171711"
+    },
+    {
+      "id": "session-20251101-171326",
+      "label": "Central North America, Kingdom of France (Louisiana) · Year 1461",
+      "subtitle": "Started Nov 1, 2025, 5:13 PM · Source OPENAI",
+      "createdAt": 1762017206871,
+      "sessionDataId": "session-20251101-171326"
+    },
+    {
+      "id": "session-1762016946948",
+      "label": "New life 11",
+      "subtitle": "Created Nov 1, 2025, 5:09 PM",
+      "createdAt": 1762016946948
+    },
+    {
+      "id": "session-20251101-170302",
+      "label": "Opole, Silesia, Kingdom of Poland · Year 1452",
+      "subtitle": "Started Nov 1, 2025, 5:03 PM · Source OPENAI",
+      "createdAt": 1762016582818,
+      "sessionDataId": "session-20251101-170302"
+    },
+    {
+      "id": "session-1762016573089",
+      "label": "New life 9",
+      "subtitle": "Created Nov 1, 2025, 5:02 PM",
+      "createdAt": 1762016573089
+    },
+    {
+      "id": "session-20251101-165109",
+      "label": "Unknown, North Africa, Almoravid Empire · Year 1134",
+      "subtitle": "Started Nov 1, 2025, 4:51 PM · Source OPENAI",
+      "createdAt": 1762015869638,
+      "sessionDataId": "session-20251101-165109"
+    },
+    {
+      "id": "session-20251101-164952",
+      "label": "Siberia, Grand Duchy of Moscow · Year 1476",
+      "subtitle": "Started Nov 1, 2025, 4:49 PM · Source OPENAI",
+      "createdAt": 1762015792949,
+      "sessionDataId": "session-20251101-164952"
+    },
+    {
       "id": "session-1762015472150",
       "label": "New life 6",
       "subtitle": "Created Nov 1, 2025, 4:44 PM",
@@ -15,7 +75,7 @@
     },
     {
       "id": "session-1762013924618",
-      "label": "Yo",
+      "label": "Died",
       "subtitle": "Created Nov 1, 2025, 4:18 PM",
       "createdAt": 1762013924618
     },
@@ -40,5 +100,5 @@
       "sessionDataId": "session-20251101-160504"
     }
   ],
-  "selectedId": "session-1762015472150"
+  "selectedId": "session-20251101-171945"
 }

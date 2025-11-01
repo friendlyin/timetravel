@@ -267,7 +267,12 @@ export function SessionTimeline({ sessionHistory }: SessionTimelineProps) {
                             />
                             <Stat
                                 label="Status"
-                                value={`${sessionSummary.status}${
+                                value={`${
+                                    sessionSummary.status
+                                        .at(0)
+                                        ?.toLocaleUpperCase() +
+                                    sessionSummary.status.slice(1)
+                                }${
                                     sessionSummary.currentAge !== undefined
                                         ? ` · Age ${sessionSummary.currentAge}`
                                         : ''
@@ -406,7 +411,7 @@ export function SessionTimeline({ sessionHistory }: SessionTimelineProps) {
                                                         </span>
                                                     </div>
                                                     <div className="flex flex-wrap gap-1 text-[0.65rem] text-slate-500 dark:text-slate-400">
-                                                        {option.opportunities.map(
+                                                        {option.opportunities?.map(
                                                             (item) => (
                                                                 <span
                                                                     key={item}
