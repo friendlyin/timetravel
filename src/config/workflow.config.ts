@@ -3,6 +3,9 @@
  * 
  * This file defines the order and structure of the game flow.
  * You can easily modify the sequence, add new steps, or change the logic.
+ * 
+ * NOTE: The main workflow sequence is now defined in agents.config.ts
+ * This file maintains backwards compatibility and game configuration.
  */
 
 export type WorkflowStepType = 
@@ -97,6 +100,13 @@ export const GAME_CONFIG = {
     max: 15,
   },
 } as const;
+
+/**
+ * Check if game should end based on session state
+ */
+export function shouldEndGame(pivotalMomentCount: number, maxMoments: number): boolean {
+  return pivotalMomentCount >= maxMoments;
+}
 
 /**
  * Get the workflow step by ID

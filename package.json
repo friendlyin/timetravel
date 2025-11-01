@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "test-workflow": "tsx scripts/test-workflow.ts"
   },
   "dependencies": {
     "next": "16.0.1",
@@ -23,6 +24,7 @@
     "eslint": "^9",
     "eslint-config-next": "16.0.1",
     "tailwindcss": "^4.1.16",
+    "tsx": "^4.19.2",
     "typescript": "^5"
   }
 }

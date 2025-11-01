@@ -8,21 +8,26 @@
 
 import OpenAI from 'openai';
 import { ModelConfig, ImageModelConfig } from '@/config/models.config';
+import localConfig from '../../config.local';
 
 /**
  * Initialize the OpenAI client
- * API key should be set in environment variables as OPENAI_API_KEY
+ * API key can be set in:
+ * 1. config.local.ts (recommended for local development)
+ * 2. Environment variable OPENAI_API_KEY (for production/deployment)
  */
 let openaiClient: OpenAI | null = null;
 
 export function getOpenAIClient(): OpenAI {
   if (!openaiClient) {
-    const apiKey = process.env.OPENAI_API_KEY;
+    // Try to get API key from local config first, then fall back to environment variables
+    const apiKey = localConfig.openaiApiKey || process.env.OPENAI_API_KEY;
     
     if (!apiKey) {
       throw new Error(
-        'OPENAI_API_KEY is not set in environment variables. ' +
-        'Please add it to your .env.local file.'
+        'OPENAI_API_KEY is not configured. ' +
+        'Please add it to config.local.ts (copy from config.local.example.ts) ' +
+        'or set it in your .env.local file.'
       );
     }
     
@@ -80,16 +85,29 @@ export async function generateJSONCompletion<T>(
   modelConfig: ModelConfig
 ): Promise<T> {
   try {
-    const content = await generateTextCompletion(systemPrompt, userPrompt, modelConfig);
+    const client = getOpenAIClient();
     
-    // Try to extract JSON from the response
-    // Sometimes the AI wraps JSON in markdown code blocks
-    const jsonMatch = content.match(/```json\n?([\s\S]*?)\n?```/) || 
-                      content.match(/```\n?([\s\S]*?)\n?```/);
+    // Use JSON mode to force JSON output
+    const response = await client.chat.completions.create({
+      model: modelConfig.model,
+      messages: [
+        { role: 'system', content: systemPrompt },
+        { role: 'user', content: userPrompt },
+      ],
+      temperature: modelConfig.temperature ?? 0.7,
+      max_tokens: modelConfig.maxTokens,
+      top_p: modelConfig.topP,
+      response_format: { type: "json_object" },
+    });
     
-    const jsonString = jsonMatch ? jsonMatch[1] : content;
+    const content = response.choices[0]?.message?.content;
     
-    return JSON.parse(jsonString) as T;
+    if (!content) {
+      throw new Error('No content returned from OpenAI API');
+    }
+    
+    // Parse the JSON response
+    return JSON.parse(content) as T;
   } catch (error) {
     console.error('Error parsing JSON completion:', error);
     throw new Error(

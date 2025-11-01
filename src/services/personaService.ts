@@ -2,118 +2,132 @@
  * Persona Service
  * 
  * This service generates possible personas (character options) based on
- * the historical context. Each persona represents a different type of
- * person who could have lived in those circumstances.
+ * the historical context. Now uses the unified agent executor system.
  */
 
-import { PersonaOptions, PersonaGenerationInput } from '@/types/persona.types';
-import { generateJSONCompletion } from '@/lib/openai';
-import { MODELS } from '@/config/models.config';
-import { getPromptsForStep } from '@/config/prompts.config';
+import { PersonaOptions } from '@/types/persona.types';
+import { getAgentConfig } from '@/config/agents.config';
+import { executeAgent } from './agentExecutor';
+import { readSession } from './sessionService';
 import { GAME_CONFIG } from '@/config/workflow.config';
 
 /**
  * Generate persona options based on historical context
  * 
- * @param input - Historical context and configuration
+ * @param sessionId - The session ID
  * @returns Multiple persona options for the player to choose from
  */
 export async function generatePersonaOptions(
-  input: PersonaGenerationInput
+  sessionId: string
 ): Promise<PersonaOptions> {
-  // TODO: Implement actual OpenAI call when prompts are finalized
+  // Get agent configuration
+  const agentConfig = getAgentConfig('personaGeneration');
   
-  const numberOfOptions = input.numberOfOptions || GAME_CONFIG.defaultPersonaOptions;
+  // Execute agent (reads from session, writes to session)
+  const result = await executeAgent(agentConfig, sessionId);
   
-  // Get the configured model and prompts
-  const modelConfig = MODELS.personaGeneration;
-  const { systemPrompt, userPrompt } = getPromptsForStep('personaGeneration', {
-    historicalContextJson: JSON.stringify(input.historicalContext, null, 2),
-    numberOfOptions: numberOfOptions.toString(),
-  });
+  // If agent didn't return data (mock mode), generate and add mock data
+  if (!result) {
+    const session = readSession(sessionId);
+    const numberOfOptions = session.config.numberOfPersonaOptions || GAME_CONFIG.defaultPersonaOptions;
+    const mockOptions: PersonaOptions = {
+      options: [
+        {
+          id: 'persona-1',
+          title: 'Noble Merchant\'s Child',
+          familyBackground: {
+            socialClass: 'Upper Middle Class',
+            occupation: 'Merchant',
+            wealth: 'wealthy',
+            familySize: 5,
+            parentalStatus: 'Both parents alive',
+            location: session.input.location,
+          },
+          birthCircumstances: 'Born into a prosperous merchant family',
+          initialAttributes: {
+            gender: 'male',
+            ethnicity: 'Local',
+            physicalTraits: ['Healthy', 'Well-fed'],
+            earlyChildhood: 'Comfortable upbringing with education',
+          },
+          probability: 20,
+          opportunities: ['Education', 'Business connections', 'Travel'],
+          challenges: ['Maintaining family reputation', 'Political instability'],
+        },
+        {
+          id: 'persona-2',
+          title: 'Peasant Farmer\'s Child',
+          familyBackground: {
+            socialClass: 'Lower Class',
+            occupation: 'Farmer',
+            wealth: 'poor',
+            familySize: 8,
+            parentalStatus: 'Both parents alive',
+            location: session.input.location,
+          },
+          birthCircumstances: 'Born into a large farming family',
+          initialAttributes: {
+            gender: 'female',
+            ethnicity: 'Local',
+            physicalTraits: ['Hardy', 'Strong'],
+            earlyChildhood: 'Hard work from young age',
+          },
+          probability: 50,
+          opportunities: ['Community support', 'Land inheritance'],
+          challenges: ['Poverty', 'Disease', 'Taxes', 'Limited social mobility'],
+        },
+        {
+          id: 'persona-3',
+          title: 'Artisan\'s Apprentice',
+          familyBackground: {
+            socialClass: 'Middle Class',
+            occupation: 'Artisan',
+            wealth: 'modest',
+            familySize: 4,
+            parentalStatus: 'Both parents alive',
+            location: session.input.location,
+          },
+          birthCircumstances: 'Born to a skilled craftsperson',
+          initialAttributes: {
+            gender: 'male',
+            ethnicity: 'Local',
+            physicalTraits: ['Dexterous hands', 'Good eyesight'],
+            earlyChildhood: 'Learning trade from parents',
+          },
+          probability: 25,
+          opportunities: ['Skill development', 'Guild membership', 'Urban life'],
+          challenges: ['Economic competition', 'Guild restrictions'],
+        },
+        {
+          id: 'persona-4',
+          title: 'Orphan',
+          familyBackground: {
+            socialClass: 'Lower Class',
+            occupation: 'Various',
+            wealth: 'poor',
+            familySize: 0,
+            parentalStatus: 'Orphan',
+            location: session.input.location,
+          },
+          birthCircumstances: 'Parents died in circumstances unknown',
+          initialAttributes: {
+            gender: 'female',
+            ethnicity: 'Local',
+            physicalTraits: ['Malnourished', 'Scrappy'],
+            earlyChildhood: 'Survival on the streets',
+          },
+          probability: 5,
+          opportunities: ['Freedom from obligations', 'Adaptability'],
+          challenges: ['Lack of support', 'Hunger', 'Danger', 'No education'],
+        },
+      ].slice(0, numberOfOptions),
+      timestamp: new Date().toISOString(),
+    };
+    return mockOptions;
+  }
   
-  // For now, return mock data with proper structure
-  // When ready to implement, uncomment the following:
-  /*
-  const personas = await generateJSONCompletion<PersonaOptions>(
-    systemPrompt,
-    userPrompt,
-    modelConfig
-  );
-  return personas;
-  */
-  
-  // Mock response for testing
-  return {
-    options: [
-      {
-        id: 'persona-1',
-        title: 'Mock Persona 1',
-        familyBackground: {
-          socialClass: 'Mock Class',
-          occupation: 'Mock Occupation',
-          wealth: 'modest',
-          familySize: 5,
-          parentalStatus: 'Both parents alive',
-          location: 'Mock Location',
-        },
-        birthCircumstances: 'Mock birth circumstances',
-        initialAttributes: {
-          gender: 'male',
-          ethnicity: 'Mock Ethnicity',
-          physicalTraits: ['Mock trait 1', 'Mock trait 2'],
-          earlyChildhood: 'Mock early childhood',
-        },
-        probability: 35,
-        opportunities: ['Mock opportunity 1', 'Mock opportunity 2'],
-        challenges: ['Mock challenge 1', 'Mock challenge 2'],
-      },
-      {
-        id: 'persona-2',
-        title: 'Mock Persona 2',
-        familyBackground: {
-          socialClass: 'Mock Class 2',
-          occupation: 'Mock Occupation 2',
-          wealth: 'poor',
-          familySize: 7,
-          parentalStatus: 'Single parent',
-          location: 'Mock Location 2',
-        },
-        birthCircumstances: 'Mock birth circumstances 2',
-        initialAttributes: {
-          gender: 'female',
-          ethnicity: 'Mock Ethnicity 2',
-          physicalTraits: ['Mock trait 3', 'Mock trait 4'],
-          earlyChildhood: 'Mock early childhood 2',
-        },
-        probability: 40,
-        opportunities: ['Mock opportunity 3'],
-        challenges: ['Mock challenge 3', 'Mock challenge 4'],
-      },
-      {
-        id: 'persona-3',
-        title: 'Mock Persona 3',
-        familyBackground: {
-          socialClass: 'Mock Class 3',
-          occupation: 'Mock Occupation 3',
-          wealth: 'wealthy',
-          familySize: 3,
-          parentalStatus: 'Both parents alive',
-          location: 'Mock Location 3',
-        },
-        birthCircumstances: 'Mock birth circumstances 3',
-        initialAttributes: {
-          gender: 'male',
-          ethnicity: 'Mock Ethnicity 3',
-          physicalTraits: ['Mock trait 5'],
-          earlyChildhood: 'Mock early childhood 3',
-        },
-        probability: 25,
-        opportunities: ['Mock opportunity 4', 'Mock opportunity 5', 'Mock opportunity 6'],
-        challenges: ['Mock challenge 5'],
-      },
-    ],
-    timestamp: new Date().toISOString(),
-  };
+  // Read the result from session
+  const session = readSession(sessionId);
+  return session.personaOptions!;
 }
 

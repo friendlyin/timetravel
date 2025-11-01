@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "sessionId": "session-20251101-133328",
+    "startTime": "2025-11-01T13:33:28.031Z",
+    "currentStep": "initialization",
+    "status": "active",
+    "totalSteps": 1
+  },
+  "input": {
+    "date": "1910-02-02",
+    "location": "Poland, Warsaw"
+  },
+  "config": {
+    "numberOfPersonaOptions": 4,
+    "maxPivotalMoments": 5,
+    "generateImages": false
+  },
+  "lifelines": [],
+  "pivotalMoments": [],
+  "choices": [],
+  "images": [],
+  "executionLogs": [
+    {
+      "agentId": "historicalContext",
+      "agentName": "Historical Context Agent",
+      "startTime": "2025-11-01T13:33:36.070Z",
+      "endTime": "2025-11-01T13:33:38.106Z",
+      "duration": 2036,
+      "inputData": {},
+      "outputData": null,
+      "success": false,
+      "error": "Failed to parse JSON response: Unexpected token 'T', \"To generat\"... is not valid JSON"
+    }
+  ],
+  "gameState": {
+    "isAlive": true
+  }
+}
