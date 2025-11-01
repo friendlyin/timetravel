@@ -15,7 +15,7 @@ When creating a new session user will go through the following steps:
 - Co-locate small helper modules (types, constants) next to their usage but export shared utilities from `src/lib/`.
 
 ## State & Data
-- Persist user state exclusively in `localStorage`; wrap access in a reusable `useLocalStorage` hook to sync reads/writes and handle JSON parsing.
+- Persist user state on the server file system via lightweight API route wrappers; use local caches only for optimistic UI when it makes sense.
 - Hydrate local state inside `useEffect` to avoid SSR mismatches, even though the project runs entirely on the client.
 - Provide optimistic UI updates and debounce writes when persisting large payloads.
 
@@ -33,7 +33,7 @@ When creating a new session user will go through the following steps:
 ## Code Quality
 - Run `npm run lint` before commits; keep ESLint warnings at zero.
 - Write lightweight component tests for complex hooks/components (e.g., using React Testing Library) when behavior becomes non-trivial.
-- Add concise comments only for complex state transitions or non-obvious localStorage quirks.
+- Add concise comments only for complex state transitions or non-obvious persistence quirks.
 
 ## Tooling & Workflow
 - Use `npm run dev` for local development; `npm run build` should stay green before merging.

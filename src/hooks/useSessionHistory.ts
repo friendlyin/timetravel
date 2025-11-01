@@ -1,20 +1,14 @@
 'use client';
 
 import { useCallback, useEffect, useMemo, useState } from 'react';
+import {
+  SessionHistoryItem,
+  StoredSessions,
+} from '@/types/session.types';
 
-const STORAGE_KEY = 'time-travel-sessions';
-
-export type SessionHistoryItem = {
-  id: string;
-  label: string;
-  subtitle: string;
-  createdAt: number;
-};
-
-type StoredSessions = {
-  sessions: SessionHistoryItem[];
-  selectedId: string | null;
-};
+const SESSIONS_ENDPOINT = '/api/sessions';
+const SELECT_ENDPOINT = '/api/sessions/select';
+const JSON_HEADERS = { 'Content-Type': 'application/json' } as const;
 
 export function useSessionHistory() {
   const [sessions, setSessions] = useState<SessionHistoryItem[]>([]);
@@ -24,114 +18,105 @@ export function useSessionHistory() {
   const [isHydrated, setHydrated] = useState(false);
 
   useEffect(() => {
-    if (typeof window === 'undefined') {
-      return;
-    }
-
     let cancelled = false;
 
-    const loadFromStorage = () => {
+    const loadFromServer = async () => {
       if (cancelled) {
         return;
       }
 
       try {
-        const rawValue = window.localStorage.getItem(STORAGE_KEY);
-        if (!rawValue) {
-          setHydrated(true);
+        const response = await fetch(SESSIONS_ENDPOINT, {
+          cache: 'no-store',
+        });
+
+        if (!response.ok) {
+          throw new Error('Failed to load sessions');
+        }
+
+        const payload = (await response.json()) as StoredSessions;
+        if (cancelled) {
           return;
         }
 
-        const parsed = JSON.parse(rawValue) as StoredSessions;
-        setSessions(parsed.sessions ?? []);
-        setSelectedSessionId(parsed.selectedId ?? null);
-        setHydrated(true);
-      } catch {
-        setHydrated(true);
+        setSessions(payload.sessions ?? []);
+        setSelectedSessionId(payload.selectedId ?? null);
+      } catch (error) {
+        if (!cancelled) {
+          console.error(error);
+          setSessions([]);
+          setSelectedSessionId(null);
+        }
+      } finally {
+        if (!cancelled) {
+          setHydrated(true);
+        }
       }
     };
 
-    const frame = window.requestAnimationFrame(loadFromStorage);
-
+    loadFromServer();
     return () => {
       cancelled = true;
-      window.cancelAnimationFrame(frame);
     };
   }, []);
 
-  const persist = useCallback(
-    (nextSessions: SessionHistoryItem[], nextSelectedId: string | null) => {
-      if (typeof window === 'undefined') {
-        return;
-      }
+  const applyServerState = useCallback((data: StoredSessions) => {
+    setSessions(data.sessions ?? []);
+    setSelectedSessionId(data.selectedId ?? null);
+  }, []);
 
-      const payload: StoredSessions = {
-        sessions: nextSessions,
-        selectedId: nextSelectedId,
-      };
-
-      window.localStorage.setItem(STORAGE_KEY, JSON.stringify(payload));
-    },
-    [],
-  );
-
-  const formatter = useMemo(
-    () =>
-      new Intl.DateTimeFormat('en', {
-        dateStyle: 'medium',
-        timeStyle: 'short',
-      }),
-    [],
-  );
-
-  const createSession = useCallback(() => {
+  const createSession = useCallback(async () => {
     if (!isHydrated) {
       return;
     }
 
-    const timestamp = Date.now();
+    try {
+      const response = await fetch(SESSIONS_ENDPOINT, { method: 'POST' });
+      if (!response.ok) {
+        throw new Error('Failed to create session');
+      }
 
-    setSessions((prev) => {
-      const index = prev.length + 1;
-      const nextSession: SessionHistoryItem = {
-        id: `session-${timestamp}`,
-        label: `New life ${index}`,
-        subtitle: `Created ${formatter.format(timestamp)}`,
-        createdAt: timestamp,
-      };
-
-      const nextSessions = [nextSession, ...prev];
-
-      setSelectedSessionId(nextSession.id);
-      persist(nextSessions, nextSession.id);
-      return nextSessions;
-    });
-  }, [formatter, isHydrated, persist]);
+      const payload = (await response.json()) as StoredSessions;
+      applyServerState(payload);
+    } catch (error) {
+      console.error(error);
+    }
+  }, [applyServerState, isHydrated]);
 
   const selectSession = useCallback(
-    (sessionId: string) => {
+    async (sessionId: string) => {
       if (!isHydrated) {
         return;
       }
 
-      setSelectedSessionId(sessionId);
-      persist(sessions, sessionId);
+      try {
+        const response = await fetch(SELECT_ENDPOINT, {
+          method: 'POST',
+          headers: JSON_HEADERS,
+          body: JSON.stringify({ id: sessionId }),
+        });
+
+        if (!response.ok) {
+          throw new Error('Failed to select session');
+        }
+
+        const payload = (await response.json()) as StoredSessions;
+        applyServerState(payload);
+      } catch (error) {
+        console.error(error);
+      }
     },
-    [isHydrated, persist, sessions],
+    [applyServerState, isHydrated],
   );
 
   const renameSession = useCallback(
-    (sessionId: string) => {
+    async (sessionId: string) => {
       if (!isHydrated) {
         return;
       }
 
       const target = sessions.find((session) => session.id === sessionId);
       if (!target) {
-        return;
-      }
-
-      if (typeof window === 'undefined') {
         return;
       }
 
@@ -145,16 +130,24 @@ export function useSessionHistory() {
         return;
       }
 
-      setSessions((prev) => {
-        const nextSessions = prev.map((session) =>
-          session.id === sessionId ? { ...session, label: trimmed } : session,
-        );
+      try {
+        const response = await fetch(`${SESSIONS_ENDPOINT}/${sessionId}`, {
+          method: 'PATCH',
+          headers: JSON_HEADERS,
+          body: JSON.stringify({ label: trimmed }),
+        });
 
-        persist(nextSessions, selectedSessionId);
-        return nextSessions;
-      });
+        if (!response.ok) {
+          throw new Error('Failed to rename session');
+        }
+
+        const payload = (await response.json()) as StoredSessions;
+        applyServerState(payload);
+      } catch (error) {
+        console.error(error);
+      }
     },
-    [isHydrated, persist, selectedSessionId, sessions],
+    [applyServerState, isHydrated, sessions],
   );
 
   const value = useMemo(

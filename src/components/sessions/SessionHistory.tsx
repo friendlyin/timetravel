@@ -43,7 +43,9 @@ export function SessionHistory({ isOpen }: SessionHistoryProps) {
                   </div>
                   <button
                       type="button"
-                      onClick={createSession}
+                      onClick={() => {
+                          void createSession();
+                      }}
                       className="rounded-md border border-slate-200 bg-white px-2 py-1 text-xs font-medium shadow-sm transition hover:border-slate-300 hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-slate-400 dark:border-slate-700 dark:bg-slate-900 dark:hover:border-slate-600 dark:hover:bg-slate-800 dark:focus:ring-slate-500"
                   >
                       New
@@ -64,10 +66,12 @@ export function SessionHistory({ isOpen }: SessionHistoryProps) {
                           <li key={session.id} className="px-1">
                               <button
                                   type="button"
-                                  onClick={() => selectSession(session.id)}
-                                  onDoubleClick={() =>
-                                      renameSession(session.id)
-                                  }
+                                  onClick={() => {
+                                      void selectSession(session.id);
+                                  }}
+                                  onDoubleClick={() => {
+                                      void renameSession(session.id);
+                                  }}
                                   className={[
                                       'group flex w-full flex-col rounded-md border px-3 py-2 text-left text-sm transition',
                                       session.id === selectedSessionId
