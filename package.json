@@ -10,6 +10,7 @@
     "test-workflow": "tsx scripts/test-workflow.ts"
   },
   "dependencies": {
+    "@google/genai": "^1.28.0",
     "next": "16.0.1",
     "ol": "^10.6.1",
     "openai": "^6.7.0",

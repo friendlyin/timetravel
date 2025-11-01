@@ -173,9 +173,12 @@ async function generateImage(
     
     console.log('\n✅ Image generated:');
     console.log(`   ID: ${image.id}`);
-    console.log(`   URL: ${image.url}`);
     if (image.filePath) {
       console.log(`   File: ${image.filePath}`);
+    }
+    // Don't log the URL if it's a data URL (too long)
+    if (image.url && !image.url.startsWith('data:')) {
+      console.log(`   URL: ${image.url}`);
     }
     if (image.revisedPrompt) {
       console.log(`   Revised Prompt: ${image.revisedPrompt}`);

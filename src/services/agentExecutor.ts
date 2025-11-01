@@ -12,7 +12,8 @@ import {
   addExecutionLog,
   getAgentInput,
 } from './sessionService';
-import { generateJSONCompletion, generateImage } from '@/lib/openai';
+import { generateJSONCompletion } from '@/lib/openai';
+import { generateImage } from '@/lib/gemini'; // Using Gemini for image generation
 import { fillPromptTemplate } from '@/config/prompts.config';
 import { ModelConfig, ImageModelConfig } from '@/config/models.config';
 import { AgentExecutionLog } from '@/types/session.types';
@@ -132,7 +133,7 @@ async function executeTextAgent(
 }
 
 /**
- * Execute an image generation agent (DALL-E)
+ * Execute an image generation agent (Gemini 2.5 Flash)
  */
 async function executeImageAgent(
   systemPrompt: string,
@@ -140,8 +141,8 @@ async function executeImageAgent(
   modelConfig: ImageModelConfig,
   sessionId: string
 ): Promise<any> {
-  // Call DALL-E to generate image
-  console.log(`   🎨 Calling DALL-E API (${modelConfig.model})...`);
+  // Call Gemini to generate image
+  console.log(`   🎨 Calling Gemini API (${modelConfig.model})...`);
   const result = await generateImage(userPrompt, modelConfig);
   return {
     id: `image-${Date.now()}`,
@@ -274,6 +275,7 @@ function buildPromptVariables(
   }
   
   // Add scene context for image prompt generation
+  // Focus on the chosen option if available, otherwise show the pivotal moment
   let sceneContext = '';
   if (session.lifelines.length > 0) {
     const latestLifeline = session.lifelines[session.lifelines.length - 1];
@@ -284,7 +286,28 @@ function buildPromptVariables(
     const latestMoment = session.pivotalMoments[session.pivotalMoments.length - 1];
     sceneContext += `Latest Pivotal Moment:\n`;
     sceneContext += `${latestMoment.title} (Age ${latestMoment.age})\n`;
-    sceneContext += latestMoment.situation + '\n';
+    
+    // If user has made a choice, focus on the chosen option
+    if (session.choices.length > 0) {
+      const latestChoice = session.choices[session.choices.length - 1];
+      
+      // Find the full choice details from the pivotal moment
+      const chosenOption = latestMoment.choices.find(c => c.id === latestChoice.choiceId);
+      
+      if (chosenOption) {
+        sceneContext += `\n**FOCUS: The character chose "${chosenOption.title}"**\n`;
+        sceneContext += `Choice Description: ${chosenOption.description}\n`;
+        sceneContext += `Immediate Consequences: ${chosenOption.immediateConsequences.join(', ')}\n`;
+        sceneContext += `\nThe image should visualize THIS SPECIFIC CHOICE and its immediate outcome, not the general situation.\n`;
+      } else {
+        // Fallback if choice details not found
+        sceneContext += `\n**FOCUS: The character chose "${latestChoice.choiceTitle}"**\n`;
+        sceneContext += `The image should visualize this specific choice and its immediate outcome.\n`;
+      }
+    } else {
+      // No choice made yet, show the situation
+      sceneContext += latestMoment.situation + '\n';
+    }
   }
   variables['sceneContext'] = sceneContext || 'Character just started their life journey.';
   

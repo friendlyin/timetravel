@@ -7,7 +7,7 @@
 
 import { getAgentConfig } from '@/config/agents.config';
 import { executeAgent } from './agentExecutor';
-import { readSession, getImageFilePath } from './sessionService';
+import { readSession, getImageFilePath, writeSession } from './sessionService';
 import { GeneratedImage } from '@/types/session.types';
 import { downloadImage } from '@/lib/openai';
 
@@ -21,8 +21,8 @@ import { downloadImage } from '@/lib/openai';
  * 
  * The function:
  * 1. Uses the latest image prompt from the session
- * 2. Generates an image via DALL-E
- * 3. Downloads the image from the URL
+ * 2. Generates an image via Gemini 2.5 Flash Image (Nano Banana)
+ * 3. Downloads the image from the data URL
  * 4. Saves it to the session folder
  * 5. Updates the session with the image data including local file path
  * 
@@ -72,6 +72,15 @@ export async function generateHistoricalImage(
     
     // Update the image with the file path
     latestImage.filePath = imageFilePath;
+    
+    // Clear the data URL to avoid cluttering the session JSON
+    // Keep only the file path for reference
+    if (latestImage.url.startsWith('data:')) {
+      latestImage.url = ''; // Clear data URL, file path is sufficient
+    }
+    
+    // Save the updated session with cleared URL
+    writeSession(sessionId, session);
     
     console.log(`✅ Image saved to: ${imageFilePath}`);
   } catch (error) {

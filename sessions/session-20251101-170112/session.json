@@ -1,0 +1,496 @@
+{
+  "metadata": {
+    "sessionId": "session-20251101-170112",
+    "startTime": "2025-11-01T17:01:12.500Z",
+    "currentStep": "Lifeline Generation Agent",
+    "status": "active",
+    "totalSteps": 6
+  },
+  "input": {
+    "date": "1600-03-02",
+    "location": "Spain"
+  },
+  "config": {
+    "numberOfPersonaOptions": 4,
+    "maxPivotalMoments": 5,
+    "generateImages": false
+  },
+  "lifelines": [
+    {
+      "id": "lifeline-persona-4-0",
+      "startAge": 0,
+      "endAge": 11,
+      "narrative": "Born in the heart of Toledo in 1600, young Isabella de la Cruz was the second child in a family of the lower nobility. Her family, modest landowners with deep ties to the Catholic Church, was steeped in the traditions of their faith. From the earliest days, Isabella was destined for a religious vocation, a path chosen by her devout parents. As a child, her days were filled with the scent of incense and the somber chants of hymns echoing through the stone walls of the convent she often visited. Under the watchful eyes of her mother and the nurturing guidance of the nuns, Isabella was taught to read and write, skills uncommon for women of her time. Her lessons were grounded in the scriptures, her mind shaped by the teachings of the Church, ensuring her piety and obedience would be unquestionable.\n\nBy the time she was ten, Isabella's life was a blend of family duties and religious devotion. She assisted her mother with household tasks, learning the arts of spinning and embroidery, while her evenings were reserved for prayer and study. Her older brother, Diego, was her closest companion, sharing with her stories of knights and faraway lands, fueling her imagination beyond the convent walls. Yet, even amid her structured life, Isabella found solace in the quiet moments of reflection in the convent garden, where the roses bloomed with brilliant colors. It was here that she often pondered her future, caught between the expectations of her family and her own burgeoning sense of self.\n\nAt the age of eleven, Isabella faced a pivotal moment. Her family, seeking to secure her future and honor their promises to the Church, arranged for her to join the convent as a novice. This decision, while foreseen, weighed heavily on Isabella, for it meant the closing of one path and the opening of another, one that promised a life of devotion but also isolation from the world she knew.",
+      "events": [
+        {
+          "age": 3,
+          "year": "1603",
+          "event": "Isabella's first visit to the convent where she was introduced to the abbess.",
+          "impact": "moderate",
+          "location": "Local convent in Toledo"
+        },
+        {
+          "age": 5,
+          "year": "1605",
+          "event": "Began formal religious education, learning to read the scriptures.",
+          "impact": "significant",
+          "location": "Home and convent"
+        },
+        {
+          "age": 8,
+          "year": "1608",
+          "event": "Received her first communion, marking an important religious milestone.",
+          "impact": "major",
+          "location": "Local church in Toledo"
+        },
+        {
+          "age": 10,
+          "year": "1610",
+          "event": "Family decided to dedicate her to the convent as a novice.",
+          "impact": "major",
+          "location": "Family home, Toledo"
+        },
+        {
+          "age": 11,
+          "year": "1611",
+          "event": "Officially joined the convent as a novice, marking the start of a new chapter in her life.",
+          "impact": "major",
+          "location": "Convent in Toledo"
+        }
+      ],
+      "characterDevelopment": {
+        "skills": [
+          "Reading",
+          "Writing",
+          "Embroidery",
+          "Religious studies"
+        ],
+        "relationships": [
+          "Close bond with her brother Diego",
+          "Mentorship with the abbess"
+        ],
+        "beliefs": [
+          "Strong Catholic faith",
+          "Devotion to religious life"
+        ],
+        "reputation": "Respected for her piety and intelligence",
+        "physicalCondition": "Healthy and active",
+        "mentalState": "Contemplative, with an emerging sense of independence"
+      },
+      "pivotalMomentReached": true,
+      "imagePrompt": "A young girl with light complexion and slender build, standing in a convent garden, surrounded by blooming roses, deep in thought as she holds a small prayer book."
+    }
+  ],
+  "pivotalMoments": [
+    {
+      "id": "pivotal-moment-isabella-1600",
+      "age": 11,
+      "year": "1611",
+      "title": "The Path of Vocation or the Call of the World",
+      "situation": "Isabella stands at a crossroad in the convent garden. The family has prepared for her to take vows as a novice, but recent news of liberation and new lands beckons from her brother, Diego. She contemplates whether to embrace a cloistered life or yearn for broader horizons.",
+      "context": "Arranged by her family for a religious career, Isabella's path seems clear. However, her brother's tales of exploration and change challenge her to think beyond the convent walls. The decision she makes now will define her future, pulling her between familial duty and personal desire.",
+      "stakes": "Her choice will determine her life's trajectory: the fulfillment of a holy vow or the unknown promise of worldly adventure, potentially reshaping her identity and destiny.",
+      "choices": [
+        {
+          "id": "choice-1",
+          "title": "Embrace the Sacred Vows",
+          "description": "Isabella accepts her family's wishes, committing to the life of a nun, finding solace in devotion and the known path of religious duty.",
+          "immediateConsequences": [
+            "Begins her novitiate with the support of the convent",
+            "Stronger ties with her family and community"
+          ],
+          "potentialOutcomes": [
+            "Becomes a respected abbess",
+            "Spiritual fulfillment and contentment in service"
+          ],
+          "risk": "low",
+          "alignment": [
+            "Duty",
+            "Faith",
+            "Tradition"
+          ]
+        },
+        {
+          "id": "choice-2",
+          "title": "Seek a Different Destiny",
+          "description": "Inspired by Diego's stories, Isabella decides to delay her vows and explore the world beyond, seeking to learn and grow outside the convent.",
+          "immediateConsequences": [
+            "Faces familial disappointment",
+            "Begins a journey into unknown lands"
+          ],
+          "potentialOutcomes": [
+            "Discovers new opportunities and skills",
+            "Possibly returns with newfound wisdom"
+          ],
+          "risk": "high",
+          "alignment": [
+            "Adventure",
+            "Independence",
+            "Curiosity"
+          ]
+        },
+        {
+          "id": "choice-3",
+          "title": "Negotiate a Compromise",
+          "description": "Isabella proposes a middle path to her family, engaging in charitable work under the church's banner, allowing for some worldly involvement while staying true to her faith.",
+          "immediateConsequences": [
+            "Initiates discussions with family and church leaders",
+            "Engages in community projects"
+          ],
+          "potentialOutcomes": [
+            "Forges a unique role that blends service with exploration",
+            "Gains community respect for innovative thinking"
+          ],
+          "risk": "medium",
+          "alignment": [
+            "Innovation",
+            "Pragmatism",
+            "Service"
+          ]
+        },
+        {
+          "id": "choice-4",
+          "title": "Secretly Plan an Escape",
+          "description": "Overwhelmed by restlessness, Isabella plans an escape from the convent, seeking freedom without the constraints of societal expectations.",
+          "immediateConsequences": [
+            "Puts her relationship with her family at risk",
+            "Embarks on a solitary adventure"
+          ],
+          "potentialOutcomes": [
+            "Finds freedom and self-identity",
+            "Faces isolation and possible danger"
+          ],
+          "risk": "extreme",
+          "alignment": [
+            "Freedom",
+            "Rebellion",
+            "Self-Determination"
+          ]
+        }
+      ],
+      "timeConstraint": "She must decide before the next formal commitment ceremony in the convent.",
+      "influencingFactors": [
+        "Familial expectations",
+        "Religious beliefs",
+        "Desire for adventure"
+      ],
+      "imagePrompt": "Young girl in a traditional Spanish convent garden, surrounded by blooming roses, holding a prayer book in one hand and a small map in the other, looking out towards the horizon with a contemplative expression."
+    }
+  ],
+  "choices": [],
+  "imagePrompts": [
+    {
+      "id": "prompt-1762016667770",
+      "prompt": "A photorealistic photograph capturing young Isabella de la Cruz at the age of eleven, standing in the cloister garden of a convent in Toledo, Spain, circa 1611. She is dressed in a simple yet elegant gown typical of the lower nobility, made of dark wool with a modest lace collar, her hair neatly braided. The garden is a serene space with stone pathways and vibrant rose bushes, their blooms vivid under the soft morning light filtering through the arches. Isabella is seen holding a small leather-bound prayer book, her expression thoughtful as she gazes at the roses, a moment of reflection before her life changes. The stonework of the convent walls in the background is weathered, with ivy creeping up, adding texture to the scene. The photograph is in sharp focus, capturing the natural lighting and realistic skin tones, emphasizing every detail in a documentary photography style.",
+      "sourceType": "context",
+      "sourceId": "session-20251101-170112",
+      "timestamp": "2023-10-25T15:30:00Z"
+    }
+  ],
+  "images": [
+    {
+      "id": "image-1762016679085",
+      "url": "",
+      "sourceType": "lifeline",
+      "sourceId": "lifeline-persona-4-0",
+      "timestamp": "2025-11-01T17:04:39.085Z",
+      "filePath": "/Users/dima/Development/time travel game/sessions/session-20251101-170112/image-1762016679085.png"
+    }
+  ],
+  "executionLogs": [
+    {
+      "agentId": "historicalContext",
+      "agentName": "Historical Context Agent",
+      "startTime": "2025-11-01T17:02:07.665Z",
+      "endTime": "2025-11-01T17:02:18.520Z",
+      "duration": 10855,
+      "inputData": {
+        "input.date": "1600-03-02",
+        "input.location": "Spain"
+      },
+      "outputData": {
+        "_structure": "country, description, politicalSituation, religion, socialStructure, economy, conflicts, culturalHighlights, additionalContext"
+      },
+      "success": true
+    },
+    {
+      "agentId": "personaGeneration",
+      "agentName": "Persona Generation Agent",
+      "startTime": "2025-11-01T17:02:41.012Z",
+      "endTime": "2025-11-01T17:02:56.280Z",
+      "duration": 15268,
+      "inputData": {
+        "historicalContext": "{country, description, politicalSituation, religion, socialStructure, economy, conflicts, culturalHighlights, additionalContext}",
+        "config.numberOfPersonaOptions": 4
+      },
+      "outputData": {
+        "optionsCount": 4,
+        "_structure": "options, timestamp"
+      },
+      "success": true
+    },
+    {
+      "agentId": "lifelineGeneration",
+      "agentName": "Lifeline Generation Agent",
+      "startTime": "2025-11-01T17:04:06.848Z",
+      "endTime": "2025-11-01T17:04:25.106Z",
+      "duration": 18258,
+      "inputData": {
+        "historicalContext": "{country, description, politicalSituation, religion, socialStructure, economy, conflicts, culturalHighlights, additionalContext}",
+        "selectedPersona": "{id, title, familyBackground, birthCircumstances, initialAttributes, probability, opportunities, challenges}",
+        "lifelines": "[Array with 0 items]"
+      },
+      "outputData": {
+        "id": "lifeline-persona-4-0",
+        "startAge": 0,
+        "endAge": 11,
+        "_structure": "id, startAge, endAge, narrative, events, characterDevelopment, pivotalMomentReached, imagePrompt"
+      },
+      "success": true
+    },
+    {
+      "agentId": "imagePromptGeneration",
+      "agentName": "Image Prompt Generation Agent",
+      "startTime": "2025-11-01T17:04:27.769Z",
+      "endTime": "2025-11-01T17:04:32.946Z",
+      "duration": 5177,
+      "inputData": {
+        "lifelines": "[Array with 1 items]",
+        "pivotalMoments": "[Array with 0 items]",
+        "historicalContext": "{country, description, politicalSituation, religion, socialStructure, economy, conflicts, culturalHighlights, additionalContext}"
+      },
+      "outputData": {
+        "id": "prompt-1762016667770",
+        "_structure": "id, prompt, sourceType, sourceId, timestamp"
+      },
+      "success": true
+    },
+    {
+      "agentId": "imageGeneration",
+      "agentName": "Image Generation Agent",
+      "startTime": "2025-11-01T17:04:32.948Z",
+      "endTime": "2025-11-01T17:04:39.102Z",
+      "duration": 6154,
+      "inputData": {
+        "imagePrompts": "[Array with 1 items]",
+        "historicalContext": "{country, description, politicalSituation, religion, socialStructure, economy, conflicts, culturalHighlights, additionalContext}"
+      },
+      "outputData": {
+        "id": "image-1762016679085",
+        "_structure": "id, url, revisedPrompt, sourceType, sourceId, timestamp"
+      },
+      "success": true
+    },
+    {
+      "agentId": "pivotalMomentGeneration",
+      "agentName": "Pivotal Moment Agent",
+      "startTime": "2025-11-01T17:04:42.148Z",
+      "endTime": "2025-11-01T17:04:53.653Z",
+      "duration": 11505,
+      "inputData": {
+        "historicalContext": "{country, description, politicalSituation, religion, socialStructure, economy, conflicts, culturalHighlights, additionalContext}",
+        "lifelines": "[Array with 1 items]",
+        "pivotalMoments": "[Array with 0 items]"
+      },
+      "outputData": {
+        "id": "pivotal-moment-isabella-1600",
+        "title": "The Path of Vocation or the Call of the World",
+        "age": 11,
+        "year": "1611",
+        "choicesCount": 4,
+        "_structure": "id, age, year, title, situation, context, stakes, choices, timeConstraint, influencingFactors, imagePrompt"
+      },
+      "success": true
+    }
+  ],
+  "gameState": {
+    "isAlive": true
+  },
+  "historicalContext": {
+    "country": "Spain",
+    "description": "In 1600, Spain was a dominant global empire, known as the Spanish Empire, which extended across Europe, the Americas, and parts of Asia. The country was rich in resources and power, with a strong influence on global politics, religion, and trade. Spain's society was characterized by a strict class hierarchy and deeply rooted in Catholic traditions.",
+    "politicalSituation": {
+      "rulers": [
+        "Philip III of Spain"
+      ],
+      "governance": "Monarchy",
+      "details": "Philip III had recently ascended to the throne in 1598 following the death of his father, Philip II. Spain was governed as an extensive monarchy, and Philip III's reign marked the beginning of the decline of the Spanish Empire's political and economic dominance. The king delegated much of his power to a favorite, the Duke of Lerma, which led to a period characterized by political corruption and inefficiency."
+    },
+    "religion": {
+      "dominant": "Roman Catholicism",
+      "culturalBackground": "Spain in 1600 was profoundly Catholic, following the Counter-Reformation led by the previous monarch, Philip II. The Spanish Inquisition was still active, enforcing Catholic orthodoxy and persecuting heresy. Religious festivals and practices were woven into the social fabric, and the church played a central role in governance and daily life."
+    },
+    "socialStructure": "Spanish society was hierarchical, with the nobility and clergy at the top, followed by the bourgeoisie and commoners. The nobility held significant land and power, while the church controlled vast resources. Social mobility was limited, and the majority of the population consisted of peasants who worked the land under feudal-like conditions.",
+    "economy": "The Spanish economy in 1600 was heavily reliant on the wealth from its colonies, especially silver from the Americas. However, the influx of precious metals led to inflation and economic instability. Agriculture was the mainstay of the economy, but inefficient practices and heavy taxation burdened the peasantry. The economy was also affected by the costs of ongoing wars in Europe.",
+    "conflicts": [
+      "Eighty Years' War",
+      "Anglo-Spanish War (1585–1604)"
+    ],
+    "culturalHighlights": [
+      "The Spanish Golden Age, a period of flourishing in arts and literature, was underway. Figures like the playwright Lope de Vega and the painter El Greco were prominent during this time."
+    ],
+    "additionalContext": {
+      "key": "Spain's maritime prowess was also significant during this period, with the Spanish Armada being a symbol of its naval strength, despite its defeat by the English in 1588. The country was a vital player in European diplomacy and wars, often in conflict with England and the Dutch Republic."
+    }
+  },
+  "personaOptions": {
+    "options": [
+      {
+        "id": "persona-1",
+        "title": "Nobleman's Daughter",
+        "familyBackground": {
+          "socialClass": "Nobility",
+          "occupation": "Landowners, involved in local governance",
+          "wealth": "very wealthy",
+          "familySize": 7,
+          "parentalStatus": "Both parents alive",
+          "location": "Madrid, Spain"
+        },
+        "birthCircumstances": "Born into a well-established noble family with vast estates in the heart of Spain, during a time of political transition.",
+        "initialAttributes": {
+          "gender": "female",
+          "ethnicity": "Spanish",
+          "physicalTraits": [
+            "fair-skinned",
+            "dark hair"
+          ],
+          "earlyChildhood": "Raised in a large estate with tutors, surrounded by luxury and a strong Catholic influence, with expectations of an advantageous marriage."
+        },
+        "probability": 25,
+        "opportunities": [
+          "Marriage into another noble family",
+          "Access to court life"
+        ],
+        "challenges": [
+          "Pressure to maintain family status",
+          "Limited personal freedom"
+        ]
+      },
+      {
+        "id": "persona-2",
+        "title": "Peasant Farmer's Son",
+        "familyBackground": {
+          "socialClass": "Peasantry",
+          "occupation": "Agricultural laborers",
+          "wealth": "poor",
+          "familySize": 9,
+          "parentalStatus": "Both parents alive",
+          "location": "Castile, Spain"
+        },
+        "birthCircumstances": "Born into a large peasant family, living in a small village dependent on farming and enduring heavy taxation.",
+        "initialAttributes": {
+          "gender": "male",
+          "ethnicity": "Spanish",
+          "physicalTraits": [
+            "tanned skin",
+            "strong build"
+          ],
+          "earlyChildhood": "Grew up working the fields from a young age, with little formal education and strong community ties."
+        },
+        "probability": 30,
+        "opportunities": [
+          "Learning traditional farming techniques",
+          "Involvement in local festivals"
+        ],
+        "challenges": [
+          "Economic hardship",
+          "Vulnerability to famine and disease"
+        ]
+      },
+      {
+        "id": "persona-3",
+        "title": "Merchant's Apprentice",
+        "familyBackground": {
+          "socialClass": "Bourgeoisie",
+          "occupation": "Merchants",
+          "wealth": "comfortable",
+          "familySize": 6,
+          "parentalStatus": "Single parent",
+          "location": "Seville, Spain"
+        },
+        "birthCircumstances": "Born to a merchant family engaged in trade with the New World, with a focus on the import of silver.",
+        "initialAttributes": {
+          "gender": "male",
+          "ethnicity": "Spanish",
+          "physicalTraits": [
+            "olive skin",
+            "medium height"
+          ],
+          "earlyChildhood": "Spent early years in a bustling port city, exposed to diverse cultures and the family's business dealings."
+        },
+        "probability": 25,
+        "opportunities": [
+          "Inheriting the family business",
+          "Education in commerce"
+        ],
+        "challenges": [
+          "Risk of maritime trade losses",
+          "Pressure to expand business"
+        ]
+      },
+      {
+        "id": "persona-4",
+        "title": "Monastic Novice",
+        "familyBackground": {
+          "socialClass": "Lower nobility",
+          "occupation": "Minor landowners",
+          "wealth": "modest",
+          "familySize": 4,
+          "parentalStatus": "Both parents alive",
+          "location": "Toledo, Spain"
+        },
+        "birthCircumstances": "Born into a family with ties to the church, destined for a religious vocation from birth.",
+        "initialAttributes": {
+          "gender": "female",
+          "ethnicity": "Spanish",
+          "physicalTraits": [
+            "light complexion",
+            "slender build"
+          ],
+          "earlyChildhood": "Raised with a focus on religious education and piety, with frequent visits to the local convent."
+        },
+        "probability": 20,
+        "opportunities": [
+          "Joining a convent",
+          "Becoming a scholar in religious studies"
+        ],
+        "challenges": [
+          "Strict religious expectations",
+          "Limited interaction with the outside world"
+        ]
+      }
+    ],
+    "timestamp": "2025-11-01T00:00:00.000Z"
+  },
+  "selectedPersona": {
+    "id": "persona-4",
+    "title": "Monastic Novice",
+    "familyBackground": {
+      "socialClass": "Lower nobility",
+      "occupation": "Minor landowners",
+      "wealth": "modest",
+      "familySize": 4,
+      "parentalStatus": "Both parents alive",
+      "location": "Toledo, Spain"
+    },
+    "birthCircumstances": "Born into a family with ties to the church, destined for a religious vocation from birth.",
+    "initialAttributes": {
+      "gender": "female",
+      "ethnicity": "Spanish",
+      "physicalTraits": [
+        "light complexion",
+        "slender build"
+      ],
+      "earlyChildhood": "Raised with a focus on religious education and piety, with frequent visits to the local convent."
+    },
+    "probability": 20,
+    "opportunities": [
+      "Joining a convent",
+      "Becoming a scholar in religious studies"
+    ],
+    "challenges": [
+      "Strict religious expectations",
+      "Limited interaction with the outside world"
+    ]
+  }
+}

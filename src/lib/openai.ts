@@ -1,17 +1,17 @@
 /**
  * OpenAI API Client Wrapper
- * 
+ *
  * This module provides a centralized interface for interacting with OpenAI's API.
  * It handles initialization, error management, and provides type-safe methods
  * for text and image generation.
  */
 
-import OpenAI from 'openai';
-import { ModelConfig, ImageModelConfig } from '@/config/models.config';
-import localConfig from '../../config.local';
-import fs from 'fs';
-import https from 'https';
-import http from 'http';
+import OpenAI from "openai";
+import { ModelConfig, ImageModelConfig } from "@/config/models.config";
+import localConfig from "../../config.local";
+import fs from "fs";
+import https from "https";
+import http from "http";
 
 /**
  * Initialize the OpenAI client
@@ -28,9 +28,9 @@ export function getOpenAIClient(): OpenAI {
 
     if (!apiKey) {
       throw new Error(
-        'OPENAI_API_KEY is not configured. ' +
-        'Please add it to config.local.ts (copy from config.local.example.ts) ' +
-        'or set it in your .env.local file.'
+        "OPENAI_API_KEY is not configured. " +
+          "Please add it to config.local.ts (copy from config.local.example.ts) " +
+          "or set it in your .env.local file."
       );
     }
 
@@ -44,88 +44,97 @@ export function getOpenAIClient(): OpenAI {
  * Generate text completion using OpenAI's chat API
  */
 export async function generateTextCompletion(
-    systemPrompt: string,
-    userPrompt: string,
-    modelConfig: ModelConfig
+  systemPrompt: string,
+  userPrompt: string,
+  modelConfig: ModelConfig
 ): Promise<string> {
-    try {
-        const client = getOpenAIClient()
+  try {
+    const client = getOpenAIClient();
 
-        const response = await client.chat.completions.create({
-            model: modelConfig.model,
-            messages: [
-                { role: 'system', content: systemPrompt },
-                { role: 'user', content: userPrompt }
-            ],
-            temperature: modelConfig.temperature ?? 0.7,
-            max_tokens: modelConfig.maxTokens,
-            top_p: modelConfig.topP
-        })
+    const response = await client.chat.completions.create({
+      model: modelConfig.model,
+      messages: [
+        { role: "system", content: systemPrompt },
+        { role: "user", content: userPrompt },
+      ],
+      temperature: modelConfig.temperature ?? 0.7,
+      max_tokens: modelConfig.maxTokens,
+      top_p: modelConfig.topP,
+    });
 
-        const content = response.choices[0]?.message?.content
+    const content = response.choices[0]?.message?.content;
 
-        if (!content) {
-            throw new Error('No content returned from OpenAI API')
-        }
-
-        return content
-    } catch (error) {
-        console.error('Error generating text completion:', error)
-        throw new Error(
-            `Failed to generate text completion: ${
-                error instanceof Error ? error.message : 'Unknown error'
-            }`
-        )
+    if (!content) {
+      throw new Error("No content returned from OpenAI API");
     }
+
+    return content;
+  } catch (error) {
+    console.error("Error generating text completion:", error);
+    throw new Error(
+      `Failed to generate text completion: ${
+        error instanceof Error ? error.message : "Unknown error"
+      }`
+    );
+  }
 }
 
 /**
  * Generate text completion and parse as JSON
  */
 export async function generateJSONCompletion<T>(
-    systemPrompt: string,
-    userPrompt: string,
-    modelConfig: ModelConfig
+  systemPrompt: string,
+  userPrompt: string,
+  modelConfig: ModelConfig
 ): Promise<T> {
   try {
     const client = getOpenAIClient();
-    
+
     // Use JSON mode to force JSON output
     const response = await client.chat.completions.create({
       model: modelConfig.model,
       messages: [
-        { role: 'system', content: systemPrompt },
-        { role: 'user', content: userPrompt },
+        { role: "system", content: systemPrompt },
+        { role: "user", content: userPrompt },
       ],
       temperature: modelConfig.temperature ?? 0.7,
       max_tokens: modelConfig.maxTokens,
       top_p: modelConfig.topP,
       response_format: { type: "json_object" },
     });
-    
+
     const content = response.choices[0]?.message?.content;
-    
+
     if (!content) {
-      throw new Error('No content returned from OpenAI API');
+      throw new Error("No content returned from OpenAI API");
     }
-    
+
     // Parse the JSON response
     return JSON.parse(content) as T;
   } catch (error) {
-    console.error('Error parsing JSON completion:', error);
+    console.error("Error parsing JSON completion:", error);
     throw new Error(
-      `Failed to parse JSON response: ${error instanceof Error ? error.message : 'Unknown error'}`
+      `Failed to parse JSON response: ${
+        error instanceof Error ? error.message : "Unknown error"
+      }`
     );
   }
 }
 
 /**
  * Generate an image using OpenAI's DALL-E API
+ * NOTE: This function is currently commented out in favor of Gemini 2.5 Flash
+ * To re-enable, uncomment the code below and update agentExecutor.ts
  */
 export async function generateImage(
-  prompt: string,
-  modelConfig: ImageModelConfig
+  _prompt: string,
+  _modelConfig: ImageModelConfig
 ): Promise<{ url: string; revisedPrompt?: string }> {
+  throw new Error(
+    "OpenAI image generation is currently disabled. Using Gemini instead."
+  );
+
+  /* COMMENTED OUT - OpenAI DALL-E Image Generation
   try {
     const client = getOpenAIClient();
     
@@ -154,6 +163,7 @@ export async function generateImage(
       `Failed to generate image: ${error instanceof Error ? error.message : 'Unknown error'}`
     );
   }
+  */
 }
 
 /**
@@ -165,49 +175,87 @@ export async function testConnection(): Promise<boolean> {
     await client.models.list();
     return true;
   } catch (error) {
-    console.error('OpenAI connection test failed:', error);
+    console.error("OpenAI connection test failed:", error);
     return false;
   }
 }
 
 /**
- * Download an image from a URL and save it to a local file
- * 
- * @param url - The URL of the image to download
+ * Download an image from a URL (or data URL) and save it to a local file
+ *
+ * @param url - The URL of the image to download (http/https) or data URL (base64)
  * @param outputPath - The local file path where the image should be saved
  * @returns Promise that resolves when the download is complete
  */
-export async function downloadImage(url: string, outputPath: string): Promise<void> {
+export async function downloadImage(
+  url: string,
+  outputPath: string
+): Promise<void> {
+  // Handle data URLs (base64 encoded images from Gemini)
+  if (url.startsWith("data:")) {
+    return new Promise((resolve, reject) => {
+      try {
+        // Extract base64 data from data URL
+        const matches = url.match(/^data:([^;]+);base64,(.+)$/);
+        if (!matches) {
+          reject(new Error("Invalid data URL format"));
+          return;
+        }
+
+        const base64Data = matches[2];
+        const buffer = Buffer.from(base64Data, "base64");
+
+        // Write buffer to file
+        fs.writeFile(outputPath, buffer, (error) => {
+          if (error) {
+            reject(error);
+          } else {
+            resolve();
+          }
+        });
+      } catch (error) {
+        reject(error);
+      }
+    });
+  }
+
+  // Handle regular HTTP/HTTPS URLs
   return new Promise((resolve, reject) => {
     // Determine which protocol to use
-    const protocol = url.startsWith('https') ? https : http;
-    
-    protocol.get(url, (response) => {
-      // Check if response is successful
-      if (response.statusCode !== 200) {
-        reject(new Error(`Failed to download image: ${response.statusCode} ${response.statusMessage}`));
-        return;
-      }
-      
-      // Create write stream
-      const fileStream = fs.createWriteStream(outputPath);
-      
-      // Pipe the response to the file
-      response.pipe(fileStream);
-      
-      // Handle completion
-      fileStream.on('finish', () => {
-        fileStream.close();
-        resolve();
-      });
-      
-      // Handle errors
-      fileStream.on('error', (error) => {
-        fs.unlink(outputPath, () => {}); // Delete partial file
+    const protocol = url.startsWith("https") ? https : http;
+
+    protocol
+      .get(url, (response) => {
+        // Check if response is successful
+        if (response.statusCode !== 200) {
+          reject(
+            new Error(
+              `Failed to download image: ${response.statusCode} ${response.statusMessage}`
+            )
+          );
+          return;
+        }
+
+        // Create write stream
+        const fileStream = fs.createWriteStream(outputPath);
+
+        // Pipe the response to the file
+        response.pipe(fileStream);
+
+        // Handle completion
+        fileStream.on("finish", () => {
+          fileStream.close();
+          resolve();
+        });
+
+        // Handle errors
+        fileStream.on("error", (error) => {
+          fs.unlink(outputPath, () => {}); // Delete partial file
+          reject(error);
+        });
+      })
+      .on("error", (error) => {
         reject(error);
       });
-    }).on('error', (error) => {
-      reject(error);
-    });
   });
 }
