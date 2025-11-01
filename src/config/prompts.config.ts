@@ -35,6 +35,12 @@ Create meaningful choices that have significant consequences and reflect the con
 Each choice should be compelling and force the player to consider historical context.
 You must respond with valid JSON only.`,
 
+    imagePromptGeneration: `You are an expert in historical visualization and documentary photography.
+Your role is to create detailed, historically accurate image prompts that capture specific scenes from a character's life.
+Focus on visual details that are authentic to the time period, including clothing, architecture, objects, lighting, and atmosphere.
+Your prompts should be vivid and specific enough to guide accurate image generation in a documentary-realistic style.
+You must respond with valid JSON only.`,
+
     imageGeneration: `Documentary-realistic historical photography style.`,
 
     locationResolution: `You are a meticulous historical toponymist.
@@ -215,6 +221,37 @@ IMPORTANT:
 - Ensure choices emerge naturally from circumstances
 - Reflect historical constraints and opportunities
 - Make consequences clear and compelling`,
+
+    imagePromptGeneration: `Generate a detailed image prompt for a documentary-realistic historical photograph.
+
+Historical Context:
+\${historicalContextJson}
+
+\${sceneContext}
+
+Create a prompt that describes ONE specific visual scene from the character's life that would make a powerful documentary photograph. The prompt must:
+1. Describe a concrete moment in time (not abstract concepts)
+2. Include specific visual details: clothing, setting, lighting, atmosphere, objects
+3. Be historically accurate for the time period and location
+4. Capture the emotional or dramatic essence of the moment
+5. Be suitable for realistic photography style (not illustration or painting)
+
+You must return EXACTLY this JSON structure:
+
+{
+  "id": "prompt-\${timestamp}",
+  "prompt": "A detailed, specific description of the scene in 2-3 sentences, rich with visual details. Must be 150-300 characters and include specific period details.",
+  "sourceType": "\${sourceType}",
+  "sourceId": "\${sourceId}",
+  "timestamp": "ISO timestamp"
+}
+
+IMPORTANT:
+- The prompt should be 150-300 characters
+- Focus on what can be SEEN in a photograph
+- Include period-accurate details (clothing, architecture, objects, lighting)
+- Specify the documentary-realistic style within the prompt
+- Do not include abstract concepts or emotions that can't be visually shown`,
 
     imageGeneration: `Create a documentary-realistic historical image depicting:
 

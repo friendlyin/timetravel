@@ -201,6 +201,13 @@ function buildPromptVariables(
     variables['momentNumber'] = '1';
   }
   
+  // Add image prompt data for image generation
+  if (session.imagePrompts.length > 0) {
+    const latestPrompt = session.imagePrompts[session.imagePrompts.length - 1];
+    variables['imagePrompt'] = latestPrompt.prompt;
+    variables['sceneDescription'] = latestPrompt.prompt;
+  }
+  
   // Add current age for pivotal moment generation
   if (session.lifelines.length > 0) {
     const latestLifeline = session.lifelines[session.lifelines.length - 1];
@@ -265,6 +272,34 @@ function buildPromptVariables(
     variables['continuationContext'] = `This is the character's first lifeline, starting from birth (age 0).`;
     variables['ageRangeWarning'] = '';
   }
+  
+  // Add scene context for image prompt generation
+  let sceneContext = '';
+  if (session.lifelines.length > 0) {
+    const latestLifeline = session.lifelines[session.lifelines.length - 1];
+    sceneContext += `Latest Lifeline (Age ${latestLifeline.startAge}-${latestLifeline.endAge}):\n`;
+    sceneContext += latestLifeline.narrative + '\n\n';
+  }
+  if (session.pivotalMoments.length > 0) {
+    const latestMoment = session.pivotalMoments[session.pivotalMoments.length - 1];
+    sceneContext += `Latest Pivotal Moment:\n`;
+    sceneContext += `${latestMoment.title} (Age ${latestMoment.age})\n`;
+    sceneContext += latestMoment.situation + '\n';
+  }
+  variables['sceneContext'] = sceneContext || 'Character just started their life journey.';
+  
+  // Add source type and ID for image prompt generation
+  variables['sourceType'] = 'context';
+  variables['sourceId'] = session.metadata.sessionId;
+  variables['timestamp'] = String(Date.now());
+  
+  // Add location and period info for prompts
+  variables['location'] = session.input.location;
+  variables['period'] = session.input.date;
+  variables['contextDescription'] = session.historicalContext 
+    ? `${session.historicalContext.country} - ${session.historicalContext.description}` 
+    : session.input.location;
+  variables['additionalStyleInstructions'] = 'natural lighting, period-accurate details';
   
   return variables;
 }

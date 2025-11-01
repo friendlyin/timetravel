@@ -39,12 +39,24 @@ export interface UserChoice {
 }
 
 /**
+ * Image prompt data
+ */
+export interface ImagePrompt {
+  id: string;
+  prompt: string;
+  sourceType: 'lifeline' | 'pivotalMoment' | 'context';
+  sourceId: string;
+  timestamp: string;
+}
+
+/**
  * Generated image data
  */
 export interface GeneratedImage {
   id: string;
   url: string;
   revisedPrompt?: string;
+  filePath?: string; // Local file path in session folder
   sourceType: 'lifeline' | 'pivotalMoment' | 'context';
   sourceId: string;
   timestamp: string;
@@ -98,6 +110,7 @@ export interface SessionData {
   lifelines: Lifeline[];
   pivotalMoments: PivotalMoment[];
   choices: UserChoice[];
+  imagePrompts: ImagePrompt[];
   images: GeneratedImage[];
   
   // Execution logs for debugging and analysis
@@ -136,6 +149,7 @@ export function createEmptySession(
     lifelines: [],
     pivotalMoments: [],
     choices: [],
+    imagePrompts: [],
     images: [],
     executionLogs: [],
     gameState: {

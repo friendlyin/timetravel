@@ -1,31 +1,26 @@
 /**
- * API Route: Generate Image
+ * API Route: Generate Image Prompt
  * 
- * POST /api/generate-image
+ * POST /api/generate-image-prompt
  * 
- * Generates documentary-realistic historical images.
- * This is a reusable endpoint that can be called multiple times
- * to visualize different stages of the game.
- * 
- * Requires an image prompt to be generated first via /api/generate-image-prompt
+ * Generates detailed, historically accurate prompts for image generation.
+ * This prompt is then used by the image generation endpoint.
  */
 
 import { NextRequest, NextResponse } from 'next/server';
-import { generateHistoricalImage } from '@/services/imageService';
+import { generateImagePrompt } from '@/services/imagePromptService';
 
-interface GenerateImageRequest {
+interface GenerateImagePromptRequest {
   sessionId: string;
   sourceType: 'lifeline' | 'pivotalMoment' | 'context';
   sourceId: string;
 }
 
-interface GenerateImageResponse {
+interface GenerateImagePromptResponse {
   success: boolean;
   data?: {
     id: string;
-    url: string;
-    filePath?: string;
-    revisedPrompt?: string;
+    prompt: string;
     sourceType: string;
     sourceId: string;
     timestamp: string;
@@ -37,11 +32,11 @@ interface GenerateImageResponse {
 export async function POST(request: NextRequest) {
   try {
     // Parse the request body
-    const body: GenerateImageRequest = await request.json();
+    const body: GenerateImagePromptRequest = await request.json();
     
     // Validate input
     if (!body.sessionId) {
-      return NextResponse.json<GenerateImageResponse>(
+      return NextResponse.json<GenerateImagePromptResponse>(
         {
           success: false,
           error: 'Missing required field: sessionId',
@@ -52,7 +47,7 @@ export async function POST(request: NextRequest) {
     }
     
     if (!body.sourceType) {
-      return NextResponse.json<GenerateImageResponse>(
+      return NextResponse.json<GenerateImagePromptResponse>(
         {
           success: false,
           error: 'Missing required field: sourceType',
@@ -63,7 +58,7 @@ export async function POST(request: NextRequest) {
     }
     
     if (!body.sourceId) {
-      return NextResponse.json<GenerateImageResponse>(
+      return NextResponse.json<GenerateImagePromptResponse>(
         {
           success: false,
           error: 'Missing required field: sourceId',
@@ -73,34 +68,32 @@ export async function POST(request: NextRequest) {
       );
     }
     
-    // Generate image (uses latest prompt from session)
-    const image = await generateHistoricalImage(
+    // Generate image prompt
+    const imagePrompt = await generateImagePrompt(
       body.sessionId,
       body.sourceType,
       body.sourceId
     );
     
     // Return successful response
-    return NextResponse.json<GenerateImageResponse>(
+    return NextResponse.json<GenerateImagePromptResponse>(
       {
         success: true,
         data: {
-          id: image.id,
-          url: image.url,
-          filePath: image.filePath,
-          revisedPrompt: image.revisedPrompt,
-          sourceType: image.sourceType,
-          sourceId: image.sourceId,
-          timestamp: image.timestamp,
+          id: imagePrompt.id,
+          prompt: imagePrompt.prompt,
+          sourceType: imagePrompt.sourceType,
+          sourceId: imagePrompt.sourceId,
+          timestamp: imagePrompt.timestamp,
         },
         timestamp: new Date().toISOString(),
       },
       { status: 200 }
     );
   } catch (error) {
-    console.error('Error in generate-image API:', error);
+    console.error('Error in generate-image-prompt API:', error);
     
-    return NextResponse.json<GenerateImageResponse>(
+    return NextResponse.json<GenerateImagePromptResponse>(
       {
         success: false,
         error: error instanceof Error ? error.message : 'Unknown error occurred',

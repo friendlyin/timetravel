@@ -13,6 +13,7 @@ import {
   SessionConfig,
   createEmptySession,
   UserChoice,
+  ImagePrompt,
   GeneratedImage,
   AgentExecutionLog,
 } from '@/types/session.types';
@@ -49,10 +50,34 @@ export function generateSessionId(): string {
 }
 
 /**
- * Get the file path for a session
+ * Get the folder path for a session
+ */
+export function getSessionFolderPath(sessionId: string): string {
+  return path.join(SESSIONS_DIR, sessionId);
+}
+
+/**
+ * Get the JSON file path for a session (new folder structure)
  */
 function getSessionFilePath(sessionId: string): string {
+  return path.join(getSessionFolderPath(sessionId), 'session.json');
+}
+
+/**
+ * Get the old flat file path for a session (for backward compatibility)
+ */
+function getOldSessionFilePath(sessionId: string): string {
   return path.join(SESSIONS_DIR, `${sessionId}.json`);
+}
+
+/**
+ * Ensure session folder exists
+ */
+function ensureSessionFolder(sessionId: string): void {
+  const folderPath = getSessionFolderPath(sessionId);
+  if (!fs.existsSync(folderPath)) {
+    fs.mkdirSync(folderPath, { recursive: true });
+  }
 }
 
 /**
@@ -67,7 +92,8 @@ export function createSession(
   const sessionId = generateSessionId();
   const session = createEmptySession(sessionId, input, config);
   
-  // Write initial session file
+  // Create session folder and write session.json file
+  ensureSessionFolder(sessionId);
   const filePath = getSessionFilePath(sessionId);
   fs.writeFileSync(filePath, JSON.stringify(session, null, 2), 'utf-8');
   
@@ -76,12 +102,20 @@ export function createSession(
 
 /**
  * Read a session from file
+ * Supports both new folder structure and old flat file structure for backward compatibility
  */
 export function readSession(sessionId: string): SessionData {
-  const filePath = getSessionFilePath(sessionId);
+  let filePath = getSessionFilePath(sessionId);
   
+  // Check new folder structure first
   if (!fs.existsSync(filePath)) {
-    throw new Error(`Session file not found: ${sessionId}`);
+    // Fall back to old flat file structure
+    const oldPath = getOldSessionFilePath(sessionId);
+    if (fs.existsSync(oldPath)) {
+      filePath = oldPath;
+    } else {
+      throw new Error(`Session file not found: ${sessionId}`);
+    }
   }
   
   const content = fs.readFileSync(filePath, 'utf-8');
@@ -90,8 +124,10 @@ export function readSession(sessionId: string): SessionData {
 
 /**
  * Write session data to file
+ * Always writes to new folder structure
  */
 export function writeSession(sessionId: string, session: SessionData): void {
+  ensureSessionFolder(sessionId);
   const filePath = getSessionFilePath(sessionId);
   fs.writeFileSync(filePath, JSON.stringify(session, null, 2), 'utf-8');
 }
@@ -197,6 +233,19 @@ export function addUserChoice(
 ): SessionData {
   const session = readSession(sessionId);
   session.choices.push(choice);
+  writeSession(sessionId, session);
+  return session;
+}
+
+/**
+ * Add an image prompt to session
+ */
+export function addImagePrompt(
+  sessionId: string,
+  imagePrompt: ImagePrompt
+): SessionData {
+  const session = readSession(sessionId);
+  session.imagePrompts.push(imagePrompt);
   writeSession(sessionId, session);
   return session;
 }
@@ -326,6 +375,7 @@ export function writeAgentOutput(
   if (outputField === 'lifelines' || 
       outputField === 'pivotalMoments' || 
       outputField === 'images' ||
+      outputField === 'imagePrompts' ||
       outputField === 'choices') {
     if (!Array.isArray(session[outputField as keyof SessionData])) {
       (session as any)[outputField] = [];
@@ -341,15 +391,28 @@ export function writeAgentOutput(
 }
 
 /**
- * List all session files
+ * List all session files (supports both old and new structures)
  */
 export function listSessions(): string[] {
   ensureSessionsDirectory();
   
-  const files = fs.readdirSync(SESSIONS_DIR);
-  return files
-    .filter(file => file.startsWith('session-') && file.endsWith('.json'))
-    .map(file => file.replace('.json', ''));
+  const items = fs.readdirSync(SESSIONS_DIR);
+  const sessions: string[] = [];
+  
+  for (const item of items) {
+    const itemPath = path.join(SESSIONS_DIR, item);
+    const stat = fs.statSync(itemPath);
+    
+    if (stat.isDirectory() && item.startsWith('session-')) {
+      // New folder structure
+      sessions.push(item);
+    } else if (stat.isFile() && item.startsWith('session-') && item.endsWith('.json')) {
+      // Old flat file structure
+      sessions.push(item.replace('.json', ''));
+    }
+  }
+  
+  return sessions;
 }
 
 /**
@@ -357,5 +420,52 @@ export function listSessions(): string[] {
  */
 export function getSessionPath(sessionId: string): string {
   return getSessionFilePath(sessionId);
+}
+
+/**
+ * Get the path for saving an image file in the session folder
+ */
+export function getImageFilePath(sessionId: string, imageId: string): string {
+  const folderPath = getSessionFolderPath(sessionId);
+  return path.join(folderPath, `${imageId}.png`);
+}
+
+/**
+ * Migrate an old flat-file session to the new folder structure
+ */
+export function migrateSessionToFolder(sessionId: string): boolean {
+  const oldPath = getOldSessionFilePath(sessionId);
+  
+  // Check if old file exists
+  if (!fs.existsSync(oldPath)) {
+    return false;
+  }
+  
+  // Check if already migrated
+  const newPath = getSessionFilePath(sessionId);
+  if (fs.existsSync(newPath)) {
+    return true; // Already migrated
+  }
+  
+  try {
+    // Read old session data
+    const content = fs.readFileSync(oldPath, 'utf-8');
+    const session = JSON.parse(content) as SessionData;
+    
+    // Create new folder structure
+    ensureSessionFolder(sessionId);
+    
+    // Write to new location
+    fs.writeFileSync(newPath, JSON.stringify(session, null, 2), 'utf-8');
+    
+    // Optionally delete old file (commented out for safety)
+    // fs.unlinkSync(oldPath);
+    
+    console.log(`✅ Migrated session ${sessionId} to folder structure`);
+    return true;
+  } catch (error) {
+    console.error(`Failed to migrate session ${sessionId}:`, error);
+    return false;
+  }
 }
 

@@ -9,6 +9,9 @@
 import OpenAI from 'openai';
 import { ModelConfig, ImageModelConfig } from '@/config/models.config';
 import localConfig from '../../config.local';
+import fs from 'fs';
+import https from 'https';
+import http from 'http';
 
 /**
  * Initialize the OpenAI client
@@ -165,4 +168,46 @@ export async function testConnection(): Promise<boolean> {
     console.error('OpenAI connection test failed:', error);
     return false;
   }
+}
+
+/**
+ * Download an image from a URL and save it to a local file
+ * 
+ * @param url - The URL of the image to download
+ * @param outputPath - The local file path where the image should be saved
+ * @returns Promise that resolves when the download is complete
+ */
+export async function downloadImage(url: string, outputPath: string): Promise<void> {
+  return new Promise((resolve, reject) => {
+    // Determine which protocol to use
+    const protocol = url.startsWith('https') ? https : http;
+    
+    protocol.get(url, (response) => {
+      // Check if response is successful
+      if (response.statusCode !== 200) {
+        reject(new Error(`Failed to download image: ${response.statusCode} ${response.statusMessage}`));
+        return;
+      }
+      
+      // Create write stream
+      const fileStream = fs.createWriteStream(outputPath);
+      
+      // Pipe the response to the file
+      response.pipe(fileStream);
+      
+      // Handle completion
+      fileStream.on('finish', () => {
+        fileStream.close();
+        resolve();
+      });
+      
+      // Handle errors
+      fileStream.on('error', (error) => {
+        fs.unlink(outputPath, () => {}); // Delete partial file
+        reject(error);
+      });
+    }).on('error', (error) => {
+      reject(error);
+    });
+  });
 }

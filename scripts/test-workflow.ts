@@ -26,6 +26,8 @@ import { generateHistoricalContext } from '../src/services/historicalContextServ
 import { generatePersonaOptions } from '../src/services/personaService';
 import { generateLifeline } from '../src/services/lifelineService';
 import { generatePivotalMoment } from '../src/services/pivotalMomentService';
+import { generateImagePrompt } from '../src/services/imagePromptService';
+import { generateHistoricalImage } from '../src/services/imageService';
 import { getAgentConfig, getNextAgent, AgentType } from '../src/config/agents.config';
 import { GAME_CONFIG } from '../src/config/workflow.config';
 import { SessionInput } from '../src/types/session.types';
@@ -140,6 +142,50 @@ async function selectChoice(choices: Choice[]): Promise<Choice> {
 }
 
 /**
+ * Ask if user wants to generate an image
+ */
+async function askGenerateImage(context: string): Promise<boolean> {
+  const answer = await question(`\n🎨 Generate image for this ${context}? (y/n): `);
+  return answer.toLowerCase() === 'y' || answer.toLowerCase() === 'yes';
+}
+
+/**
+ * Generate image (prompt + image)
+ */
+async function generateImage(
+  sessionId: string,
+  sourceType: 'lifeline' | 'pivotalMoment' | 'context',
+  sourceId: string
+): Promise<void> {
+  console.log('\n📝 Generating image prompt...');
+  
+  try {
+    // Step 1: Generate prompt
+    const imagePrompt = await generateImagePrompt(sessionId, sourceType, sourceId);
+    
+    console.log('\n✅ Image prompt generated:');
+    console.log(`   ID: ${imagePrompt.id}`);
+    console.log(`   Prompt: ${imagePrompt.prompt}`);
+    
+    // Step 2: Generate image
+    console.log('\n🎨 Generating image from prompt...');
+    const image = await generateHistoricalImage(sessionId, sourceType, sourceId);
+    
+    console.log('\n✅ Image generated:');
+    console.log(`   ID: ${image.id}`);
+    console.log(`   URL: ${image.url}`);
+    if (image.filePath) {
+      console.log(`   File: ${image.filePath}`);
+    }
+    if (image.revisedPrompt) {
+      console.log(`   Revised Prompt: ${image.revisedPrompt}`);
+    }
+  } catch (error) {
+    console.error('\n❌ Image generation failed:', error);
+  }
+}
+
+/**
  * Main workflow execution
  */
 async function main() {
@@ -244,6 +290,11 @@ async function main() {
           console.log(`  Relationships: ${lifeline.characterDevelopment.relationships.join(', ')}`);
           console.log(`  Reputation: ${lifeline.characterDevelopment.reputation}`);
           
+          // Ask if user wants to generate an image
+          if (await askGenerateImage('lifeline')) {
+            await generateImage(sessionId, 'lifeline', lifeline.id);
+          }
+          
         } else if (currentAgent === 'pivotalMomentGeneration') {
           const moment = await generatePivotalMoment(sessionId);
           
@@ -267,6 +318,11 @@ async function main() {
           
           console.log(`\n✅ You chose: ${selectedChoice.title}`);
           userMadeSelection = true; // User just made a selection
+          
+          // Ask if user wants to generate an image
+          if (await askGenerateImage('pivotal moment')) {
+            await generateImage(sessionId, 'pivotalMoment', moment.id);
+          }
           
           // Check if we should end the game
           const updatedSession = readSession(sessionId);
@@ -319,6 +375,8 @@ async function main() {
     console.log(`   Lifeline segments: ${finalSession.lifelines.length}`);
     console.log(`   Pivotal moments: ${finalSession.pivotalMoments.length}`);
     console.log(`   Choices made: ${finalSession.choices.length}`);
+    console.log(`   Image prompts generated: ${finalSession.imagePrompts.length}`);
+    console.log(`   Images generated: ${finalSession.images.length}`);
     console.log(`   Final age: ${finalSession.gameState.currentAge}`);
     console.log(`   Total steps executed: ${finalSession.metadata.totalSteps}`);
     

@@ -15,6 +15,7 @@ export type AgentType =
   | "personaGeneration"
   | "lifelineGeneration"
   | "pivotalMomentGeneration"
+  | "imagePromptGeneration"
   | "imageGeneration";
 
 export interface AgentInputField {
@@ -223,6 +224,46 @@ export const AGENTS: Record<AgentType, AgentConfig> = {
     requiresUserInput: true,
   },
 
+  imagePromptGeneration: {
+    id: "imagePromptGeneration",
+    type: "imagePromptGeneration",
+    name: "Image Prompt Generation Agent",
+    description: "Generates detailed prompts for documentary-realistic historical images",
+
+    modelConfig: MODELS.imagePromptGeneration,
+    systemPrompt: SYSTEM_PROMPTS.imagePromptGeneration,
+    userPromptTemplate: USER_PROMPTS.imagePromptGeneration,
+
+    inputFields: [
+      {
+        field: "lifelines",
+        required: false,
+        description: "Latest lifeline for context",
+      },
+      {
+        field: "pivotalMoments",
+        required: false,
+        description: "Latest pivotal moment for context",
+      },
+      {
+        field: "historicalContext",
+        required: true,
+        description: "Historical context for accuracy",
+      },
+    ],
+    outputField: "imagePrompts", // Appends to array
+
+    nextAgentRules: [
+      {
+        condition: "always",
+        nextAgentId: "imageGeneration",
+        description: "After generating prompt, proceed to image generation",
+      },
+    ],
+
+    repeatable: true,
+  },
+
   imageGeneration: {
     id: "imageGeneration",
     type: "imageGeneration",
@@ -235,14 +276,9 @@ export const AGENTS: Record<AgentType, AgentConfig> = {
 
     inputFields: [
       {
-        field: "lifelines",
-        required: false,
-        description: "Latest lifeline for image generation",
-      },
-      {
-        field: "pivotalMoments",
-        required: false,
-        description: "Latest pivotal moment for image generation",
+        field: "imagePrompts",
+        required: true,
+        description: "Latest image prompt to use for generation",
       },
       {
         field: "historicalContext",

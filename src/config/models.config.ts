@@ -68,6 +68,16 @@ export const MODELS = {
   } as ModelConfig,
 
   /**
+   * Image Prompt Generation
+   * Crafts detailed, historically accurate prompts for image generation
+   */
+  imagePromptGeneration: {
+    model: 'gpt-4o',
+    temperature: 0.7,
+    maxTokens: 1000,
+  } as ModelConfig,
+
+  /**
    * Image Generation
    * Documentary-realistic historical visualization
    */

@@ -7,8 +7,9 @@
 
 import { getAgentConfig } from '@/config/agents.config';
 import { executeAgent } from './agentExecutor';
-import { readSession } from './sessionService';
+import { readSession, getImageFilePath } from './sessionService';
 import { GeneratedImage } from '@/types/session.types';
+import { downloadImage } from '@/lib/openai';
 
 /**
  * Generate a documentary-realistic historical image
@@ -17,6 +18,13 @@ import { GeneratedImage } from '@/types/session.types';
  * - Historical contexts
  * - Life events and periods
  * - Pivotal moments
+ * 
+ * The function:
+ * 1. Uses the latest image prompt from the session
+ * 2. Generates an image via DALL-E
+ * 3. Downloads the image from the URL
+ * 4. Saves it to the session folder
+ * 5. Updates the session with the image data including local file path
  * 
  * @param sessionId - The session ID
  * @param sourceType - Type of content to generate image for
@@ -32,6 +40,7 @@ export async function generateHistoricalImage(
   const agentConfig = getAgentConfig('imageGeneration');
   
   // Execute agent (reads from session, writes to session)
+  // The agent will use the latest imagePrompt from the session
   const result = await executeAgent(agentConfig, sessionId);
   
   // If agent didn't return data (mock mode), generate and add mock data
@@ -55,6 +64,20 @@ export async function generateHistoricalImage(
   // Update the source information
   latestImage.sourceType = sourceType;
   latestImage.sourceId = sourceId;
+  
+  // Download and save the image to the session folder
+  try {
+    const imageFilePath = getImageFilePath(sessionId, latestImage.id);
+    await downloadImage(latestImage.url, imageFilePath);
+    
+    // Update the image with the file path
+    latestImage.filePath = imageFilePath;
+    
+    console.log(`✅ Image saved to: ${imageFilePath}`);
+  } catch (error) {
+    console.error(`Failed to download image:`, error);
+    // Continue without file path - the URL is still available
+  }
   
   return latestImage;
 }
