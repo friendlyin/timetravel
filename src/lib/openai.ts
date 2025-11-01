@@ -22,7 +22,7 @@ export function getOpenAIClient(): OpenAI {
   if (!openaiClient) {
     // Try to get API key from local config first, then fall back to environment variables
     const apiKey = localConfig.openaiApiKey || process.env.OPENAI_API_KEY;
-    
+
     if (!apiKey) {
       throw new Error(
         'OPENAI_API_KEY is not configured. ' +
@@ -30,12 +30,10 @@ export function getOpenAIClient(): OpenAI {
         'or set it in your .env.local file.'
       );
     }
-    
-    openaiClient = new OpenAI({
-      apiKey: apiKey,
-    });
+
+    openaiClient = new OpenAI({ apiKey });
   }
-  
+
   return openaiClient;
 }
 
@@ -43,46 +41,48 @@ export function getOpenAIClient(): OpenAI {
  * Generate text completion using OpenAI's chat API
  */
 export async function generateTextCompletion(
-  systemPrompt: string,
-  userPrompt: string,
-  modelConfig: ModelConfig
+    systemPrompt: string,
+    userPrompt: string,
+    modelConfig: ModelConfig
 ): Promise<string> {
-  try {
-    const client = getOpenAIClient();
-    
-    const response = await client.chat.completions.create({
-      model: modelConfig.model,
-      messages: [
-        { role: 'system', content: systemPrompt },
-        { role: 'user', content: userPrompt },
-      ],
-      temperature: modelConfig.temperature ?? 0.7,
-      max_tokens: modelConfig.maxTokens,
-      top_p: modelConfig.topP,
-    });
-    
-    const content = response.choices[0]?.message?.content;
-    
-    if (!content) {
-      throw new Error('No content returned from OpenAI API');
+    try {
+        const client = getOpenAIClient()
+
+        const response = await client.chat.completions.create({
+            model: modelConfig.model,
+            messages: [
+                { role: 'system', content: systemPrompt },
+                { role: 'user', content: userPrompt }
+            ],
+            temperature: modelConfig.temperature ?? 0.7,
+            max_tokens: modelConfig.maxTokens,
+            top_p: modelConfig.topP
+        })
+
+        const content = response.choices[0]?.message?.content
+
+        if (!content) {
+            throw new Error('No content returned from OpenAI API')
+        }
+
+        return content
+    } catch (error) {
+        console.error('Error generating text completion:', error)
+        throw new Error(
+            `Failed to generate text completion: ${
+                error instanceof Error ? error.message : 'Unknown error'
+            }`
+        )
     }
-    
-    return content;
-  } catch (error) {
-    console.error('Error generating text completion:', error);
-    throw new Error(
-      `Failed to generate text completion: ${error instanceof Error ? error.message : 'Unknown error'}`
-    );
-  }
 }
 
 /**
  * Generate text completion and parse as JSON
  */
 export async function generateJSONCompletion<T>(
-  systemPrompt: string,
-  userPrompt: string,
-  modelConfig: ModelConfig
+    systemPrompt: string,
+    userPrompt: string,
+    modelConfig: ModelConfig
 ): Promise<T> {
   try {
     const client = getOpenAIClient();
@@ -166,4 +166,3 @@ export async function testConnection(): Promise<boolean> {
     return false;
   }
 }
-

@@ -11,32 +11,37 @@
  * System prompts define the AI's role and behavior
  */
 export const SYSTEM_PROMPTS = {
-  historicalContext: `You are an expert historian with deep knowledge of world history across all time periods and cultures. 
+    historicalContext: `You are an expert historian with deep knowledge of world history across all time periods and cultures. 
 Your role is to provide accurate, detailed historical context for any given date and location.
 Focus on creating an immersive, factual description that captures the essence of the time and place.
 Always prioritize historical accuracy over dramatization.
 You must respond with valid JSON only.`,
 
-  personaGeneration: `You are a historical demographer and social historian.
+    personaGeneration: `You are a historical demographer and social historian.
 Your role is to generate realistic personas of people who could have lived in a specific historical context.
 Consider social structures, class systems, demographics, and typical life circumstances of the era.
 Each persona should be plausible and grounded in historical reality.
 You must respond with valid JSON only.`,
 
-  lifelineGeneration: `You are a creative historical storyteller and biographer.
+    lifelineGeneration: `You are a creative historical storyteller and biographer.
 Your role is to craft engaging, realistic life narratives that respect historical facts and social constraints.
 Create vivid, documentary-style narratives that feel authentic to the time period.
 Balance storytelling with historical accuracy, making the character's life feel real and relatable.
 You must respond with valid JSON only.`,
 
-  pivotalMomentGeneration: `You are a dramatic historical writer specializing in critical decision points.
+    pivotalMomentGeneration: `You are a dramatic historical writer specializing in critical decision points.
 Your role is to identify and describe historically plausible pivotal moments in a character's life.
 Create meaningful choices that have significant consequences and reflect the constraints and opportunities of the era.
 Each choice should be compelling and force the player to consider historical context.
 You must respond with valid JSON only.`,
 
-  imageGeneration: `Documentary-realistic historical photography style.`,
-} as const;
+    imageGeneration: `Documentary-realistic historical photography style.`,
+
+    locationResolution: `You are a meticulous historical toponymist.
+Resolve modern coordinates and years into accurate historical place names.
+Prefer historically appropriate country or polity names for the given year.
+Return concise, factual information and note uncertainty when data is sparse.`
+} as const
 
 /**
  * User prompts are the actual instructions sent to the AI
@@ -72,7 +77,7 @@ You must provide ACTUAL historical information (not templates or placeholders) i
 
 IMPORTANT: Provide real, specific historical data for \${location} on \${date}. Do NOT use placeholders, templates, or generic descriptions.`,
 
-  personaGeneration: `Based on the following historical context, generate \${numberOfOptions} distinct persona options representing different types of people who could be born in these circumstances.
+    personaGeneration: `Based on the following historical context, generate \${numberOfOptions} distinct persona options representing different types of people who could be born in these circumstances.
 
 Historical Context:
 \${historicalContextJson}
@@ -113,7 +118,7 @@ IMPORTANT:
 - Provide realistic, historically accurate personas based on the context
 - Use real social classes, occupations, and circumstances from that era`,
 
-  lifelineGeneration: `Generate a life narrative for the following character until they reach a pivotal moment in their life.
+    lifelineGeneration: `Generate a life narrative for the following character until they reach a pivotal moment in their life.
 
 Historical Context:
 \${historicalContextJson}
@@ -161,13 +166,13 @@ IMPORTANT:
 - Write vivid, documentary-realistic narrative
 \${ageRangeWarning}`,
 
-  lifelineGenerationWithPreviousChoice: `\${previousLifelineSection}
+    lifelineGenerationWithPreviousChoice: `\${previousLifelineSection}
 
 The character chose: \${previousChoice}
 
 Continue the narrative from this point, showing the consequences of this choice and leading to the next pivotal moment.`,
 
-  pivotalMomentGeneration: `Generate a pivotal moment for the character based on their life so far.
+    pivotalMomentGeneration: `Generate a pivotal moment for the character based on their life so far.
 
 Historical Context:
 \${historicalContextJson}
@@ -211,7 +216,7 @@ IMPORTANT:
 - Reflect historical constraints and opportunities
 - Make consequences clear and compelling`,
 
-  imageGeneration: `Create a documentary-realistic historical image depicting:
+    imageGeneration: `Create a documentary-realistic historical image depicting:
 
 \${sceneDescription}
 
@@ -219,7 +224,22 @@ Historical Context:
 \${contextDescription}
 
 Style: Documentary photography, historically accurate, vivid details, \${additionalStyleInstructions}`,
-} as const;
+
+    locationResolution: `Given the following inputs, identify the historically appropriate place names.
+
+Longitude: \${lon}
+Latitude: \${lat}
+Year: \${year}
+
+Respond as strict JSON with keys:
+- area (string, required)
+- country (string | null)
+- settlement (string | null)
+- confidence (0-1 number; how confident you are)
+- notes (string | null; caveats or data limitations)
+
+Keep strings concise (max ~60 characters).`
+} as const
 
 /**
  * Helper function to fill in a prompt template with actual values

@@ -77,6 +77,16 @@ export const MODELS = {
     quality: 'hd',
     style: 'natural',
   } as ImageModelConfig,
+
+  /**
+   * Location Resolution
+   * Translates coordinates and a year into historical place names
+   */
+  locationResolution: {
+    model: 'gpt-4o-mini',
+    temperature: 0.2,
+    maxTokens: 600,
+  } as ModelConfig,
 } as const;
 
 /**
@@ -85,4 +95,3 @@ export const MODELS = {
 export function getModelConfig(step: keyof typeof MODELS): ModelConfig | ImageModelConfig {
   return MODELS[step];
 }
-
