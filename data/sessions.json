@@ -1,0 +1,29 @@
+{
+  "sessions": [
+    {
+      "id": "session-1762001611189",
+      "label": "It's ok",
+      "subtitle": "Created Nov 1, 2025, 12:53 PM",
+      "createdAt": 1762001611189
+    },
+    {
+      "id": "session-1762001603517",
+      "label": "Yo",
+      "subtitle": "Created Nov 1, 2025, 12:53 PM",
+      "createdAt": 1762001603517
+    },
+    {
+      "id": "session-1762001426707",
+      "label": "Georgii",
+      "subtitle": "Created Nov 1, 2025, 12:50 PM",
+      "createdAt": 1762001426707
+    },
+    {
+      "id": "session-1762000725872",
+      "label": "Another guy",
+      "subtitle": "Created Nov 1, 2025, 12:38 PM",
+      "createdAt": 1762000725872
+    }
+  ],
+  "selectedId": "session-1762001426707"
+}
